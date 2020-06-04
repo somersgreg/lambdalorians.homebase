@@ -351,3 +351,231 @@ MSGTYPE=hide "Unknown command ' '."
 # Messages it's easy to miss.
 MSGTYPE=stop "You feel more confident in your.*skills."
 MSGTYPE=stop "You feel a strange vibration.*"
+
+#0   ________ 
+#0  /_  __/ /_  ___  v3.4.3
+#0   / / / __ \/ _ \        
+#0  / / / / / /  __/          __        __      __           _   
+#0 /_/ / / /_/\___/____ ___  / /_  ____/ /___ _/ /___  _____(_)___ _____  _____
+#0    / /   / __ `/ __ `__ \/ __ \/ __  / __ `/ / __ \/ ___/ / __ `/ __ \/ ___/
+#00  / /___/ /_/ / / / / / / /_/ / /_/ / /_/ / / /_/ / /  / / /_/ / / / (__  )
+#000/_____/\__,_/_/ /_/ /_/_.___/\__,_/\__,_/_/\____/_/  /_/\__,_/_/ /_/____/
+#000000000000000000000000000000000000000000000000000000000000000000000000000
+OPTIONS=symset:curses                 # Use for v3.6.n            TEST
+OPTIONS=symset:IBMgraphics            # Use for v3.6.n            TEST
+OPTIONS=cursesgraphics          #  =->>TEST<<-=
+
+OPTIONS=sortpack,travel,runmode:run,fixinv,disclose:+i+a+v+g+c
+OPTIONS=autopickup,pickup_types:$="/!?+
+OPTIONS=hilite_hidden_stairs
+OPTIONS=hilite_pet,safe_pet
+OPTIONS=msg_window:reversed       # Full screen, new first
+OPTIONS=menustyle:partial         # Immediately display a menu of all objects
+OPTIONS=hilite_obj_piles
+OPTIONS=pickup_burden:B
+OPTIONS=msghistory:60      
+OPTIONS=item_use_menu
+OPTIONS=sortloot:full
+OPTIONS=paranoid_quit
+OPTIONS=pickup_thrown
+OPTIONS=use_darkgray
+OPTIONS=lit_corridor
+OPTIONS=hitpointbar
+OPTIONS=!cmdassist
+OPTIONS=autoquiver
+OPTIONS=showscore               # Working?
+OPTIONS=!showrace               # PC represented by race letter not @
+OPTIONS=showbuc                 # Shows uncursed if known always
+OPTIONS=showexp
+OPTIONS=autodig
+OPTIONS=confirm
+OPTIONS=color
+OPTIONS=time                    # Not working?
+OPTIONS=mail                    # Allows recieving messages in game from viewers.
+
+OPTIONS=number_pad:0            # Have off because cant get numpad to run.
+
+OPTIONS=perm_invent    	        # Needs curses. =->>TEST<<-=
+OPTIONS=IBMgraphics
+#OPTIONS=UTF8graphics
+
+
+SYMBOL='opulent throne':0x265C
+SYMBOL='altar':0x2250
+OPTIONS=boulder:0                                 # Working
+
+MONSTERCOLOR=floating eye:lightcyan&inverse        #  =->>TEST<<-=
+MONSTERCOLOR=mind flayer:lightmagenta
+MONSTERCOLOR=master mind flayer:lightmagenta
+
+#  stth's @ with tweaks
+MONSTERCOLOR=human:white                           # - CLR_WHITE (HI_DOMESTIC)
+MONSTERCOLOR=wererat (human):black                 # ! CLR_BROWN
+MONSTERCOLOR=werejackal (human):black              # ! CLR_RED
+MONSTERCOLOR=werewolf (human):black                # ! CLR_ORANGE
+MONSTERCOLOR=elf:white                             # - CLR_WHITE (HI_DOMESTIC)
+MONSTERCOLOR=Woodland-elf:green                    # - CLR_GREEN
+MONSTERCOLOR=Green-elf:lightgreen                  # - CLR_BRIGHT_GREEN
+MONSTERCOLOR=Grey-elf:gray                         # - CLR_GRAY
+MONSTERCOLOR=elf-lord:lightblue                    # - CLR_BRIGHT_BLUE
+MONSTERCOLOR=Elvenking:magenta                     # - CLR_MAGENTA (HI_LORD)
+MONSTERCOLOR=doppelganger:lightcyan                # ! CLR_WHITE (HI_DOMESTIC)
+MONSTERCOLOR=nurse:white                           # - CLR_WHITE (HI_DOMESTIC)
+MONSTERCOLOR=shopkeeper:yellow                     # ! CLR_WHITE (HI_DOMESTIC)
+MONSTERCOLOR=guard:orange                          # ! CLR_BLUE
+MONSTERCOLOR=prisoner:orange                       # ! CLR_WHITE (HI_DOMESTIC)
+MONSTERCOLOR=aligned priest:white                  # ! CLR_WHITE
+MONSTERCOLOR=high priest:lightmagenta              # ! CLR_WHITE
+MONSTERCOLOR=soldier:gray                          # - CLR_GRAY
+MONSTERCOLOR=sergeant:red                          # - CLR_RED
+MONSTERCOLOR=lieutenant:green                      # - CLR_GREEN
+MONSTERCOLOR=captain:lightblue                     # ! CLR_BLUE
+MONSTERCOLOR=watchman:cyan                         # ! CLR_GRAY
+MONSTERCOLOR=watch captain:lightcyan               # ! CLR_GREEN
+MONSTERCOLOR=minotaur:orange
+MONSTERCOLOR=wererat:black
+MONSTERCOLOR=werejackal:black
+MONSTERCOLOR=werewolf:black
+
+
+OPTIONS=menucolors
+
+MENUCOLOR=" blessed"=green
+MENUCOLOR=" uncursed"=white
+MENUCOLOR=" named uc"=white
+MENUCOLOR=" cursed"=red
+MENUCOLOR=" named pc"=red
+
+MENUCOLOR=" water"=lightblue
+MENUCOLOR=" called plain"=lightblue
+MENUCOLOR=" clear"=lightblue
+MENUCOLOR=" holy water"=lightcyan
+MENUCOLOR=" unholy water"=blue
+
+MENUCOLOR=" blessed .* water"=lightcyan
+MENUCOLOR=" blessed clear"=lightcyan
+MENUCOLOR=" cursed .* water"=blue
+MENUCOLOR=" cursed clear"=blue
+
+MENUCOLOR=" worn"=cyan&inverse
+MENUCOLOR=" blessed .* worn"=green&inverse
+MENUCOLOR=" cursed .* worn"=red&inverse
+
+MENUCOLOR=" poisoned"=lightgreen
+
+MENUCOLOR=" hand"=lightmagenta&inverse    # This set to show weilding - Beware alt+x disarm cmd
+MENUCOLOR=" blessed .* hand"=cyan&inverse
+MENUCOLOR=" cursed .* hand"=red&inverse
+
+MENUCOLOR=" blessed .* bag of holding"=green&underline
+MENUCOLOR=" uncursed .* bag of holding"=cyan&underline
+MENUCOLOR=" cursed .* bag of holding"=red&underline
+
+MENUCOLOR=" wand of cancellation"=orange&underline
+MENUCOLOR=" called cancellation"=orange&underline
+MENUCOLOR=" bag of tricks"=orange&underline
+
+MENUCOLOR=" (gauntlets|gloves|boots) .* fumbl"=orange
+MENUCOLOR=" fumble boots"=orange
+MENUCOLOR=" dunce cap"=orange
+MENUCOLOR="align"=orange
+MENUCOLOR=" c(hi|o)ckatrice corpse"=yellow
+MENUCOLOR=" cockatrice egg"=yellow
+
+MENUCOLOR=":0"=yellow
+MENUCOLOR="named op"=yellow
+
+MENUCOLOR="wishing"=lightcyan
+MENUCOLOR="unpaid"=white&underline
+
+
+# Spellcasting
+MENUCOLOR=" 0%"=white
+MENUCOLOR=" [1-9]%"=cyan
+MENUCOLOR=" [12][0-9]%"=yellow
+MENUCOLOR=" [3-5][0-9]%"=brown
+MENUCOLOR=" [6-8][0-9]%"=orange
+MENUCOLOR=" 9[0-9]%"=red
+MENUCOLOR=" 100%"=red
+MENUCOLOR="[a-zA-Z] - [a-zA-Z ]+ [0-9]\*   [a-z]+ +[0-9]+%"=black
+
+# Enhance
+MENUCOLOR=" \[Basic\]$"=green
+MENUCOLOR=" \[(Skilled|Master)\]$"=lightgreen
+MENUCOLOR=" \[(Expert|Grand Master)\]$"=white
+MENUCOLOR=" martial arts +\[Expert\]$"=green
+MENUCOLOR="^ *[a-z -]+ +\[Unskilled\]$"=black
+#MENUCOLOR="^ *[a-z] - +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master)\]$"=white
+
+
+OPTIONS=statuscolors
+# HP    
+STATUSCOLOR=hp%100=green,hp%66=yellow,hp%45=orange
+STATUSCOLOR=hp%33=red&bold,hp%14:red&inverse,hp%0:red&inverse&blink
+# Pw    
+STATUSCOLOR=pw%100=green,pw%66=yellow,pw%50:orange,pw%33=red&bold
+# Carry 
+STATUSCOLOR=burdened:yellow,stressed:orange,strained:red&bold
+STATUSCOLOR=overtaxed:red&inverse,overloaded:red&inverse&blink
+## Hunger
+STATUSCOLOR=satiated:yellow,hungry:brown,weak:red&bold
+STATUSCOLOR=fainting:red&inverse,fainted:red&inverse&blink
+# Mental
+STATUSCOLOR=hallu:yellow,conf:orange,stun:red&bold
+## Health
+STATUSCOLOR=ill:red&inverse,foodpois:red&inverse,slime:red&inverse
+# Other
+STATUSCOLOR=blind:cyan
+
+# experiment (from Berry)
+DungeonColor= 0 7 7 7 7 7 7 7 7 7 7 7  3 3 3 3 3  6 2 7 7 7 13 13 3 3 7 6 11 6 6 4 14 1   5 5 5 5 6 7 4
+
+
+TRAPCOLORS= 6 6 7 3 6 1 7 14 4 9 0 0 2 2 5 13 13 7 15 12 11 10
+
+OPTIONS=effects:|-\\/*!)(0#@*/-\\||\\-/\\|/-X-/|\\
+
+# turns ghosts/shades to X for easier detection, strange objects \(mimics\) to m
+OPTIONS=monsters:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@X'&;:~m
+
+#MSGTYPE=hide "You start digging*"
+#MSGTYPE=hide "You continue digging*"
+#MSGTYPE=hide "You make an opening in the*"
+#MSGTYPE=hide "You hit the rock*"
+#MSGTYPE=hide "*tastes terrible!"
+
+#MSGTYPE=hide "You add to the writing in the dust with your fingers*"
+#MSGTYPE=hide "You write in the dust with your fingers*"
+#MSGTYPE=hide "Something is engraved*"
+
+#MSGTYPE=hide "With great effort*"
+
+#MSGTYPE=hide "*draws the life from*"
+#MSGTYPE=hide "*Lightning strikes*"
+#MSGTYPE=hide "*with your gloved hands*"
+
+MSGTYPE=stop "You are slowing down*"
+MSGTYPE=stop "*feel weak*"
+MSGTYPE=stop "*needs food*"
+MSGTYPE=stop "*interfering with*"
+MSGTYPE=stop "*faint from*"
+MSGTYPE=stop "*strange vibration under*"
+MSGTYPE=stop "*sign*"
+#autopickup exceptions
+
+autopickup_exception=">* poisoned*"
+
+autopickup_exception="<*athame"
+#autopickup_exception="<*flint*"
+#autopickup_exception="<*dagger"
+#autopickup_exception="<*dart"
+autopickup_exception=">*corpse"
+autopickup_exception="< li*"
+autopickup_exception=">*scare"
+
+# don't pick up known spellbooks
+autopickup_exception=">*spellbook of*"
+
+# arc and others with touchstones: pick up unknown gems only
+# autopickup_exception="<*gem*"
+
