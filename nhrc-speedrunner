@@ -1,0 +1,2044 @@
+
+#rerolling
+OPTIONS=disclose:-i -a -v -g -c
+#OPTIONS=disclose:yi ya nv +g +c
+#OPTIONS=noautopickup
+
+#comment out if reconnecting shouldn't start a new game
+OPTIONS=role:wizard
+OPTIONS=race:elf
+OPTIONS=align:chaotic
+OPTIONS=gender:female
+
+#illiterate. See also scroll of scare monster and engraving section.
+# If you want to have a chat with me: I'm Tjr on #nethack at freenode, Tjr on the wiki, and TJR on rec.games.usenet.roguelike.nethack.
+OPTIONS=mail
+#OPTIONS=nomail
+
+# no bones for speed runs.
+OPTION=nobones
+
+##
+## ncurses interface
+##
+# #http://nethackwiki.com/wiki/Curses_interface
+# # Deactivated until the crash bug is fixed.
+#OPTIONS=windowtype:curses
+#OPTIONS=IBMgraphics
+# #OPTIONS=cursesgraphics
+#OPTIONS=align_message:right
+#OPTIONS=align_status:right
+#OPTIONS=popup_dialog
+##OPTIONS=term_cols:110
+# #OPTIONS=term_rows:32 
+#OPTIONS=windowborders:2
+#OPTIONS=nosplash_screen
+#OPTIONS=petattr:iu
+#OPTIONS=guicolor
+#OPTIONS=mouse_support
+# #noobhack, ncurses
+OPTIONS=DECgraphics
+#OPTIONS=noDECgraphics
+
+
+
+# see http://alt.org/nethack/webconf/nethackrc.php
+#OPTIONS=autodig
+OPTIONS=noautodig
+OPTIONS=autopickup
+OPTIONS=autoquiver
+OPTIONS=checkpoint
+OPTIONS=nocmdassist
+OPTIONS=color
+OPTIONS=confirm
+OPTIONS=noeight_bit_tty
+OPTIONS=noextmenu
+OPTIONS=fixinv
+#Farlook with / to avoid cursor resetting on @. Turn off "more info" prompt
+OPTIONS=nohelp
+OPTIONS=hp_monitor
+OPTIONS=hilite_pet
+OPTIONS=noignintr
+OPTIONS=lit_corridor
+OPTIONS=nolootabc
+OPTIONS=null
+OPTIONS=paranoid_hit
+OPTIONS=paranoid_quit
+OPTIONS=paranoid_remove
+OPTIONS=prayconfirm
+OPTIONS=nopushweapon
+OPTIONS=norest_on_space
+OPTIONS=safe_pet
+OPTIONS=showborn
+OPTIONS=showbuc
+OPTIONS=showexp
+OPTIONS=noshowrace
+OPTIONS=showscore
+OPTIONS=silent
+OPTIONS=sortpack
+OPTIONS=sound
+OPTIONS=nosparkle
+OPTIONS=nostandout
+OPTIONS=time
+OPTIONS=travel
+OPTIONS=nouse_darkgray
+OPTIONS=nouse_inverse
+OPTIONS=verbose
+OPTIONS=notombstone
+
+OPTIONS=number_pad:0
+OPTIONS=msghistory:60
+OPTIONS=msg_window:reversed
+OPTIONS=mouse_support
+OPTIONS=monsters:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@87&;:~]
+OPTIONS=align_message:left
+OPTIONS=win_edge
+OPTIONS=boulder:0
+OPTIONS=catname:NymphKiller
+
+#try this one out
+OPTIONS=fullscreen
+OPTIONS=nolegacy
+OPTIONS=nosplash_screen
+
+#probably does nothing
+OPTIONS=vary_msgcount:5
+#OPTIONS=justmove # not implemented
+
+OPTIONS=pickup_types:$%?!=/(*0
+OPTIONS=pickup_burden:unencumbered
+OPTIONS=suppress_alert:3.4.3
+# 3.4.3,'3.4.3',343 don't work. How do you set it?
+
+#stuff from Eidolos, ctaboir, and maud, with my own mods
+# my changes: ring of reg(en(eration, added "named glass", pickup ammo, tools, and magical armor
+
+OPTIONS=menucolors
+
+#########
+# B/U/C #
+#########
+#MENUCOLOR="^[a-zA-Z$] - "=white #may want to enable this if regularly playing priest.. (priests don't see the 'uncursed')
+MENUCOLOR=" !C"=white
+MENUCOLOR=" !B"=white
+MENUCOLOR=" !UC"=white
+MENUCOLOR=" uncursed| UC?($| )"=white
+MENUCOLOR=" \([-0-9]+:[-0-9]+\)"=white #nethack doesn't display "uncursed" if charges are known
+MENUCOLOR=" [+-][0-9] "=white
+
+MENUCOLOR=" blessed| B($| )"=green
+MENUCOLOR=" cursed| C($| )"=red
+
+################
+# WATER SPORTS #
+################
+MENUCOLOR=" holy water"=cyan&bold
+MENUCOLOR=" blessed clear potion"=cyan&bold
+MENUCOLOR=" blessed potions? called water"=cyan&bold
+MENUCOLOR=" clear potions? named (holy|blessed|B)($| )"=cyan&bold
+MENUCOLOR=" potions? of water named (holy|blessed|B)($| )"=cyan&bold
+MENUCOLOR=" potions? called water named (holy|blessed|B)($| )"=cyan&bold
+MENUCOLOR=" unholy water"=orange
+MENUCOLOR=" cursed clear potion"=orange
+MENUCOLOR=" cursed potions? called water"=orange
+MENUCOLOR=" potions? called water named (unholy|cursed|C)($| )"=orange
+
+#################
+# FOOD CONDUCTS # thanks, teabing!
+#################
+# vegan
+MENUCOLOR="(food |cram |K-|C-)ration|gunyoki"=green&bold
+MENUCOLOR="lembas wafer|melon|carrot|tin .* spinach"=green&bold
+MENUCOLOR=" oranges?( named.*)?$"=green&bold # avoid coloring orange DSM
+MENUCOLOR=" pears?( named.*)?$"=green&bold # avoid coloring pearl rings
+MENUCOLOR=" apple|banana|kelp|eucalyptus|garlic|wolfsbane"=green&bold
+MENUCOLOR=" slime mold| brain"=green&bold  ## YOUR FRUIT HERE
+MENUCOLOR="(tin of )?(gelatinous cube|acid blob|quivering blob)( corpse)?"=green&bold
+MENUCOLOR="(tin of )?(blue|spotted|ochre) jelly( corpse)?"=green&bold
+MENUCOLOR="(tin of )?lichen|shrieker|violet fungus|(brown|yellow|green|red) mold( corpse)?"=green&bold
+
+# vegetarian
+MENUCOLOR="egg|pancake|fortune cookie|candy bar|royal jelly|cream pie|candle"=green
+MENUCOLOR="(tin of )?brown pudding|gray ooze( corpse)?"=green
+
+###########
+# GOODIES #
+###########
+MENUCOLOR=" bag .* holding"=magenta
+MENUCOLOR=" luck(stone)?($| )"=magenta
+MENUCOLOR=" wand .* wish(ing)?($| )"= magenta
+MENUCOLOR=" magic marker"=magenta
+MENUCOLOR=" magic lamp|lamp .* magic"=magenta
+MENUCOLOR=" unicorn horn[^[]*$"=magenta #this doesn't color the #enhance unicorn horn skill
+MENUCOLOR=" tinning kit"=magenta
+MENUCOLOR=" ring .* reg(eneration)?($| )"=magenta
+MENUCOLOR=" ring .* conf(lict)?"=magenta
+MENUCOLOR=" ring .* (FA|free action)($| )"=magenta
+MENUCOLOR=" ring .* (TC|teleport control)($| )"=magenta
+MENUCOLOR=" ring .* lev(itation)?($| )"=magenta
+MENUCOLOR=" amulet .* (life ?saving|LS)($| )"=magenta
+MENUCOLOR=" amulet .* ref(lection)?($| )"=magenta
+MENUCOLOR=" c(o|hi)ckatrice (corpse|egg)"=magenta
+MENUCOLOR=" egg .* cockatrice"=magenta
+MENUCOLOR=" stethoscope"=magenta
+
+##instruments
+#MENUCOLOR="tooled horn|fire horn|frost horn|horn .* tooled|fire|frost)"=magenta
+#MENUCOLOR=" harp"=magenta
+#MENUCOLOR=" bugle"=magenta
+#MENUCOLOR=" flute"=magenta
+
+#############
+# ARTIFACTS #
+#############
+#unaligned
+MENUCOLOR=" (Dragonbane|Fire Brand|Frost Brand|Ogresmasher|Trollsbane|Werebane)"=lightgreen
+
+#lawful normal, quest
+MENUCOLOR=" (Demonbane|Excalibur|Grayswandir|Snickersnee|Sunsword)"=lightgreen
+MENUCOLOR=" (Orb of Detection|Sceptre of Might|Magic Mirror of Merlin|Mitre of Holiness|Tsurugi of Muramasa)"=lightgreen
+
+#neutral normal, quest
+MENUCOLOR=" (Cleaver|Giantslayer|Magicbane|Mjollnir|Vorpal Blade)"=lightgreen
+MENUCOLOR=" (Heart of Ahriman|Staff of Aesculapius|Eyes of the Overworld|Platinum Yendorian Express Card|Orb of Fate|Eye of the Aethiopica)"=lightgreen
+
+#chaotic normal, quest
+MENUCOLOR=" (Grimtooth|Orcrist|Sting|Stormbringer)"=lightgreen
+MENUCOLOR=" (Longbow of Diana|Master Key of Thievery)"=lightgreen
+
+#invocation items
+MENUCOLOR=" (Bell of Opening|silver bell|Candelabrum of Invocation|candelabrum|Book of the Dead|papyrus spellbook)"=magenta&bold
+
+#raison d'etre
+MENUCOLOR=" Amulet of Yendor named"=green&bold&underline
+
+##################
+# CURSED GOODIES #
+##################
+#MENUCOLOR=" cursed.* bag .* holding"=red&bold
+MENUCOLOR=" cursed.* luck(stone)?($| )"=red&bold
+MENUCOLOR=" cursed.* unicorn horn"=red&bold
+MENUCOLOR=" cursed.* (Bell of Opening|silver bell|Candelabrum of Invocation|candelabrum|Book of the Dead|papyrus spellbook)"=red&bold
+
+#############
+# BAD STUFF #
+#############
+MENUCOLOR=" load(stone)?($| )"=blue&underline
+
+##############################
+# WATCH OUT, BAG OF HOLDING! #
+##############################
+#
+# even if unidentified:
+#
+MENUCOLOR="bag($| named)"=red&underline
+MENUCOLOR=" bag .* holding"=red&underline
+MENUCOLOR=" bag .* tricks"=red&underline
+MENUCOLOR=" bag .* holding named MI.*"=magenta
+MENUCOLOR="cursed.* bag .* holding"=red&underline
+MENUCOLOR="bag .* holding named.* C($| )"=red&underline
+MENUCOLOR=" wand .*[^!]canc"=red&underline
+MENUCOLOR=" wand .* msg_van"=red&underline
+MENUCOLOR=" wand called .* vanish( .*)?$"=red&underline
+MENUCOLOR="(^|aluminum |balsa |brass |copper |crystal |curved |ebony | forked |glass |hexagonal |iridium |iron |jeweled |long |maple |marble |oak |pine |platinum |runed |short |silver |spiked |steel |tin |uranium |zinc )wand($| named)"=red&underline 
+
+
+################
+# SHINY THINGS #
+################
+MENUCOLOR=" gold piece"=yellow
+MENUCOLOR=" valuable"=brown
+MENUCOLOR=" gems? .* hard"=yellow
+
+#soft gems
+MENUCOLOR=" ([0-9]+|an?|gems? .*) (uncursed |cursed |blessed )?(dilithium|opal|garnet|jasper|agate|jet|obsidian|jade|citrine|chrysoberyl|amber|amethyst|fluorite|turquoise)(e?s)?( stones?| gems?| crystals?)?( named .*)?$"=brown
+
+#hard gems
+MENUCOLOR=" ([0-9]+|an?|gems?.*) (uncursed |cursed |blessed )?(diamond|rub(y|ies)|jacinth|sapphire|black opal|emerald|topaz|aquamarine)(e?s)?( stones?| gems?)?( named .*)?$"=yellow
+
+#######################
+# SPELL FAILURE RATES #
+#######################
+MENUCOLOR=" 0%"=white
+MENUCOLOR=" [1-9]%"=cyan
+MENUCOLOR=" [12][0-9]%"=cyan
+MENUCOLOR=" [3-6][0-9]%"=yellow
+MENUCOLOR=" 7[0-5]%"=yellow
+MENUCOLOR=" 7[6-9]%"=orange
+MENUCOLOR=" 8[0-9]%"=orange
+MENUCOLOR=" 9[0-9]%"=red
+MENUCOLOR=" 100%"=red
+
+###################
+# FORGOTTEN SPELL # thanks, Stevie
+###################
+MENUCOLOR="[a-zA-Z] - [a-zA-Z ]+ [0-9]\*   [a-z]+ +[0-9]+%"=magenta
+
+############
+# #ENHANCE # thanks itsblah
+############
+MENUCOLOR="^ +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=none           # normal
+MENUCOLOR="^ *[a-z] - +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white # ready to enhance
+MENUCOLOR="^ +\* +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white      # enhanceable if more skill slots
+MENUCOLOR="^ +# +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=none        # enhanceable if more potential
+
+################
+# FORCE COLORS #
+################
+# Some of these are subject to change !
+
+MENUCOLOR="\{R\}"=red
+MENUCOLOR="\{B\}"=blue
+MENUCOLOR="\{C\}"=cyan
+MENUCOLOR="\{G\}"=green
+MENUCOLOR="\{Y\}"=yellow
+MENUCOLOR="\{[MP]\}"=magenta
+MENUCOLOR="\{O\}"=orange
+MENUCOLOR="\{W\}"=white
+MENUCOLOR="\{L\}"=black
+MENUCOLOR="\{y\}"=gray
+MENUCOLOR="\{g\}"=lightgreen
+MENUCOLOR="\{b\}"=lightblue
+MENUCOLOR="\{[mp]\}"=lightmagenta
+MENUCOLOR="\{c\}"=lightcyan
+MENUCOLOR="\{N\}"=none
+MENUCOLOR="\{X\}"=bold
+MENUCOLOR="\{x\}"=dim
+MENUCOLOR="\{U\}"=underline
+MENUCOLOR="\{I\}"=inverse
+MENUCOLOR="\{K\}"=blink
+MENUCOLOR="\{R\}\{U\}"=red&underline
+MENUCOLOR="\{RU\}"=red&underline
+
+########################
+# LOOT/APPLY CONTAINER #
+########################
+MENUCOLOR=" is empty. Do what?"=none
+MENUCOLOR="Put something into .*"=none
+MENUCOLOR="Take something out of .*"=none
+
+###########################################################################
+###########################################################################
+###
+### autopickup exceptions
+###
+
+###
+### AUTOPICKUP & OBJECT NAMES MINI-SPOILER
+###
+# Supported grammar (pickup.c#line607, hacklib.c#line329): 
+# Object names are in standard singular form. * matches 0 or more characters, ? exactly one, and each rule has to match the entire name. Case matters. There are no other wildcards.
+# Thus, in egrep terms, '*tin named ?' becomes '^.*tin named .$' and would match both '3 tins named y' and 'a blessed can named ?'.
+
+# There is much more complexity in what standard form names objects can have. Objects' names are  1) given according to the list of examples below, 2) appended " named foo" and pluralized if applicable, 3) decorated with various attributes, and 4) made singular again.
+# 
+# 1) Ignoring Japanese names, the following examples are an exhaustive list of object name "patterns" possible after step 1:
+## Eye of the Aethiopica, Master Key of Thievery, Amulet of Yendor, cheap plastic imitation of the Amulet of Yendor,
+## amulet of life saving, amulet called foobar, square amulet,
+## poisoned bamboo arrow, poisoned ya, pair of lenses, pair of lenses called foobar [real name used if tool has no description name], key called foobar, figurine called foobar of an Angel, figurine of a stalker,
+## set of yellow dragon scales, pair of gauntlets of dexerity, pair of water walking boots, pair of boots called foobar, pair of gloves called foobar, cloak called foobar, helmet called foobar, shield called foobar, armor called foobar,
+## slime mold, candied wand of wishing, candied poisoned wand of wishing, food ration, tin, tin of spinach, empty tin, tin of quivering blob, tin of stalker meat,
+## gold piece, iron chain, historic statue of a centaur, statue of the High Priest of Moloch, statue of an Angel, boulder, heavy iron ball, very heavy iron ball,
+## potion of water, potion of unholy water, diluted potion of monster detection, potion called foobar, diluted potion called foobar, diluted smoky potion, smoky potion,
+## scroll of taming, scroll called foobar, scroll labeled DUAM XANAHT, stamped scroll, unlabeled scroll,
+## wand of wishing, wand called foobar, forked wand,
+## spellbook of magic missile, spellbook called foobar, warped spellbook, papyrus spellbook,
+## ring of adornment, ring of conflict, ring called foobarbaz, iron ring,
+## stone called foobar, gray stone, gem called foobar, green gem, flint stone, luckstone, loadstone, agate stone, dilithium crystal, ruby, diamond, sapphire, black opal, [all other gems get " stone" appended]
+## glorkum oclass type +3.
+#
+# Less information is displayed if you are blind. In precise terms, if you have not formally identified the object class or don't know this individual object's description from having seen it, due to a shopkeeper transaction, the blessed potion of object detection, or a wand of probing.
+## amulet, shield [elven/orcish], smooth shield [relfection], potion, diluted potion, scroll, wand, spellbook, ring, stone [gray stones and rock], gem [glass and gems].
+#
+# 2) Pluralization and individual names are added. You can #name individual objects while blind, but the name will not display.
+#
+# 3) doname() then strips any initial "the " from step 2 and decorates it with various attributes. I'm going to write "hand" for "(hand|foreclaw|pseudopod extremity|wing|tentacle tip|strand|minor current|scale gap|pectoral fin|paw|tentacle|ray|beam)", "corpsetype" for "(giant ant|....)", and I'll ignore partly eaten unique monsters. The returned string matches this egrep expression
+### ([0-9]+ |the |a |an )(blessed |(un)?cursed |(un)?holy )?(greased )?(poisoned )?((very |thoroughly )?(rusty |burnt ))?((very |thoroughly )?(corroded |rotted ))?(fixed |rustproof |corrodeproof |fireproof )?(partly used )?([-+][0-9]+ )?(partly eaten )?(corpsetype )?NameReturnedByStepTwo( \((being worn|in use)\))?( \(lit\)|\((no|[1-7]) candles?( attached|, lit)\))?( \([0-7]:[0-9]+\))?( \(on (right|left) hand\))?( \(laid by you\))?( \(chained to you\))?( \((wielded|weapon in hands|alternate weapon; not wielded|in quiver)\))?( \(unpaid, [0-9]+ zorkmids\))?
+#
+# 4) Finally, the above made singular again, and that's what autopickup exceptions have to match. Singularization is string-based - I don't know what would happen to "3 worm teeth named fortune cookies" if they would stack.
+ 
+
+###
+### THE REAL AUTOPICKUP EXCEPTIONS
+###
+
+# todo: 
+# * treat overlapping items (helmet vs. plumed helmet)
+# *Perhaps more characters should be admitted with <> autopickup, e. g. "thing called junk > named [junk".
+
+# Pickup_types need to be non-empty, else everything will be picked up. 
+# If you only want to pick up exceptions, set it to iron balls and you're safe.
+
+# This mostly covers items you cannot type-name. It's understood you name the rest.
+# In general, I don't end item-type lines with * because I want to be able 
+# to override that for individual items.
+
+# pickup what I define during game (called or named). Individual names take precedence.
+autopickup_exception="<* named *<"
+autopickup_exception="<* named *< (?:?)"
+autopickup_exception="<* named *< (?:??)"
+autopickup_exception="<* called *<"
+autopickup_exception="<* called *< named ?*"
+#The above rule is ok because if both "called <" and "named >" match, it's dropped.
+autopickup_exception=">* named *>"
+autopickup_exception=">* called *>"
+# Last character only. ">* called *>*" would also match "x called foo>bar named <",
+# preventing individual overrides.
+autopickup_exception=">* called *> named *a"
+autopickup_exception=">* called *> named *b"
+autopickup_exception=">* called *> named *c"
+autopickup_exception=">* called *> named *d"
+autopickup_exception=">* called *> named *e"
+autopickup_exception=">* called *> named *f"
+autopickup_exception=">* called *> named *g"
+autopickup_exception=">* called *> named *h"
+autopickup_exception=">* called *> named *i"
+autopickup_exception=">* called *> named *j"
+autopickup_exception=">* called *> named *k"
+autopickup_exception=">* called *> named *l"
+autopickup_exception=">* called *> named *m"
+autopickup_exception=">* called *> named *n"
+autopickup_exception=">* called *> named *o"
+autopickup_exception=">* called *> named *p"
+autopickup_exception=">* called *> named *q"
+autopickup_exception=">* called *> named *r"
+autopickup_exception=">* called *> named *s"
+autopickup_exception=">* called *> named *t"
+autopickup_exception=">* called *> named *u"
+autopickup_exception=">* called *> named *v"
+autopickup_exception=">* called *> named *w"
+autopickup_exception=">* called *> named *x"
+autopickup_exception=">* called *> named *y"
+autopickup_exception=">* called *> named *z"
+autopickup_exception=">* called *> named *A"
+autopickup_exception=">* called *> named *B"
+autopickup_exception=">* called *> named *C"
+autopickup_exception=">* called *> named *D"
+autopickup_exception=">* called *> named *E"
+autopickup_exception=">* called *> named *F"
+autopickup_exception=">* called *> named *G"
+autopickup_exception=">* called *> named *H"
+autopickup_exception=">* called *> named *I"
+autopickup_exception=">* called *> named *J"
+autopickup_exception=">* called *> named *K"
+autopickup_exception=">* called *> named *L"
+autopickup_exception=">* called *> named *M"
+autopickup_exception=">* called *> named *N"
+autopickup_exception=">* called *> named *O"
+autopickup_exception=">* called *> named *P"
+autopickup_exception=">* called *> named *Q"
+autopickup_exception=">* called *> named *R"
+autopickup_exception=">* called *> named *S"
+autopickup_exception=">* called *> named *T"
+autopickup_exception=">* called *> named *U"
+autopickup_exception=">* called *> named *V"
+autopickup_exception=">* called *> named *W"
+autopickup_exception=">* called *> named *X"
+autopickup_exception=">* called *> named *Y"
+autopickup_exception=">* called *> named *Z"
+autopickup_exception=">* called *> named *^"
+autopickup_exception=">* called *> named *!"
+autopickup_exception=">* called *> named *$"
+autopickup_exception=">* called *> named *%"
+autopickup_exception=">* called *> named *&"
+autopickup_exception=">* called *> named */"
+autopickup_exception=">* called *> named *("
+# #items with charges are alway fully ID'd, thus no
+# #"wand called nothing> named stash< (0:12)"
+autopickup_exception=">* called *> named *)"
+autopickup_exception=">* called *> named *="
+autopickup_exception=">* called *> named *`"
+autopickup_exception=">* called *> named *+"
+autopickup_exception=">* called *> named *,"
+autopickup_exception=">* called *> named *;"
+autopickup_exception=">* called *> named *."
+autopickup_exception=">* called *> named *:"
+autopickup_exception=">* called *> named *-"
+autopickup_exception=">* called *> named *_"
+autopickup_exception=">* called *> named *["
+autopickup_exception=">* called *> named *]"
+autopickup_exception=">* called *> named *{"
+autopickup_exception=">* called *> named *}"
+autopickup_exception=">* called *> named *|"
+autopickup_exception=">* called *> named *"
+autopickup_exception=">* called *> named *0"
+autopickup_exception=">* called *> named *1"
+autopickup_exception=">* called *> named *2"
+autopickup_exception=">* called *> named *3"
+autopickup_exception=">* called *> named *4"
+autopickup_exception=">* called *> named *5"
+autopickup_exception=">* called *> named *6"
+autopickup_exception=">* called *> named *7"
+autopickup_exception=">* called *> named *8"
+autopickup_exception=">* called *> named *9"
+
+#legacy
+autopickup_exception="<*[,]*"
+autopickup_exception=">*[!,]*"
+autopickup_exception="<*[;]*"
+autopickup_exception=">*[!;]*"
+autopickup_exception="<* pickup*"
+AUTOPICKUP_EXCEPTION=">* junk"
+# (escape) items permanently in main inventory.
+autopickup_exception="<* named MI *"
+autopickup_exception="<* named MI"
+
+# empty stuff
+autopickup_exception="*:0)*"
+AUTOPICKUP_EXCEPTION=">* named empty"
+#AUTOPICKUP_EXCEPTION=">* mail*"
+
+
+# Really good weapons/armor. They should never fall in monsters' hands.
+AUTOPICKUP_EXCEPTION="<* +6 *"
+AUTOPICKUP_EXCEPTION="<* +7 *"
+AUTOPICKUP_EXCEPTION="<* +8 *"
+AUTOPICKUP_EXCEPTION="<* +9 *"
+
+
+# # A full list of possible items, including ones unidentified or felt blind.
+# # Better (documentation for) regular expressions in the autopickup code
+# # would greatly improve this section.
+# # Samurai, priests, and vegan/non-vegan eaters will have to improve this.
+# # You can dip stuff in holy/unholy water when blind, thus "a cursed scroll". 
+# # As a general principle, unidentified things can be autopicked up and named 
+# # right away. That will pick up only one of each type, which is great for 
+# # rings, harmful items, items with coinciding appearances, ...
+
+# #storytelling items
+AUTOPICKUP_EXCEPTION=">*cheap plastic imitation of the Amulet of Yendor"
+AUTOPICKUP_EXCEPTION=">*cheap plastic imitation of the Amulet of Yendor named ?*"
+AUTOPICKUP_EXCEPTION=">*Amulet of Yendor"
+AUTOPICKUP_EXCEPTION="<*Amulet of Yendor named ?*"
+AUTOPICKUP_EXCEPTION="<*Candelabrum of Invocation"
+AUTOPICKUP_EXCEPTION="<*candelabrum"
+AUTOPICKUP_EXCEPTION="<*Bell of Opening"
+AUTOPICKUP_EXCEPTION="<*silver bell"
+AUTOPICKUP_EXCEPTION="<*Book of the Dead"
+AUTOPICKUP_EXCEPTION="<*papyrus spellbook"
+
+# # Artifacts. 
+# # In general, I'm not a fan of death by blasting,
+# # but Sunsword/Demonbane get generated on archons that my pets might kill before I see.
+# # This isn't perfect protection from a blast - if blind, artifacts just show up as "a long sword" etc.
+# # lawful
+AUTOPICKUP_EXCEPTION="<the* Demonbane"
+AUTOPICKUP_EXCEPTION="<*long sword named Demonbane"
+AUTOPICKUP_EXCEPTION="<the* Sunsword"
+AUTOPICKUP_EXCEPTION="<*long sword named Sunsword"
+# AUTOPICKUP_EXCEPTION="<the* Excalibur"
+# AUTOPICKUP_EXCEPTION="<*long sword named Excalibur"
+# AUTOPICKUP_EXCEPTION="<the* Grayswandir"
+# AUTOPICKUP_EXCEPTION="<*silver saber named Grayswandir"
+# AUTOPICKUP_EXCEPTION="<the* Snickersnee"
+# AUTOPICKUP_EXCEPTION="<*katana named Snickersnee"
+# AUTOPICKUP_EXCEPTION="<*samurai sword named Snickersnee"
+AUTOPICKUP_EXCEPTION=">the* Orb of Detection (?:?*)"
+AUTOPICKUP_EXCEPTION=">the* Orb of Detection"
+AUTOPICKUP_EXCEPTION=">*crystal ball named The Orb of Detection"
+AUTOPICKUP_EXCEPTION=">*glass orb called ?* named The Orb of Detection"
+AUTOPICKUP_EXCEPTION=">*glass orb named The Orb of Detection"
+# AUTOPICKUP_EXCEPTION="<the* Sceptre of Might"
+# AUTOPICKUP_EXCEPTION="<*mace named The Sceptre of Might"
+AUTOPICKUP_EXCEPTION=">the* Magic Mirror of Merlin"
+AUTOPICKUP_EXCEPTION=">*mirror named Magic Mirror of Merlin"
+# AUTOPICKUP_EXCEPTION="<the* Mitre of Holiness"
+# AUTOPICKUP_EXCEPTION="<*helm of brilliance named The Mitre of Holiness"
+# AUTOPICKUP_EXCEPTION="<*helmet called ?* named The Mitre of Holiness"
+# AUTOPICKUP_EXCEPTION="<*helmet named The Mitre of Holiness"
+# AUTOPICKUP_EXCEPTION="<the* Tsurugi of Muramasa"
+# AUTOPICKUP_EXCEPTION="<*tsurugi named The Tsurugi of Muramasa"
+# AUTOPICKUP_EXCEPTION="<*long samurai sword named The Tsurugi of Muramasa"
+# # neutral
+# AUTOPICKUP_EXCEPTION="<the* Cleaver"
+# AUTOPICKUP_EXCEPTION="<*battle-axe named Cleaver"
+# AUTOPICKUP_EXCEPTION="<*double-headed axe named Cleaver"
+# AUTOPICKUP_EXCEPTION="<the* Giantslayer"
+# AUTOPICKUP_EXCEPTION="<*long sword named Giantslayer"
+AUTOPICKUP_EXCEPTION="<the* Magicbane"
+AUTOPICKUP_EXCEPTION="<*athame named Magicbane"
+# AUTOPICKUP_EXCEPTION="<the* Mjollnir"
+# AUTOPICKUP_EXCEPTION="<*war hammer named Mjollnir"
+# AUTOPICKUP_EXCEPTION="<the* Vorpal Blade"
+# AUTOPICKUP_EXCEPTION="<*long sword named Vorpal Blade"
+AUTOPICKUP_EXCEPTION=">the* Heart of Ahriman"
+AUTOPICKUP_EXCEPTION=">*luckstone named Heart of Ahriman"
+# AUTOPICKUP_EXCEPTION="<the* Staff of Aesculapius"
+# AUTOPICKUP_EXCEPTION="<*quarterstaff named The Staff of Aesculapius"
+# AUTOPICKUP_EXCEPTION="<*staff named The Staff of Aesculapius"
+AUTOPICKUP_EXCEPTION=">the* Eyes of the Overworld"
+AUTOPICKUP_EXCEPTION=">the* Platinum Yendorian Express Card"
+AUTOPICKUP_EXCEPTION=">the* Orb of Fate (?:?*)"
+AUTOPICKUP_EXCEPTION=">the* Orb of Fate"
+AUTOPICKUP_EXCEPTION=">*glass orb called ?* named The Orb of Fate"
+AUTOPICKUP_EXCEPTION=">*glass orb named The Orb of Fate"
+AUTOPICKUP_EXCEPTION=">*crystal ball named The Orb of Fate"
+AUTOPICKUP_EXCEPTION="<the* Eye of the Aethiopica"
+# # chaotic
+# AUTOPICKUP_EXCEPTION="<the* Grimtooth"
+# AUTOPICKUP_EXCEPTION="<*orcish dagger named Grimtooth"
+# AUTOPICKUP_EXCEPTION="<*crude dagger named Grimtooth"
+# AUTOPICKUP_EXCEPTION="<the* Orcrist"
+# AUTOPICKUP_EXCEPTION="<*elven broadsword named Orcrist"
+# AUTOPICKUP_EXCEPTION="<*runed broadsword named Orcrist"
+# AUTOPICKUP_EXCEPTION="<the* Sting"
+# AUTOPICKUP_EXCEPTION="<*elven dagger named Sting"
+# AUTOPICKUP_EXCEPTION="<*runed dagger named Sting"
+# AUTOPICKUP_EXCEPTION="<the* Stormbringer"
+# AUTOPICKUP_EXCEPTION="<*runesword named Stormbringer"
+# AUTOPICKUP_EXCEPTION="<*runed broadsword named Stormbringer"
+# AUTOPICKUP_EXCEPTION="<the* Longbow of Diana"
+# AUTOPICKUP_EXCEPTION="<*bow named The Longbow of Diana"
+AUTOPICKUP_EXCEPTION=">the* Master Key of Thievery"
+AUTOPICKUP_EXCEPTION=">*skeleton key named The Master Key of Thievery"
+# # unaligned
+# AUTOPICKUP_EXCEPTION="<the* Dragonbane"
+# AUTOPICKUP_EXCEPTION="<*broadsword named Dragonbane"
+AUTOPICKUP_EXCEPTION="<the* Fire Brand"
+AUTOPICKUP_EXCEPTION="<*long sword named Fire Brand"
+AUTOPICKUP_EXCEPTION="<the* Frost Brand"
+AUTOPICKUP_EXCEPTION="<*long sword named Frost Brand"
+# AUTOPICKUP_EXCEPTION="<the* Ogresmasher"
+# AUTOPICKUP_EXCEPTION="<*war hammer named Ogresmasher"
+# AUTOPICKUP_EXCEPTION="<the* Trollsbane"
+# AUTOPICKUP_EXCEPTION="<*morning star named Trollsbane"
+# AUTOPICKUP_EXCEPTION="<the* Werebane"
+# AUTOPICKUP_EXCEPTION="<*silver saber named Werebane"
+
+
+# # ammo for me
+AUTOPICKUP_EXCEPTION="<*dagger named !C*"
+AUTOPICKUP_EXCEPTION="<*dagger named C*"
+AUTOPICKUP_EXCEPTION="<* named ammo*"
+
+
+# #ammo monsters shouldn't get
+AUTOPICKUP_EXCEPTION="<*arrow"
+## AUTOPICKUP_EXCEPTION="<*elven arrow"
+## AUTOPICKUP_EXCEPTION="<*orcish arrow"
+## AUTOPICKUP_EXCEPTION="<*silver arrow"
+AUTOPICKUP_EXCEPTION="<*ya"
+AUTOPICKUP_EXCEPTION="<*crossbow bolt"
+AUTOPICKUP_EXCEPTION="<*dart"
+AUTOPICKUP_EXCEPTION="<*shuriken"
+AUTOPICKUP_EXCEPTION="<*dagger"
+## AUTOPICKUP_EXCEPTION="<*elven dagger"
+## AUTOPICKUP_EXCEPTION="<*orcish dagger"
+## AUTOPICKUP_EXCEPTION="<*silver dagger"
+AUTOPICKUP_EXCEPTION="<*athame"
+AUTOPICKUP_EXCEPTION="<*knife"
+## AUTOPICKUP_EXCEPTION="<*runed arrow"
+## AUTOPICKUP_EXCEPTION="<*crude arrow"
+## AUTOPICKUP_EXCEPTION="<*bamboo arrow"
+AUTOPICKUP_EXCEPTION="<*throwing star"
+## AUTOPICKUP_EXCEPTION="<*runed dagger"
+## AUTOPICKUP_EXCEPTION="<*crude dagger"
+
+# #weapons except ammo.
+# # throne farming: pick up weapons that would damage my pets too much
+# AUTOPICKUP_EXCEPTION="<*partisan" #troll polearms - don't know where they come
+#AUTOPICKUP_EXCEPTION="<*ranseur"
+#AUTOPICKUP_EXCEPTION="<*spetum"
+#AUTOPICKUP_EXCEPTION="<*glaive"
+#AUTOPICKUP_EXCEPTION="<*vulgar polearm" #troll polearms - don't know where they come
+#AUTOPICKUP_EXCEPTION="<*hilted polearm"
+#AUTOPICKUP_EXCEPTION="<*forked polearm"
+#AUTOPICKUP_EXCEPTION="<*single-edged polearm"
+
+# # Melee weapons monsters use, sorted roughly by order of preference
+# Dispose of powerful mattocks early on in the mines.
+AUTOPICKUP_EXCEPTION="<*tsurugi"
+## # AUTOPICKUP_EXCEPTION="<*long samurai sword"
+AUTOPICKUP_EXCEPTION="<*runesword"
+# # AUTOPICKUP_EXCEPTION="<*runed broadsword"
+#AUTOPICKUP_EXCEPTION="<*dwarvish mattock"
+AUTOPICKUP_EXCEPTION="<*broad pick"
+#AUTOPICKUP_EXCEPTION="<*two-handed sword"
+#AUTOPICKUP_EXCEPTION="<*battle-axe"
+#AUTOPICKUP_EXCEPTION="<*double-headed axe"
+#AUTOPICKUP_EXCEPTION="<*katana"
+#AUTOPICKUP_EXCEPTION="<*samurai sword"
+# # unihorn - handled by tools section
+#AUTOPICKUP_EXCEPTION="<*crysknife"
+#AUTOPICKUP_EXCEPTION="<*trident"
+#AUTOPICKUP_EXCEPTION="<*long sword"
+#AUTOPICKUP_EXCEPTION="<*elven broadsword"
+#AUTOPICKUP_EXCEPTION="<*runed broadsword"
+#AUTOPICKUP_EXCEPTION="<*broadsword"
+#AUTOPICKUP_EXCEPTION="<*scimitar"
+#AUTOPICKUP_EXCEPTION="<*curved sword"
+#AUTOPICKUP_EXCEPTION="<*silver saber" #last throne-farming pickup
+# AUTOPICKUP_EXCEPTION=">*morning star"
+# AUTOPICKUP_EXCEPTION=">*elven short sword"
+# AUTOPICKUP_EXCEPTION=">*runed short sword"
+# AUTOPICKUP_EXCEPTION=">*dwarvish short sword"
+# AUTOPICKUP_EXCEPTION=">*broad short sword"
+# AUTOPICKUP_EXCEPTION=">*short sword"
+# AUTOPICKUP_EXCEPTION=">*orcish short sword"
+# AUTOPICKUP_EXCEPTION=">*crude short sword"
+# AUTOPICKUP_EXCEPTION=">*mace"
+# AUTOPICKUP_EXCEPTION=">*axe"
+# AUTOPICKUP_EXCEPTION=">*dwarvish spear"
+# AUTOPICKUP_EXCEPTION=">*stout spear"
+# AUTOPICKUP_EXCEPTION=">*silver spear"
+# AUTOPICKUP_EXCEPTION=">*elven spear"
+# AUTOPICKUP_EXCEPTION=">*runed spear"
+# AUTOPICKUP_EXCEPTION=">*spear"
+# AUTOPICKUP_EXCEPTION=">*orcish spear"
+# AUTOPICKUP_EXCEPTION=">*crude spear"
+# AUTOPICKUP_EXCEPTION=">*flail"
+# # a bullwhip is always useful.
+AUTOPICKUP_EXCEPTION="<*bullwhip"
+# AUTOPICKUP_EXCEPTION=">*quarterstaff"
+# AUTOPICKUP_EXCEPTION=">*staff"
+# AUTOPICKUP_EXCEPTION=">*javelin"
+# AUTOPICKUP_EXCEPTION=">*throwing spear"
+# AUTOPICKUP_EXCEPTION=">*aklys"
+# AUTOPICKUP_EXCEPTION=">*thonged club"
+# AUTOPICKUP_EXCEPTION=">*club"
+# #pick-axe -- handled by tools section
+# AUTOPICKUP_EXCEPTION=">*rubber hose"
+# AUTOPICKUP_EXCEPTION=">*war hammer"
+# # silver dagger, elven dagger, dagger, orcish dagger, athame --ammo section
+# AUTOPICKUP_EXCEPTION=">*scalpel"
+# # knife --ammo section
+# AUTOPICKUP_EXCEPTION=">*worm tooth"
+
+# # other weapons
+# AUTOPICKUP_EXCEPTION=">*boomerang"
+# AUTOPICKUP_EXCEPTION=">*stiletto"
+# AUTOPICKUP_EXCEPTION=">*lance"
+# AUTOPICKUP_EXCEPTION=">*halberd"
+# AUTOPICKUP_EXCEPTION=">*bardiche"
+# AUTOPICKUP_EXCEPTION=">*voulge"
+# AUTOPICKUP_EXCEPTION=">*fauchard"
+# AUTOPICKUP_EXCEPTION=">*guisarme"
+# AUTOPICKUP_EXCEPTION=">*bill-guisarme"
+# AUTOPICKUP_EXCEPTION=">*lucern hammer"
+# AUTOPICKUP_EXCEPTION=">*bec de corbin"
+## raise cash for speed runners >> picks up way too many *bows
+#AUTOPICKUP_EXCEPTION="<*bow"
+#AUTOPICKUP_EXCEPTION="<*elven bow"
+# AUTOPICKUP_EXCEPTION=">*orcish bow"
+# AUTOPICKUP_EXCEPTION=">*yumi"
+# AUTOPICKUP_EXCEPTION=">*sling"
+#AUTOPICKUP_EXCEPTION="<*crossbow"
+# AUTOPICKUP_EXCEPTION=">*angled poleaxe"
+# AUTOPICKUP_EXCEPTION=">*long poleaxe"
+# AUTOPICKUP_EXCEPTION=">*pole cleaver"
+# AUTOPICKUP_EXCEPTION=">*pole sickle"
+# AUTOPICKUP_EXCEPTION=">*pruning hook"
+# AUTOPICKUP_EXCEPTION=">*hooked polearm"
+# AUTOPICKUP_EXCEPTION=">*pronged polearm"
+# AUTOPICKUP_EXCEPTION=">*beaked polearm"
+# AUTOPICKUP_EXCEPTION=">*runed bow"
+# AUTOPICKUP_EXCEPTION=">*crude bow"
+# AUTOPICKUP_EXCEPTION=">*long bow"
+
+
+# #identified magical armor. In general, I need only one of each, which will be un-identified before I pick it up.
+AUTOPICKUP_EXCEPTION="<*robe"
+# AUTOPICKUP_EXCEPTION=">*elven cloak"
+# AUTOPICKUP_EXCEPTION=">*alchemy smock"
+# AUTOPICKUP_EXCEPTION=">*shield of reflection"
+# AUTOPICKUP_EXCEPTION=">*cornuthaum"
+# AUTOPICKUP_EXCEPTION=">*dunce cap"
+# AUTOPICKUP_EXCEPTION=">*helm of brilliance"
+# AUTOPICKUP_EXCEPTION=">*helm of opposite alignment"
+# AUTOPICKUP_EXCEPTION=">*helm of telepathy"
+# AUTOPICKUP_EXCEPTION=">*gauntlets of fumbling"
+# AUTOPICKUP_EXCEPTION=">*gauntlets of power"
+# AUTOPICKUP_EXCEPTION=">*gauntlets of dexterity"
+# AUTOPICKUP_EXCEPTION=">*speed boots"
+# AUTOPICKUP_EXCEPTION=">*water walking boots"
+# AUTOPICKUP_EXCEPTION=">*jumping boots"
+# AUTOPICKUP_EXCEPTION=">*elven boots"
+# AUTOPICKUP_EXCEPTION=">*kicking boots"
+# AUTOPICKUP_EXCEPTION=">*fumble boots"
+# AUTOPICKUP_EXCEPTION=">*levitation boots"
+# AUTOPICKUP_EXCEPTION=">*cloak of protection"
+# AUTOPICKUP_EXCEPTION=">*cloak of invisibility"
+# AUTOPICKUP_EXCEPTION=">*cloak of magic resistance"
+# AUTOPICKUP_EXCEPTION=">*cloak of displacement"
+
+
+# #unidentified magical armor
+# # Usually, a "plumed helmet" is new, but a "helmet called plain" isn't.
+# AUTOPICKUP_EXCEPTION="<*faded pall"
+AUTOPICKUP_EXCEPTION="<*apron"
+# AUTOPICKUP_EXCEPTION="<*polished silver shield"
+# # blind
+# AUTOPICKUP_EXCEPTION="<*smooth shield"
+AUTOPICKUP_EXCEPTION="<*conical hat"
+# # helms of opposite alignment are useful and rare enough to merit extra treatment.
+AUTOPICKUP_EXCEPTION="<*helmet called OA"
+AUTOPICKUP_EXCEPTION="<*helmet called align"
+AUTOPICKUP_EXCEPTION="<*plumed helmet"
+AUTOPICKUP_EXCEPTION="<*etched helmet"
+AUTOPICKUP_EXCEPTION="<*crested helmet"
+AUTOPICKUP_EXCEPTION="<*visored helmet"
+AUTOPICKUP_EXCEPTION="<*tattered cape"
+AUTOPICKUP_EXCEPTION="<*opera cloak"
+AUTOPICKUP_EXCEPTION="<*ornamental cope"
+AUTOPICKUP_EXCEPTION="<*piece of cloth"
+AUTOPICKUP_EXCEPTION="<*old gloves"
+AUTOPICKUP_EXCEPTION="<*padded gloves"
+AUTOPICKUP_EXCEPTION="<*riding gloves"
+AUTOPICKUP_EXCEPTION="<*fencing gloves"
+AUTOPICKUP_EXCEPTION="<*combat boots"
+AUTOPICKUP_EXCEPTION="<*jungle boots"
+AUTOPICKUP_EXCEPTION="<*hiking boots"
+AUTOPICKUP_EXCEPTION="<*mud boots"
+AUTOPICKUP_EXCEPTION="<*buckled boots"
+AUTOPICKUP_EXCEPTION="<*riding boots"
+AUTOPICKUP_EXCEPTION="<*snow boots"
+
+
+# # dragon scale mail and scales
+# AUTOPICKUP_EXCEPTION=">*gray dragon scale mail"
+# AUTOPICKUP_EXCEPTION=">*silver dragon scale mail"
+# AUTOPICKUP_EXCEPTION=">*shimmering dragon scale mail"
+# AUTOPICKUP_EXCEPTION=">*red dragon scale mail"
+# AUTOPICKUP_EXCEPTION=">*white dragon scale mail"
+# AUTOPICKUP_EXCEPTION=">*orange dragon scale mail"
+# AUTOPICKUP_EXCEPTION=">*black dragon scale mail"
+# AUTOPICKUP_EXCEPTION=">*blue dragon scale mail"
+# AUTOPICKUP_EXCEPTION=">*green dragon scale mail"
+# AUTOPICKUP_EXCEPTION=">*yellow dragon scale mail"
+# AUTOPICKUP_EXCEPTION=">*gray dragon scales"
+# AUTOPICKUP_EXCEPTION=">*silver dragon scales"
+# AUTOPICKUP_EXCEPTION=">*shimmering dragon scales"
+# AUTOPICKUP_EXCEPTION=">*red dragon scales"
+# AUTOPICKUP_EXCEPTION=">*white dragon scales"
+# AUTOPICKUP_EXCEPTION=">*orange dragon scales"
+# AUTOPICKUP_EXCEPTION=">*black dragon scales"
+# AUTOPICKUP_EXCEPTION=">*blue dragon scales"
+# AUTOPICKUP_EXCEPTION=">*green dragon scales"
+# AUTOPICKUP_EXCEPTION=">*yellow dragon scales"
+
+# # identified non-magical armor
+# AUTOPICKUP_EXCEPTION=">*Hawaiian shirt"
+# AUTOPICKUP_EXCEPTION=">*T-shirt"
+# AUTOPICKUP_EXCEPTION=">*elven leather helm"
+# AUTOPICKUP_EXCEPTION=">*orcish helm"
+# AUTOPICKUP_EXCEPTION=">*dwarvish iron helm"
+# AUTOPICKUP_EXCEPTION=">*fedora"
+# AUTOPICKUP_EXCEPTION=">*dented pot"
+# AUTOPICKUP_EXCEPTION=">helmet"
+# AUTOPICKUP_EXCEPTION=">*sed helmet"
+# AUTOPICKUP_EXCEPTION=">*ded helmet"
+# AUTOPICKUP_EXCEPTION=">*y helmet"
+# AUTOPICKUP_EXCEPTION=">*f helmet"
+# AUTOPICKUP_EXCEPTION=">*plate mail"
+# AUTOPICKUP_EXCEPTION=">*crystal plate mail"
+# AUTOPICKUP_EXCEPTION=">*bronze plate mail"
+# AUTOPICKUP_EXCEPTION=">*splint mail"
+# AUTOPICKUP_EXCEPTION=">*banded mail"
+# AUTOPICKUP_EXCEPTION=">*dwarvish mithril-coat"
+# AUTOPICKUP_EXCEPTION=">*elven mithril-coat"
+# AUTOPICKUP_EXCEPTION=">*chain mail"
+# AUTOPICKUP_EXCEPTION=">*orcish chain mail"
+# AUTOPICKUP_EXCEPTION=">*scale mail"
+# AUTOPICKUP_EXCEPTION=">*studded leather armor"
+# AUTOPICKUP_EXCEPTION=">*ring mail"
+# AUTOPICKUP_EXCEPTION=">*orcish ring mail"
+# AUTOPICKUP_EXCEPTION=">*leather armor"
+# AUTOPICKUP_EXCEPTION=">*leather jacket"
+# AUTOPICKUP_EXCEPTION=">*mummy wrapping"
+# AUTOPICKUP_EXCEPTION=">*orcish cloak"
+# AUTOPICKUP_EXCEPTION=">*dwarvish cloak"
+# AUTOPICKUP_EXCEPTION=">*oilskin cloak"
+# AUTOPICKUP_EXCEPTION=">*leather cloak"
+# AUTOPICKUP_EXCEPTION=">*small shield"
+# AUTOPICKUP_EXCEPTION=">*elven shield"
+# AUTOPICKUP_EXCEPTION=">*Uruk-hai shield"
+# AUTOPICKUP_EXCEPTION=">*orcish shield"
+# AUTOPICKUP_EXCEPTION=">*large shield"
+# AUTOPICKUP_EXCEPTION=">*dwarvish roundshield"
+# AUTOPICKUP_EXCEPTION=">*leather gloves"
+# AUTOPICKUP_EXCEPTION=">*low boots"
+# AUTOPICKUP_EXCEPTION=">*iron shoes"
+# AUTOPICKUP_EXCEPTION=">*high boots"
+
+# # unidentified non-magical armor
+# AUTOPICKUP_EXCEPTION=">*leather hat"
+# AUTOPICKUP_EXCEPTION=">*iron skull cap"
+# AUTOPICKUP_EXCEPTION=">*hard hat"
+# AUTOPICKUP_EXCEPTION=">*crude chain mail"
+# AUTOPICKUP_EXCEPTION=">*crude ring mail"
+# AUTOPICKUP_EXCEPTION=">*coarse mantelet"
+# #raise cash for speed runners
+AUTOPICKUP_EXCEPTION="<*hooded cloak"
+# AUTOPICKUP_EXCEPTION=">*slippery cloak"
+# AUTOPICKUP_EXCEPTION=">*blue and green shield"
+# AUTOPICKUP_EXCEPTION=">*white-handed shield"
+# # blind for orcish or elven shield
+# AUTOPICKUP_EXCEPTION=">shield"
+# AUTOPICKUP_EXCEPTION=">*f shield"
+# AUTOPICKUP_EXCEPTION=">*sed shield"
+# AUTOPICKUP_EXCEPTION=">*ted shield"
+# AUTOPICKUP_EXCEPTION=">*ded shield"
+# AUTOPICKUP_EXCEPTION=">*red-eyed shield"
+# AUTOPICKUP_EXCEPTION=">*large round shield"
+# AUTOPICKUP_EXCEPTION=">*walking shoes"
+# AUTOPICKUP_EXCEPTION=">*hard shoes"
+# AUTOPICKUP_EXCEPTION=">*jackboots"
+
+# #identified rings
+# AUTOPICKUP_EXCEPTION=">*ring of adornment"
+# AUTOPICKUP_EXCEPTION=">*ring of gain strength"
+# AUTOPICKUP_EXCEPTION=">*ring of gain constitution"
+# AUTOPICKUP_EXCEPTION=">*ring of increase accuracy"
+# AUTOPICKUP_EXCEPTION=">*ring of increase damage"
+# AUTOPICKUP_EXCEPTION=">*ring of protection"
+# AUTOPICKUP_EXCEPTION=">*ring of regeneration"
+# AUTOPICKUP_EXCEPTION=">*ring of searching"
+# AUTOPICKUP_EXCEPTION=">*ring of stealth"
+# AUTOPICKUP_EXCEPTION=">*ring of sustain ability"
+# AUTOPICKUP_EXCEPTION=">*ring of levitation"
+# AUTOPICKUP_EXCEPTION=">*ring of hunger"
+# AUTOPICKUP_EXCEPTION=">*ring of aggravate monster"
+# AUTOPICKUP_EXCEPTION=">*ring of conflict"
+# AUTOPICKUP_EXCEPTION=">*ring of warning"
+# AUTOPICKUP_EXCEPTION=">*ring of poison resistance"
+# AUTOPICKUP_EXCEPTION=">*ring of fire resistance"
+# AUTOPICKUP_EXCEPTION=">*ring of cold resistance"
+# AUTOPICKUP_EXCEPTION=">*ring of shock resistance"
+# AUTOPICKUP_EXCEPTION=">*ring of free action"
+# AUTOPICKUP_EXCEPTION=">*ring of slow digestion"
+# AUTOPICKUP_EXCEPTION=">*ring of teleportation"
+# AUTOPICKUP_EXCEPTION=">*ring of teleport control"
+# AUTOPICKUP_EXCEPTION=">*ring of polymorph"
+# AUTOPICKUP_EXCEPTION=">*ring of polymorph control"
+# AUTOPICKUP_EXCEPTION=">*ring of invisibility"
+# AUTOPICKUP_EXCEPTION=">*ring of see invisible"
+# AUTOPICKUP_EXCEPTION=">*ring of protection from shape changers"
+
+
+# # unidentified rings.
+# # The same logic applies as for unid'd armor.
+AUTOPICKUP_EXCEPTION="<*wooden ring"
+AUTOPICKUP_EXCEPTION="<*granite ring"
+AUTOPICKUP_EXCEPTION="<*opal ring"
+AUTOPICKUP_EXCEPTION="<*clay ring"
+AUTOPICKUP_EXCEPTION="<*coral ring"
+AUTOPICKUP_EXCEPTION="<*black onyx ring"
+AUTOPICKUP_EXCEPTION="<*moonstone ring"
+AUTOPICKUP_EXCEPTION="<*tiger eye ring"
+AUTOPICKUP_EXCEPTION="<*jade ring"
+AUTOPICKUP_EXCEPTION="<*bronze ring"
+AUTOPICKUP_EXCEPTION="<*agate ring"
+AUTOPICKUP_EXCEPTION="<*topaz ring"
+AUTOPICKUP_EXCEPTION="<*sapphire ring"
+AUTOPICKUP_EXCEPTION="<*ruby ring"
+AUTOPICKUP_EXCEPTION="<*diamond ring"
+AUTOPICKUP_EXCEPTION="<*pearl ring"
+AUTOPICKUP_EXCEPTION="<*iron ring"
+AUTOPICKUP_EXCEPTION="<*brass ring"
+AUTOPICKUP_EXCEPTION="<*copper ring"
+AUTOPICKUP_EXCEPTION="<*twisted ring"
+AUTOPICKUP_EXCEPTION="<*steel ring"
+AUTOPICKUP_EXCEPTION="<*silver ring"
+AUTOPICKUP_EXCEPTION="<*gold ring"
+AUTOPICKUP_EXCEPTION="<*ivory ring"
+AUTOPICKUP_EXCEPTION="<*emerald ring"
+AUTOPICKUP_EXCEPTION="<*wire ring"
+AUTOPICKUP_EXCEPTION="<*engagement ring"
+AUTOPICKUP_EXCEPTION="<*shiny ring"
+# # blind. Erodeproofing isn't displayed unless we know the appearance.
+# AUTOPICKUP_EXCEPTION=">ring"
+# AUTOPICKUP_EXCEPTION=">*sed ring"
+# AUTOPICKUP_EXCEPTION=">*rusty ring"
+# AUTOPICKUP_EXCEPTION=">*corroded ring"
+
+# #identified amulets
+# # Reflection is for pet use. Don't drop harmful ones if you polypile.
+AUTOPICKUP_EXCEPTION="<*amulet of life saving"
+AUTOPICKUP_EXCEPTION="<*amulet called life"
+AUTOPICKUP_EXCEPTION="<*amulet of reflection"
+AUTOPICKUP_EXCEPTION="<*amulet called ref"
+# AUTOPICKUP_EXCEPTION=">*amulet of ESP"
+# AUTOPICKUP_EXCEPTION=">*amulet versus poison"
+# AUTOPICKUP_EXCEPTION=">*amulet of unchanging"
+# AUTOPICKUP_EXCEPTION=">*amulet of magical breathing"
+# AUTOPICKUP_EXCEPTION=">*amulet of change"
+# AUTOPICKUP_EXCEPTION=">*amulet of strangulation"
+#AUTOPICKUP_EXCEPTION=">*amulet called die"
+#AUTOPICKUP_EXCEPTION=">*amulet of restful sleep"
+#AUTOPICKUP_EXCEPTION=">*amulet called sleep"
+
+
+# #unidentified amulets
+# #amulets show up properly when blind
+AUTOPICKUP_EXCEPTION="<*circular amulet"
+AUTOPICKUP_EXCEPTION="<*spherical amulet"
+AUTOPICKUP_EXCEPTION="<*oval amulet"
+AUTOPICKUP_EXCEPTION="<*triangular amulet"
+AUTOPICKUP_EXCEPTION="<*pyramidal amulet"
+AUTOPICKUP_EXCEPTION="<*square amulet"
+AUTOPICKUP_EXCEPTION="<*concave amulet"
+AUTOPICKUP_EXCEPTION="<*hexagonal amulet"
+AUTOPICKUP_EXCEPTION="<*octagonal amulet"
+
+
+# # Containers
+# # don't pick up known BoH unless you want magical explosions when you least expect them
+AUTOPICKUP_EXCEPTION=">*large box"
+AUTOPICKUP_EXCEPTION=">*chest"
+AUTOPICKUP_EXCEPTION=">*ice box"
+AUTOPICKUP_EXCEPTION=">*large box named junk*"
+AUTOPICKUP_EXCEPTION=">*chest named junk*"
+AUTOPICKUP_EXCEPTION=">*ice box named junk*"
+# AUTOPICKUP_EXCEPTION=">sack"
+# AUTOPICKUP_EXCEPTION=">*d sack"
+# AUTOPICKUP_EXCEPTION=">*oilskin sack"
+AUTOPICKUP_EXCEPTION=">*bag of holding"
+AUTOPICKUP_EXCEPTION=">*bag called hold"
+AUTOPICKUP_EXCEPTION="<*bag"
+
+# # Tonal instruments. Magic flutes are below.
+# AUTOPICKUP_EXCEPTION="<*wooden flute"
+# AUTOPICKUP_EXCEPTION="<*tooled horn"
+AUTOPICKUP_EXCEPTION="<*frost horn"
+AUTOPICKUP_EXCEPTION="<*fire horn"
+AUTOPICKUP_EXCEPTION="<horn"
+AUTOPICKUP_EXCEPTION="<*sed horn"
+# AUTOPICKUP_EXCEPTION="<*wooden harp"
+AUTOPICKUP_EXCEPTION="<*magic harp"
+AUTOPICKUP_EXCEPTION="<harp"
+AUTOPICKUP_EXCEPTION="<*sed harp"
+AUTOPICKUP_EXCEPTION="<*bugle"
+
+# # General tools that are rare/good enough for autopickup
+AUTOPICKUP_EXCEPTION="<*tallow candle"
+AUTOPICKUP_EXCEPTION="<*tallow candles"
+AUTOPICKUP_EXCEPTION="<*wax candle"
+AUTOPICKUP_EXCEPTION="<*wax candles"
+AUTOPICKUP_EXCEPTION="<candle"
+AUTOPICKUP_EXCEPTION="<*sed candle"
+AUTOPICKUP_EXCEPTION="<*expensive camera"
+AUTOPICKUP_EXCEPTION="<*lenses"
+AUTOPICKUP_EXCEPTION="<*stethoscope"
+# AUTOPICKUP_EXCEPTION="<*crystal ball"
+AUTOPICKUP_EXCEPTION="<*glass orb"
+AUTOPICKUP_EXCEPTION="<*can of grease"
+AUTOPICKUP_EXCEPTION="<*magic whistle"
+AUTOPICKUP_EXCEPTION="<whistle"
+AUTOPICKUP_EXCEPTION="<*d whistle"
+# # drums of earthquake are here to wake up Rodney in speed runs
+AUTOPICKUP_EXCEPTION="<*drum of earthquake"
+AUTOPICKUP_EXCEPTION="<drum"
+AUTOPICKUP_EXCEPTION="<*d drum"
+AUTOPICKUP_EXCEPTION="<*magic flute"
+AUTOPICKUP_EXCEPTION="<flute"
+AUTOPICKUP_EXCEPTION="<*d flute"
+# # still relevant to the later game
+AUTOPICKUP_EXCEPTION="<*magic marker"
+AUTOPICKUP_EXCEPTION="<*magic lamp"
+AUTOPICKUP_EXCEPTION="<lamp"
+AUTOPICKUP_EXCEPTION="<*d lamp"
+# #Don't let monsters unlock doors
+AUTOPICKUP_EXCEPTION="<*key"
+# "(skeleton )?key": key doesn't catch anything else
+
+
+# # General tools I usually don't autopickup
+# #pick-axes for throne farming. When the random monsters set in, don't let  diggers dig.
+AUTOPICKUP_EXCEPTION="<*pick-axe"
+# AUTOPICKUP_EXCEPTION=">*unicorn horn"
+AUTOPICKUP_EXCEPTION=">*bag of tricks"
+AUTOPICKUP_EXCEPTION=">*bag called trick*"
+# AUTOPICKUP_EXCEPTION=">*horn of plenty"
+AUTOPICKUP_EXCEPTION=">*lock pick"
+AUTOPICKUP_EXCEPTION=">*credit card"
+#AUTOPICKUP_EXCEPTION=">*brass lantern"
+AUTOPICKUP_EXCEPTION=">*oil lamp"
+AUTOPICKUP_EXCEPTION=">*mirror"
+AUTOPICKUP_EXCEPTION=">*looking glass"
+# AUTOPICKUP_EXCEPTION=">*blindfold"
+# AUTOPICKUP_EXCEPTION=">*towel"
+AUTOPICKUP_EXCEPTION=">*saddle"
+#AUTOPICKUP_EXCEPTION="<*leash"
+# AUTOPICKUP_EXCEPTION=">*tinning kit"
+AUTOPICKUP_EXCEPTION=">*tin opener"
+AUTOPICKUP_EXCEPTION=">*figurine of a*"
+# AUTOPICKUP_EXCEPTION=">*land mine"
+# AUTOPICKUP_EXCEPTION=">*beartrap"
+AUTOPICKUP_EXCEPTION=">*tin whistle"
+AUTOPICKUP_EXCEPTION=">*whistle called tin"
+# AUTOPICKUP_EXCEPTION=">*bell"
+# AUTOPICKUP_EXCEPTION=">*grappling hook"
+# AUTOPICKUP_EXCEPTION=">*iron hook"
+# AUTOPICKUP_EXCEPTION=">*leather drum"
+
+# #food that keeps
+# #I don't know how to make tins work except by listing all monsters
+# # Not all of the vegan/vegetarian corpses are listed (as of yet)
+# #
+# # We might pick up people food, but never corpses, except lizards. 
+# # Grepped monst.c to avoid combinatorical explosion.
+# # Despite my general rules, the trailing is present * to avoid picking
+# #  up named monsters.
+# # It's "blessed greased partly-eaten lizard corpse", without "a" or "3".
+AUTOPICKUP_EXCEPTION=">*a corpse*"
+AUTOPICKUP_EXCEPTION=">*b corpse*"
+AUTOPICKUP_EXCEPTION=">*c corpse*"
+AUTOPICKUP_EXCEPTION=">*e corpse*"
+AUTOPICKUP_EXCEPTION=">*f corpse*"
+AUTOPICKUP_EXCEPTION=">*g corpse*"
+AUTOPICKUP_EXCEPTION=">*h corpse*"
+AUTOPICKUP_EXCEPTION=">*i corpse*"
+AUTOPICKUP_EXCEPTION=">*k corpse*"
+AUTOPICKUP_EXCEPTION=">*l corpse*"
+AUTOPICKUP_EXCEPTION=">*m corpse*"
+AUTOPICKUP_EXCEPTION=">*o corpse*"
+AUTOPICKUP_EXCEPTION=">*p corpse*"
+AUTOPICKUP_EXCEPTION=">*r corpse*"
+AUTOPICKUP_EXCEPTION=">*s corpse*"
+AUTOPICKUP_EXCEPTION=">*' corpse*"
+AUTOPICKUP_EXCEPTION=">*t corpse*"
+AUTOPICKUP_EXCEPTION=">*u corpse*"
+AUTOPICKUP_EXCEPTION=">*v corpse*"
+AUTOPICKUP_EXCEPTION=">*x corpse*"
+AUTOPICKUP_EXCEPTION=">*y corpse*"
+AUTOPICKUP_EXCEPTION=">*ld corpse*"
+AUTOPICKUP_EXCEPTION=">*nd corpse*"
+AUTOPICKUP_EXCEPTION=">*ud corpse*"
+AUTOPICKUP_EXCEPTION=">*ord corpse*"
+AUTOPICKUP_EXCEPTION=">*uard corpse*"
+AUTOPICKUP_EXCEPTION=">*wizard corpse*"
+# #lichen corpse
+#AUTOPICKUP_EXCEPTION=">*n corpse*"
+AUTOPICKUP_EXCEPTION=">*an corpse*"
+AUTOPICKUP_EXCEPTION=">*in corpse*"
+AUTOPICKUP_EXCEPTION=">*on corpse*"
+AUTOPICKUP_EXCEPTION=">*rn corpse*"
+AUTOPICKUP_EXCEPTION=">*un corpse*"
+AUTOPICKUP_EXCEPTION=">*aen corpse*"
+AUTOPICKUP_EXCEPTION=">*een corpse*"
+AUTOPICKUP_EXCEPTION=">*ken corpse*"
+AUTOPICKUP_EXCEPTION=">*ten corpse*"
+AUTOPICKUP_EXCEPTION=">*ven corpse*"
+
+# # meat
+AUTOPICKUP_EXCEPTION="<*lizard corpse"
+AUTOPICKUP_EXCEPTION="<*tripe ration"
+# AUTOPICKUP_EXCEPTION="<*meatball"
+# AUTOPICKUP_EXCEPTION="<*meat stick"
+AUTOPICKUP_EXCEPTION=">*huge chunk of meat"
+AUTOPICKUP_EXCEPTION=">*huge chunks of meat"
+# AUTOPICKUP_EXCEPTION="<*meat ring"
+# # vegetarian. Cream pies for pacifists
+# AUTOPICKUP_EXCEPTION="<*cream pie"
+AUTOPICKUP_EXCEPTION="<*egg"
+# AUTOPICKUP_EXCEPTION="<*lump of royal jelly"
+# AUTOPICKUP_EXCEPTION="<*candy bar"
+# AUTOPICKUP_EXCEPTION="<*fortune cookie"
+# AUTOPICKUP_EXCEPTION="<*pancake"
+# # vegan
+# AUTOPICKUP_EXCEPTION="<*lichen corpse"
+AUTOPICKUP_EXCEPTION="<*tin of spinach"
+# AUTOPICKUP_EXCEPTION="<*kelp frond"
+# AUTOPICKUP_EXCEPTION="<*eucalyptus leaf"
+# AUTOPICKUP_EXCEPTION="<*apple"
+# AUTOPICKUP_EXCEPTION="<*orange"
+# AUTOPICKUP_EXCEPTION="<*pear"
+# AUTOPICKUP_EXCEPTION="<*melon"
+# AUTOPICKUP_EXCEPTION="<*banana"
+# AUTOPICKUP_EXCEPTION="<*carrot"
+# AUTOPICKUP_EXCEPTION="<*sprig of wolfsbane"
+# AUTOPICKUP_EXCEPTION="<*clove of garlic"
+# AUTOPICKUP_EXCEPTION="<*slime mold"
+# AUTOPICKUP_EXCEPTION="<*lembas wafer"
+# AUTOPICKUP_EXCEPTION="<*cram ration"
+# AUTOPICKUP_EXCEPTION="<*food ration"
+# AUTOPICKUP_EXCEPTION="<*K-ration"
+# AUTOPICKUP_EXCEPTION="<*C-ration"
+
+# #identified potions
+# #speed runners generally won't pick up all potions, thus these exceptions
+AUTOPICKUP_EXCEPTION="<*potion of healing"
+AUTOPICKUP_EXCEPTION="<*potion of extra healing"
+AUTOPICKUP_EXCEPTION="<*potion of full healing"
+AUTOPICKUP_EXCEPTION="<*potion of gain level"
+AUTOPICKUP_EXCEPTION="<*potion of object detection"
+# AUTOPICKUP_EXCEPTION=">*potion of water"
+# AUTOPICKUP_EXCEPTION=">*potion of gain ability"
+# AUTOPICKUP_EXCEPTION=">*potion of restore ability"
+# AUTOPICKUP_EXCEPTION=">*potion of confusion"
+# AUTOPICKUP_EXCEPTION=">*potion of blindness"
+# AUTOPICKUP_EXCEPTION=">*potion of paralysis"
+# AUTOPICKUP_EXCEPTION=">*potion of speed"
+# AUTOPICKUP_EXCEPTION=">*potion of levitation"
+# AUTOPICKUP_EXCEPTION=">*potion of hallucination"
+# AUTOPICKUP_EXCEPTION=">*potion of invisibility"
+# AUTOPICKUP_EXCEPTION=">*potion of see invisible"
+# AUTOPICKUP_EXCEPTION=">*potion of enlightenment"
+# AUTOPICKUP_EXCEPTION=">*potion of monster detection"
+# AUTOPICKUP_EXCEPTION=">*potion of gain energy"
+# AUTOPICKUP_EXCEPTION=">*potion of sleeping"
+# AUTOPICKUP_EXCEPTION=">*potion of polymorph"
+# AUTOPICKUP_EXCEPTION=">*potion of booze"
+# AUTOPICKUP_EXCEPTION=">*potion of sickness"
+# AUTOPICKUP_EXCEPTION=">*potion of fruit juice"
+# AUTOPICKUP_EXCEPTION=">*potion of acid"
+# AUTOPICKUP_EXCEPTION=">*potion of oil"
+
+# #Unidentified potions
+# AUTOPICKUP_EXCEPTION=">*clear potion"
+# AUTOPICKUP_EXCEPTION=">*ruby potion"
+# AUTOPICKUP_EXCEPTION=">*pink potion"
+# AUTOPICKUP_EXCEPTION=">*orange potion"
+# AUTOPICKUP_EXCEPTION=">*yellow potion"
+# AUTOPICKUP_EXCEPTION=">*emerald potion"
+# AUTOPICKUP_EXCEPTION=">*dark green potion"
+# AUTOPICKUP_EXCEPTION=">*cyan potion"
+# AUTOPICKUP_EXCEPTION=">*sky blue potion"
+# AUTOPICKUP_EXCEPTION=">*brilliant blue potion"
+# AUTOPICKUP_EXCEPTION=">*magenta potion"
+# AUTOPICKUP_EXCEPTION=">*purple-red potion"
+# AUTOPICKUP_EXCEPTION=">*puce potion"
+# AUTOPICKUP_EXCEPTION=">*milky potion"
+# AUTOPICKUP_EXCEPTION=">*swirly potion"
+# AUTOPICKUP_EXCEPTION=">*bubbly potion"
+# AUTOPICKUP_EXCEPTION=">*smoky potion"
+# AUTOPICKUP_EXCEPTION=">*cloudy potion"
+# AUTOPICKUP_EXCEPTION=">*effervescent potion"
+# AUTOPICKUP_EXCEPTION=">*black potion"
+# AUTOPICKUP_EXCEPTION=">*golden potion"
+# AUTOPICKUP_EXCEPTION=">*brown potion"
+# AUTOPICKUP_EXCEPTION=">*fizzy potion"
+# AUTOPICKUP_EXCEPTION=">*dark potion"
+# AUTOPICKUP_EXCEPTION=">*white potion"
+# AUTOPICKUP_EXCEPTION=">*murky potion"
+# #blind
+# AUTOPICKUP_EXCEPTION=">potion"
+# AUTOPICKUP_EXCEPTION=">*sed potion"
+# AUTOPICKUP_EXCEPTION=">*ted potion"
+
+
+# # identified scrolls
+AUTOPICKUP_EXCEPTION=">blessed scroll of scare monster"
+AUTOPICKUP_EXCEPTION=">blessed greased scroll of scare monster"
+AUTOPICKUP_EXCEPTION="<*scroll of scare monster"
+# AUTOPICKUP_EXCEPTION=">*scroll of mail"
+# AUTOPICKUP_EXCEPTION=">*scroll of blank paper"
+# AUTOPICKUP_EXCEPTION=">*scroll of enchant armor"
+# AUTOPICKUP_EXCEPTION=">*scroll of destroy armor"
+# AUTOPICKUP_EXCEPTION=">*scroll of confuse monster"
+# AUTOPICKUP_EXCEPTION=">*scroll of remove curse"
+# AUTOPICKUP_EXCEPTION=">*scroll of enchant weapon"
+# AUTOPICKUP_EXCEPTION=">*scroll of create monster"
+# AUTOPICKUP_EXCEPTION=">*scroll of taming"
+# AUTOPICKUP_EXCEPTION=">*scroll of genocide"
+# AUTOPICKUP_EXCEPTION=">*scroll of light"
+# AUTOPICKUP_EXCEPTION=">*scroll of teleportation"
+# AUTOPICKUP_EXCEPTION=">*scroll of gold detection"
+# AUTOPICKUP_EXCEPTION=">*scroll of food detection"
+# AUTOPICKUP_EXCEPTION=">*scroll of identify"
+# AUTOPICKUP_EXCEPTION=">*scroll of magic mapping"
+# AUTOPICKUP_EXCEPTION=">*scroll of amnesia"
+# AUTOPICKUP_EXCEPTION=">*scroll of fire"
+# AUTOPICKUP_EXCEPTION=">*scroll of earth"
+# AUTOPICKUP_EXCEPTION=">*scroll of punishment"
+# AUTOPICKUP_EXCEPTION=">*scroll of charging"
+# AUTOPICKUP_EXCEPTION=">*scroll of stinking cloud"
+
+# # Unidentified scrolls
+# AUTOPICKUP_EXCEPTION=">*stamped scroll"
+# AUTOPICKUP_EXCEPTION=">*unlabeled scroll"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled ZELGO MER"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled JUYED AWK YACC"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled NR 9"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled XIXAXA XOXAXA XUXAXA"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled PRATYAVAYAH"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled DAIYEN FOOELS"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled LEP GEX VEN ZEA"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled PRIRUTSENIE"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled ELBIB YLOH"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled VERR YED HORRE"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled VENZAR BORGAVVE"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled THARR"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled YUM YUM"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled KERNOD WEL"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled ELAM EBOW"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled DUAM XNAHT"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled ANDOVA BEGARIN"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled KIRJE"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled VE FORBRYDERNE"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled HACKEM MUCHE"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled VELOX NEB"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled FOOBIE BLETCH"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled TEMOV"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled GARVEN DEH"
+# AUTOPICKUP_EXCEPTION=">*scroll labeled READ ME"
+# #blind
+# AUTOPICKUP_EXCEPTION=">scroll"
+# AUTOPICKUP_EXCEPTION=">*sed scroll"
+
+
+# #Identified spellbooks
+# AUTOPICKUP_EXCEPTION=">*spellbook of blank paper"
+# AUTOPICKUP_EXCEPTION=">*spellbook of dig"
+# AUTOPICKUP_EXCEPTION=">*spellbook of magic missile"
+# AUTOPICKUP_EXCEPTION=">*spellbook of fireball"
+# AUTOPICKUP_EXCEPTION=">*spellbook of cone of cold"
+# AUTOPICKUP_EXCEPTION=">*spellbook of sleep"
+# AUTOPICKUP_EXCEPTION=">*spellbook of finger of death"
+# AUTOPICKUP_EXCEPTION=">*spellbook of light"
+# AUTOPICKUP_EXCEPTION=">*spellbook of detect monsters"
+# AUTOPICKUP_EXCEPTION=">*spellbook of healing"
+# AUTOPICKUP_EXCEPTION=">*spellbook of knock"
+# AUTOPICKUP_EXCEPTION=">*spellbook of force bolt"
+# AUTOPICKUP_EXCEPTION=">*spellbook of confuse monster"
+# AUTOPICKUP_EXCEPTION=">*spellbook of cure blindness"
+# AUTOPICKUP_EXCEPTION=">*spellbook of drain life"
+# AUTOPICKUP_EXCEPTION=">*spellbook of slow monster"
+# AUTOPICKUP_EXCEPTION=">*spellbook of wizard lock"
+# AUTOPICKUP_EXCEPTION=">*spellbook of create monster"
+# AUTOPICKUP_EXCEPTION=">*spellbook of detect food"
+# AUTOPICKUP_EXCEPTION=">*spellbook of cause fear"
+# AUTOPICKUP_EXCEPTION=">*spellbook of clairvoyance"
+# AUTOPICKUP_EXCEPTION=">*spellbook of cure sickness"
+# AUTOPICKUP_EXCEPTION=">*spellbook of charm monster"
+# AUTOPICKUP_EXCEPTION=">*spellbook of haste self"
+# AUTOPICKUP_EXCEPTION=">*spellbook of detect unseen"
+# AUTOPICKUP_EXCEPTION=">*spellbook of levitation"
+# AUTOPICKUP_EXCEPTION=">*spellbook of extra healing"
+# AUTOPICKUP_EXCEPTION=">*spellbook of restore ability"
+# AUTOPICKUP_EXCEPTION=">*spellbook of invisibility"
+# AUTOPICKUP_EXCEPTION=">*spellbook of detect treasure"
+# AUTOPICKUP_EXCEPTION=">*spellbook of remove curse"
+# AUTOPICKUP_EXCEPTION=">*spellbook of magic mapping"
+# AUTOPICKUP_EXCEPTION=">*spellbook of identify"
+# AUTOPICKUP_EXCEPTION=">*spellbook of turn undead"
+# AUTOPICKUP_EXCEPTION=">*spellbook of polymorph"
+# AUTOPICKUP_EXCEPTION=">*spellbook of teleport away"
+# AUTOPICKUP_EXCEPTION=">*spellbook of create familiar"
+# AUTOPICKUP_EXCEPTION=">*spellbook of cancellation"
+# AUTOPICKUP_EXCEPTION=">*spellbook of protection"
+# AUTOPICKUP_EXCEPTION=">*spellbook of jumping"
+# AUTOPICKUP_EXCEPTION=">*spellbook of stone to flesh"
+# AUTOPICKUP_EXCEPTION=">*spellbook of flame sphere"
+# AUTOPICKUP_EXCEPTION=">*spellbook of freeze sphere"
+
+# #Unidentified spellbooks
+# AUTOPICKUP_EXCEPTION="<*plain spellbook"
+AUTOPICKUP_EXCEPTION="<*parchment spellbook"
+AUTOPICKUP_EXCEPTION="<*vellum spellbook"
+AUTOPICKUP_EXCEPTION="<*ragged spellbook"
+AUTOPICKUP_EXCEPTION="<*dog eared spellbook"
+AUTOPICKUP_EXCEPTION="<*mottled spellbook"
+AUTOPICKUP_EXCEPTION="<*stained spellbook"
+AUTOPICKUP_EXCEPTION="<*cloth spellbook"
+AUTOPICKUP_EXCEPTION="<*leather spellbook"
+AUTOPICKUP_EXCEPTION="<*white spellbook"
+AUTOPICKUP_EXCEPTION="<*pink spellbook"
+AUTOPICKUP_EXCEPTION="<*red spellbook"
+AUTOPICKUP_EXCEPTION="<*orange spellbook"
+AUTOPICKUP_EXCEPTION="<*yellow spellbook"
+AUTOPICKUP_EXCEPTION="<*velvet spellbook"
+AUTOPICKUP_EXCEPTION="<*light green spellbook"
+AUTOPICKUP_EXCEPTION="<*dark green spellbook"
+AUTOPICKUP_EXCEPTION="<*turquoise spellbook"
+AUTOPICKUP_EXCEPTION="<*cyan spellbook"
+AUTOPICKUP_EXCEPTION="<*light blue spellbook"
+AUTOPICKUP_EXCEPTION="<*dark blue spellbook"
+AUTOPICKUP_EXCEPTION="<*indigo spellbook"
+AUTOPICKUP_EXCEPTION="<*magenta spellbook"
+AUTOPICKUP_EXCEPTION="<*purple spellbook"
+AUTOPICKUP_EXCEPTION="<*violet spellbook"
+AUTOPICKUP_EXCEPTION="<*tan spellbook"
+AUTOPICKUP_EXCEPTION="<*plaid spellbook"
+AUTOPICKUP_EXCEPTION="<*light brown spellbook"
+AUTOPICKUP_EXCEPTION="<*dark brown spellbook"
+AUTOPICKUP_EXCEPTION="<*gray spellbook"
+AUTOPICKUP_EXCEPTION="<*wrinkled spellbook"
+AUTOPICKUP_EXCEPTION="<*dusty spellbook"
+AUTOPICKUP_EXCEPTION="<*bronze spellbook"
+AUTOPICKUP_EXCEPTION="<*copper spellbook"
+AUTOPICKUP_EXCEPTION="<*silver spellbook"
+AUTOPICKUP_EXCEPTION="<*gold spellbook"
+AUTOPICKUP_EXCEPTION="<*glittering spellbook"
+AUTOPICKUP_EXCEPTION="<*shining spellbook"
+AUTOPICKUP_EXCEPTION="<*dull spellbook"
+AUTOPICKUP_EXCEPTION="<*thin spellbook"
+AUTOPICKUP_EXCEPTION="<*thick spellbook"
+AUTOPICKUP_EXCEPTION="<*canvas spellbook"
+AUTOPICKUP_EXCEPTION="<*hardcover spellbook"
+# #blind
+# AUTOPICKUP_EXCEPTION="<spellbook"
+# AUTOPICKUP_EXCEPTION="<*sed spellbook"
+
+
+# #Identified wands
+AUTOPICKUP_EXCEPTION="<*wand of wishing"
+AUTOPICKUP_EXCEPTION="<*wand called wish"
+AUTOPICKUP_EXCEPTION="<*wand of create monster"
+AUTOPICKUP_EXCEPTION="<*wand of teleportation"
+AUTOPICKUP_EXCEPTION="<*wand called tele"
+AUTOPICKUP_EXCEPTION="<*wand of polymorph"
+AUTOPICKUP_EXCEPTION="<*wand called poly"
+AUTOPICKUP_EXCEPTION="<*wand of fire"
+AUTOPICKUP_EXCEPTION="<*wand of lightning"
+# AUTOPICKUP_EXCEPTION="<*wand of death"
+# # In the late game, cold is used for Juiblex swamp, etc.
+# AUTOPICKUP_EXCEPTION=">*wand of cold"
+# AUTOPICKUP_EXCEPTION=">*wand of light"
+# AUTOPICKUP_EXCEPTION=">*wand of secret door detection"
+# AUTOPICKUP_EXCEPTION=">*wand of enlightenment"
+AUTOPICKUP_EXCEPTION=">*wand of nothing"
+AUTOPICKUP_EXCEPTION=">*wand of striking"
+AUTOPICKUP_EXCEPTION=">*wand of magic missile" #it can't hurt me, but my pets.
+# AUTOPICKUP_EXCEPTION=">*wand of make invisible"
+# AUTOPICKUP_EXCEPTION=">*wand of slow monster"
+# AUTOPICKUP_EXCEPTION=">*wand of speed monster"
+# AUTOPICKUP_EXCEPTION=">*wand of undead turning"
+# AUTOPICKUP_EXCEPTION=">*wand of cancellation"
+AUTOPICKUP_EXCEPTION=">*wand of opening"
+# AUTOPICKUP_EXCEPTION=">*wand of locking"
+# AUTOPICKUP_EXCEPTION=">*wand of probing"
+# AUTOPICKUP_EXCEPTION=">*wand of digging"
+# AUTOPICKUP_EXCEPTION=">*wand of sleep"
+
+# #Unidentified wands
+# AUTOPICKUP_EXCEPTION="<*glass wand"
+# AUTOPICKUP_EXCEPTION="<*balsa wand"
+# AUTOPICKUP_EXCEPTION="<*crystal wand"
+# AUTOPICKUP_EXCEPTION="<*maple wand"
+# AUTOPICKUP_EXCEPTION="<*pine wand"
+# AUTOPICKUP_EXCEPTION="<*oak wand"
+# AUTOPICKUP_EXCEPTION="<*ebony wand"
+# AUTOPICKUP_EXCEPTION="<*marble wand"
+# AUTOPICKUP_EXCEPTION="<*tin wand"
+# AUTOPICKUP_EXCEPTION="<*brass wand"
+# AUTOPICKUP_EXCEPTION="<*copper wand"
+# AUTOPICKUP_EXCEPTION="<*silver wand"
+# AUTOPICKUP_EXCEPTION="<*platinum wand"
+# AUTOPICKUP_EXCEPTION="<*iridium wand"
+# AUTOPICKUP_EXCEPTION="<*zinc wand"
+# AUTOPICKUP_EXCEPTION="<*aluminum wand"
+# AUTOPICKUP_EXCEPTION="<*uranium wand"
+# AUTOPICKUP_EXCEPTION="<*iron wand"
+# AUTOPICKUP_EXCEPTION="<*steel wand"
+# AUTOPICKUP_EXCEPTION="<*hexagonal wand"
+# AUTOPICKUP_EXCEPTION="<*short wand"
+# AUTOPICKUP_EXCEPTION="<*runed wand"
+# AUTOPICKUP_EXCEPTION="<*long wand"
+# AUTOPICKUP_EXCEPTION="<*curved wand"
+# AUTOPICKUP_EXCEPTION="<*forked wand"
+# AUTOPICKUP_EXCEPTION="<*spiked wand"
+# AUTOPICKUP_EXCEPTION="<*jeweled wand"
+# #blind
+# AUTOPICKUP_EXCEPTION=">wand"
+# AUTOPICKUP_EXCEPTION=">*sed wand"
+
+
+#identified gems (valueable and glass)
+# AUTOPICKUP_EXCEPTION="<*dilithium crystal"
+# AUTOPICKUP_EXCEPTION="<*diamond"
+# AUTOPICKUP_EXCEPTION="<*ruby"
+# AUTOPICKUP_EXCEPTION="<*sapphire"
+# AUTOPICKUP_EXCEPTION="<*black opal"
+# AUTOPICKUP_EXCEPTION="<*jacinth stone"
+# AUTOPICKUP_EXCEPTION="<*emerald stone"
+# AUTOPICKUP_EXCEPTION="<*turquoise stone"
+# AUTOPICKUP_EXCEPTION="<*citrine stone"
+# AUTOPICKUP_EXCEPTION="<*aquamarine stone"
+# AUTOPICKUP_EXCEPTION="<*amber stone"
+# AUTOPICKUP_EXCEPTION="<*topaz stone"
+# AUTOPICKUP_EXCEPTION="<*jet stone"
+# AUTOPICKUP_EXCEPTION="<*opal stone"
+# AUTOPICKUP_EXCEPTION="<*chrysoberyl stone"
+# AUTOPICKUP_EXCEPTION="<*garnet stone"
+# AUTOPICKUP_EXCEPTION="<*amethyst stone"
+# AUTOPICKUP_EXCEPTION="<*jasper stone"
+# AUTOPICKUP_EXCEPTION="<*fluorite stone"
+# AUTOPICKUP_EXCEPTION="<*obsidian stone"
+# AUTOPICKUP_EXCEPTION="<*agate stone"
+# AUTOPICKUP_EXCEPTION="<*jade stone"
+# #*glass*" catches glass wand, glass orb
+AUTOPICKUP_EXCEPTION=">*worthless*"
+# AUTOPICKUP_EXCEPTION=">*worthless piece of white glass"
+# AUTOPICKUP_EXCEPTION=">*worthless piece of blue glass"
+# AUTOPICKUP_EXCEPTION=">*worthless piece of red glass"
+# AUTOPICKUP_EXCEPTION=">*worthless piece of yellowish brown glass"
+# AUTOPICKUP_EXCEPTION=">*worthless piece of orange glass"
+# AUTOPICKUP_EXCEPTION=">*worthless piece of yellow glass"
+# AUTOPICKUP_EXCEPTION=">*worthless piece of black glass"
+# AUTOPICKUP_EXCEPTION=">*worthless piece of green glass"
+# AUTOPICKUP_EXCEPTION=">*worthless piece of violet glass"
+
+# #unidentified gems, gray stone.
+# # pick up luckstones as spares, just in case.
+# # I usually name new gems "hardness color turn_number",
+# # to know when I have several kinds.
+AUTOPICKUP_EXCEPTION="<*black gem"
+AUTOPICKUP_EXCEPTION="<*blue gem"
+AUTOPICKUP_EXCEPTION="<*green gem"
+AUTOPICKUP_EXCEPTION="<*orange gem"
+AUTOPICKUP_EXCEPTION="<*red gem"
+AUTOPICKUP_EXCEPTION="<*violet gem"
+AUTOPICKUP_EXCEPTION="<*white gem"
+AUTOPICKUP_EXCEPTION="<*yellow gem"
+AUTOPICKUP_EXCEPTION="<*yellowish brown gem"
+# #
+# # This should never pick up loadstones (id'd, called, blind, new)
+AUTOPICKUP_EXCEPTION=">*stone called loa*"
+AUTOPICKUP_EXCEPTION=">*loadstone"
+AUTOPICKUP_EXCEPTION=">*loadstone named ?*"
+AUTOPICKUP_EXCEPTION="<*stone called luck"
+AUTOPICKUP_EXCEPTION="<*luckstone"
+# AUTOPICKUP_EXCEPTION="<*touchstone"
+AUTOPICKUP_EXCEPTION=">*flint stone"
+AUTOPICKUP_EXCEPTION=">*rock"
+AUTOPICKUP_EXCEPTION=">*gray stone"
+# #blind: glass/gems show up as gem, all else as stone.
+# AUTOPICKUP_EXCEPTION=">gem"
+# AUTOPICKUP_EXCEPTION=">*sed gem"
+AUTOPICKUP_EXCEPTION=">stone"
+AUTOPICKUP_EXCEPTION=">*sed stone"
+
+# #Misc junk. Never pick up iron balls so pickup_types can be "0" if you only want exceptions.
+AUTOPICKUP_EXCEPTION=">*statue of*"
+# AUTOPICKUP_EXCEPTION=">*very heavy iron ball*"
+AUTOPICKUP_EXCEPTION=">*heavy iron ball*"
+# AUTOPICKUP_EXCEPTION=">*iron chain*"
+# AUTOPICKUP_EXCEPTION=">*blinding venom*"
+# AUTOPICKUP_EXCEPTION=">*acid venom*"
+# AUTOPICKUP_EXCEPTION=">*splash of venom*"
+
+
+
+
+
+
+################
+##
+##  Ignored messages
+##
+###############
+##
+##
+## 1) same crude regex as in autopickup
+## 2) the last match counts, so exceptions go last.
+##
+## This need to be expanded very much.
+# delayed instadeaths, credits to stth
+MSGTYPE=stop "The couatl swings itself around you!"
+MSGTYPE=stop "The electric eel swings itself around you!"
+MSGTYPE=stop "The giant eel swings itself around you!"
+MSGTYPE=stop "The kraken swings itself around you!"
+MSGTYPE=stop "The python grabs you!"
+MSGTYPE=stop "You don't feel very well."
+MSGTYPE=stop "You are turning a little green."
+MSGTYPE=stop "Your limbs are getting oozy."
+MSGTYPE=stop "Your skin begins to peel away."
+MSGTYPE=stop "You are turning into a green slime."
+MSGTYPE=stop "You are slowing down."
+MSGTYPE=stop "Your limbs are stiffening."
+MSGTYPE=stop "It constricts your throat!"
+MSGTYPE=stop "You find it hard to breathe."
+MSGTYPE=stop "You're gasping for air."
+MSGTYPE=stop "Your blood is having trouble reaching your brain."
+MSGTYPE=stop "You can no longer breathe."
+MSGTYPE=stop "You're turning blue."
+MSGTYPE=stop "Your consciousness is fading."
+MSGTYPE=stop "You feel deathly sick."
+MSGTYPE=stop "You feel much worse."
+MSGTYPE=stop "You feel even worse."
+
+
+#important because of conducts, or signaling careless play
+#hide them in non-conduct games
+MSGTYPE=hide "You die..."
+MSGTYPE=hide "You kill *." #lost pacifist
+MSGTYPE=hide "You displaced *." #foodless: lost 1 nutrition
+MSGTYPE=hide "You stop.  * is in the way!" #ditto
+MSGTYPE=hide "You move right into *." #pacifist
+MSGTYPE=hide "Pardon me, *." #pacifist
+MSGTYPE=stop "* catches the gold." #1/7 chance of angering shopkeeper
+# remapped movement keys --> error message at ; prompt.
+MSGTYPE=hide "Unknown direction: 'm' (use hjkl or .)."
+
+#run of the mill junk
+MSGTYPE=hide "Which ring-finger, Right or Left?"
+MSGTYPE=hide "Adjust letter to what *"
+MSGTYPE=hide "Hello tjr*, the elven Wizard, welcome back to NetHack!" #noobhack
+#MSGTYPE=hide "Hello tjr*, welcome to NetHack!  You are a chaotic female elven Wizard."
+MSGTYPE=norep "Unknown command ' '."
+
+#superfluous messages: suppress those that are
+# a) duplicate,
+# b) indicate normal course of events,
+# c) blatanlty obvious.
+#using items
+MSGTYPE=hide "You hear your heart beat."
+MSGTYPE=hide "You start playing the tooled horn*."
+MSGTYPE=hide "You start playing the horn called too*."
+MSGTYPE=hide "You start playing the * horn * empty."
+MSGTYPE=hide "You start playing the leather drum*."
+MSGTYPE=hide "You start playing the drum called lea*."
+MSGTYPE=hide "You start playing the wooden harp*."
+MSGTYPE=hide "You start playing the harp called wo*."
+MSGTYPE=hide "* admires herself in your mirror."
+MSGTYPE=hide "You finish disrobing."
+# other dupes, normal course of operation
+MSGTYPE=hide "WHAMMM!!!"
+MSGTYPE=hide "Restoring save file..." #noobhack
+MSGTYPE=hide "Perhaps that's why * cannot move it." #you can't move it etc.
+MSGTYPE=hide "With great effort you move the boulder."
+MSGTYPE=hide "You find no traps on the *."
+#foocubi
+MSGTYPE=hide "You seem to have enjoyed it more than *..."
+MSGTYPE=hide "?Take off your *; it's in the way.?"
+MSGTYPE=hide "?Take off your boots; let me rub your feet.?"
+MSGTYPE=hide "You feel very attracted to *."
+MSGTYPE=hide "Time stands still while you and * lie in each other's arms..."
+MSGTYPE=hide "You seem to have enjoyed it more than *..."
+MSGTYPE=hide "* seems to have enjoyed it more than you..."
+# exercise
+MSGTYPE=hide "You must have been exercising."
+MSGTYPE=hide "You must have been very observant."
+MSGTYPE=hide "You haven't been paying attention."
+MSGTYPE=hide "You must be leading a healthy life-style."
+MSGTYPE=hide "You must have been working on your reflexes."
+# bathing
+MSGTYPE=norep "You fall into the water!"
+MSGTYPE=norep "You fall into the water."
+MSGTYPE=hide "You sink like a rock."
+MSGTYPE=hide "You try to crawl out of the water."
+MSGTYPE=hide "Pheew!  That was close."
+MSGTYPE=hide "You touch bottom."
+# quest portal
+MSGTYPE=hide "You activated a magic portal!"
+MSGTYPE=hide "You feel dizzy for a moment, but the sensation passes."
+MSGTYPE=norep "Once again, you are back at the Lonely Tower."
+
+#level and area sounds.
+MSGTYPE=norep "You hear someone cursing shoplifters."
+MSGTYPE=norep "You hear the chime of a cash register."
+MSGTYPE=hide "?Hello, tjr*!  Welcome again to *!?"
+MSGTYPE=hide "The priest* of * intones:  ?Pilgrim, you enter a sacred place!?"
+MSGTYPE=norep "You experience a strange sense of peace."
+MSGTYPE=norep "You have a strange forbidding feeling."
+MSGTYPE=norep "You hear bubbling water." #I need to explore anyway>>hide
+MSGTYPE=norep "You hear water falling on coins."
+MSGTYPE=norep "You hear the splashing of a naiad."
+MSGTYPE=norep "You hear a slow drip."
+MSGTYPE=norep "You hear a gurgling noise."
+MSGTYPE=hide "You hear someone counting money." #vaults waste time
+MSGTYPE=hide "You hear the footsteps of a guard on patrol."
+MSGTYPE=hide "You hear someone searching."
+MSGTYPE=norep "You hear snoring snakes."
+MSGTYPE=norep "You hear a strange wind."
+MSGTYPE=norep "You hear convulsive ravings."
+
+# dual slow digestion abuse.
+MSGTYPE=hide "? - a* ring of slow digestion named MI* right* (on right hand)."
+MSGTYPE=hide "You were wearing a* ring of slow digestion named MI* right* (on right hand)."
+MSGTYPE=hide "? - a* ring of slow digestion named MI* left* (on left hand)."
+MSGTYPE=hide "You were wearing a* ring of slow digestion named MI* left* (on left hand)."
+
+# confuse yourself
+MSGTYPE=hide "Your knowledge of this spell is twisted."
+MSGTYPE=hide "It invokes nightmarish images in your mind..."
+#cancelling (a stack of) sickness to fruit juice
+MSGTYPE=hide "The * potion that you dipped into turns *."
+MSGTYPE=hide "The * potion turns *."
+
+
+#throne farming. Take care to re-activate them in normal play.
+#MSGTYPE=hide "The exchequer accepts your contribution."
+#MSGTYPE=hide "Loot in what direction*"
+#MSGTYPE=hide "You don't find anything there to loot." #This should not arise, but somehow it does.
+#MSGTYPE=norep "You can't go down here." #the cue to recommence the next cycle
+# ... deleted
+
+#engraving for illiterates
+# No messages when engraving.
+# Don't read anything on the floor except Elbereth.
+MSGTYPE=hide "You write in the dust with a* ring*."
+MSGTYPE=hide "There's some graffiti on the * here."
+MSGTYPE=hide "Some text has been * into the * here."
+MSGTYPE=hide "Something is engraved here on the headstone."
+MSGTYPE=hide "You read: ?*?."
+MSGTYPE=hide "You feel the words: ?*?."
+MSGTYPE=show "You *: *ELBERETH*."
+MSGTYPE=show "You *: *ELBERETh*."
+MSGTYPE=show "You *: *ELBEREtH*."
+MSGTYPE=show "You *: *ELBEREth*."
+MSGTYPE=show "You *: *ELBEReTH*."
+MSGTYPE=show "You *: *ELBEReTh*."
+MSGTYPE=show "You *: *ELBERetH*."
+MSGTYPE=show "You *: *ELBEReth*."
+MSGTYPE=show "You *: *ELBErETH*."
+MSGTYPE=show "You *: *ELBErETh*."
+MSGTYPE=show "You *: *ELBErEtH*."
+MSGTYPE=show "You *: *ELBErEth*."
+MSGTYPE=show "You *: *ELBEreTH*."
+MSGTYPE=show "You *: *ELBEreTh*."
+MSGTYPE=show "You *: *ELBEretH*."
+MSGTYPE=show "You *: *ELBEreth*."
+MSGTYPE=show "You *: *ELBeRETH*."
+MSGTYPE=show "You *: *ELBeRETh*."
+MSGTYPE=show "You *: *ELBeREtH*."
+MSGTYPE=show "You *: *ELBeREth*."
+MSGTYPE=show "You *: *ELBeReTH*."
+MSGTYPE=show "You *: *ELBeReTh*."
+MSGTYPE=show "You *: *ELBeRetH*."
+MSGTYPE=show "You *: *ELBeReth*."
+MSGTYPE=show "You *: *ELBerETH*."
+MSGTYPE=show "You *: *ELBerETh*."
+MSGTYPE=show "You *: *ELBerEtH*."
+MSGTYPE=show "You *: *ELBerEth*."
+MSGTYPE=show "You *: *ELBereTH*."
+MSGTYPE=show "You *: *ELBereTh*."
+MSGTYPE=show "You *: *ELBeretH*."
+MSGTYPE=show "You *: *ELBereth*."
+MSGTYPE=show "You *: *ELbERETH*."
+MSGTYPE=show "You *: *ELbERETh*."
+MSGTYPE=show "You *: *ELbEREtH*."
+MSGTYPE=show "You *: *ELbEREth*."
+MSGTYPE=show "You *: *ELbEReTH*."
+MSGTYPE=show "You *: *ELbEReTh*."
+MSGTYPE=show "You *: *ELbERetH*."
+MSGTYPE=show "You *: *ELbEReth*."
+MSGTYPE=show "You *: *ELbErETH*."
+MSGTYPE=show "You *: *ELbErETh*."
+MSGTYPE=show "You *: *ELbErEtH*."
+MSGTYPE=show "You *: *ELbErEth*."
+MSGTYPE=show "You *: *ELbEreTH*."
+MSGTYPE=show "You *: *ELbEreTh*."
+MSGTYPE=show "You *: *ELbEretH*."
+MSGTYPE=show "You *: *ELbEreth*."
+MSGTYPE=show "You *: *ELbeRETH*."
+MSGTYPE=show "You *: *ELbeRETh*."
+MSGTYPE=show "You *: *ELbeREtH*."
+MSGTYPE=show "You *: *ELbeREth*."
+MSGTYPE=show "You *: *ELbeReTH*."
+MSGTYPE=show "You *: *ELbeReTh*."
+MSGTYPE=show "You *: *ELbeRetH*."
+MSGTYPE=show "You *: *ELbeReth*."
+MSGTYPE=show "You *: *ELberETH*."
+MSGTYPE=show "You *: *ELberETh*."
+MSGTYPE=show "You *: *ELberEtH*."
+MSGTYPE=show "You *: *ELberEth*."
+MSGTYPE=show "You *: *ELbereTH*."
+MSGTYPE=show "You *: *ELbereTh*."
+MSGTYPE=show "You *: *ELberetH*."
+MSGTYPE=show "You *: *ELbereth*."
+MSGTYPE=show "You *: *ElBERETH*."
+MSGTYPE=show "You *: *ElBERETh*."
+MSGTYPE=show "You *: *ElBEREtH*."
+MSGTYPE=show "You *: *ElBEREth*."
+MSGTYPE=show "You *: *ElBEReTH*."
+MSGTYPE=show "You *: *ElBEReTh*."
+MSGTYPE=show "You *: *ElBERetH*."
+MSGTYPE=show "You *: *ElBEReth*."
+MSGTYPE=show "You *: *ElBErETH*."
+MSGTYPE=show "You *: *ElBErETh*."
+MSGTYPE=show "You *: *ElBErEtH*."
+MSGTYPE=show "You *: *ElBErEth*."
+MSGTYPE=show "You *: *ElBEreTH*."
+MSGTYPE=show "You *: *ElBEreTh*."
+MSGTYPE=show "You *: *ElBEretH*."
+MSGTYPE=show "You *: *ElBEreth*."
+MSGTYPE=show "You *: *ElBeRETH*."
+MSGTYPE=show "You *: *ElBeRETh*."
+MSGTYPE=show "You *: *ElBeREtH*."
+MSGTYPE=show "You *: *ElBeREth*."
+MSGTYPE=show "You *: *ElBeReTH*."
+MSGTYPE=show "You *: *ElBeReTh*."
+MSGTYPE=show "You *: *ElBeRetH*."
+MSGTYPE=show "You *: *ElBeReth*."
+MSGTYPE=show "You *: *ElBerETH*."
+MSGTYPE=show "You *: *ElBerETh*."
+MSGTYPE=show "You *: *ElBerEtH*."
+MSGTYPE=show "You *: *ElBerEth*."
+MSGTYPE=show "You *: *ElBereTH*."
+MSGTYPE=show "You *: *ElBereTh*."
+MSGTYPE=show "You *: *ElBeretH*."
+MSGTYPE=show "You *: *ElBereth*."
+MSGTYPE=show "You *: *ElbERETH*."
+MSGTYPE=show "You *: *ElbERETh*."
+MSGTYPE=show "You *: *ElbEREtH*."
+MSGTYPE=show "You *: *ElbEREth*."
+MSGTYPE=show "You *: *ElbEReTH*."
+MSGTYPE=show "You *: *ElbEReTh*."
+MSGTYPE=show "You *: *ElbERetH*."
+MSGTYPE=show "You *: *ElbEReth*."
+MSGTYPE=show "You *: *ElbErETH*."
+MSGTYPE=show "You *: *ElbErETh*."
+MSGTYPE=show "You *: *ElbErEtH*."
+MSGTYPE=show "You *: *ElbErEth*."
+MSGTYPE=show "You *: *ElbEreTH*."
+MSGTYPE=show "You *: *ElbEreTh*."
+MSGTYPE=show "You *: *ElbEretH*."
+MSGTYPE=show "You *: *ElbEreth*."
+MSGTYPE=show "You *: *ElbeRETH*."
+MSGTYPE=show "You *: *ElbeRETh*."
+MSGTYPE=show "You *: *ElbeREtH*."
+MSGTYPE=show "You *: *ElbeREth*."
+MSGTYPE=show "You *: *ElbeReTH*."
+MSGTYPE=show "You *: *ElbeReTh*."
+MSGTYPE=show "You *: *ElbeRetH*."
+MSGTYPE=show "You *: *ElbeReth*."
+MSGTYPE=show "You *: *ElberETH*."
+MSGTYPE=show "You *: *ElberETh*."
+MSGTYPE=show "You *: *ElberEtH*."
+MSGTYPE=show "You *: *ElberEth*."
+MSGTYPE=show "You *: *ElbereTH*."
+MSGTYPE=show "You *: *ElbereTh*."
+MSGTYPE=show "You *: *ElberetH*."
+MSGTYPE=show "You *: *Elbereth*."
+MSGTYPE=show "You *: *eLBERETH*."
+MSGTYPE=show "You *: *eLBERETh*."
+MSGTYPE=show "You *: *eLBEREtH*."
+MSGTYPE=show "You *: *eLBEREth*."
+MSGTYPE=show "You *: *eLBEReTH*."
+MSGTYPE=show "You *: *eLBEReTh*."
+MSGTYPE=show "You *: *eLBERetH*."
+MSGTYPE=show "You *: *eLBEReth*."
+MSGTYPE=show "You *: *eLBErETH*."
+MSGTYPE=show "You *: *eLBErETh*."
+MSGTYPE=show "You *: *eLBErEtH*."
+MSGTYPE=show "You *: *eLBErEth*."
+MSGTYPE=show "You *: *eLBEreTH*."
+MSGTYPE=show "You *: *eLBEreTh*."
+MSGTYPE=show "You *: *eLBEretH*."
+MSGTYPE=show "You *: *eLBEreth*."
+MSGTYPE=show "You *: *eLBeRETH*."
+MSGTYPE=show "You *: *eLBeRETh*."
+MSGTYPE=show "You *: *eLBeREtH*."
+MSGTYPE=show "You *: *eLBeREth*."
+MSGTYPE=show "You *: *eLBeReTH*."
+MSGTYPE=show "You *: *eLBeReTh*."
+MSGTYPE=show "You *: *eLBeRetH*."
+MSGTYPE=show "You *: *eLBeReth*."
+MSGTYPE=show "You *: *eLBerETH*."
+MSGTYPE=show "You *: *eLBerETh*."
+MSGTYPE=show "You *: *eLBerEtH*."
+MSGTYPE=show "You *: *eLBerEth*."
+MSGTYPE=show "You *: *eLBereTH*."
+MSGTYPE=show "You *: *eLBereTh*."
+MSGTYPE=show "You *: *eLBeretH*."
+MSGTYPE=show "You *: *eLBereth*."
+MSGTYPE=show "You *: *eLbERETH*."
+MSGTYPE=show "You *: *eLbERETh*."
+MSGTYPE=show "You *: *eLbEREtH*."
+MSGTYPE=show "You *: *eLbEREth*."
+MSGTYPE=show "You *: *eLbEReTH*."
+MSGTYPE=show "You *: *eLbEReTh*."
+MSGTYPE=show "You *: *eLbERetH*."
+MSGTYPE=show "You *: *eLbEReth*."
+MSGTYPE=show "You *: *eLbErETH*."
+MSGTYPE=show "You *: *eLbErETh*."
+MSGTYPE=show "You *: *eLbErEtH*."
+MSGTYPE=show "You *: *eLbErEth*."
+MSGTYPE=show "You *: *eLbEreTH*."
+MSGTYPE=show "You *: *eLbEreTh*."
+MSGTYPE=show "You *: *eLbEretH*."
+MSGTYPE=show "You *: *eLbEreth*."
+MSGTYPE=show "You *: *eLbeRETH*."
+MSGTYPE=show "You *: *eLbeRETh*."
+MSGTYPE=show "You *: *eLbeREtH*."
+MSGTYPE=show "You *: *eLbeREth*."
+MSGTYPE=show "You *: *eLbeReTH*."
+MSGTYPE=show "You *: *eLbeReTh*."
+MSGTYPE=show "You *: *eLbeRetH*."
+MSGTYPE=show "You *: *eLbeReth*."
+MSGTYPE=show "You *: *eLberETH*."
+MSGTYPE=show "You *: *eLberETh*."
+MSGTYPE=show "You *: *eLberEtH*."
+MSGTYPE=show "You *: *eLberEth*."
+MSGTYPE=show "You *: *eLbereTH*."
+MSGTYPE=show "You *: *eLbereTh*."
+MSGTYPE=show "You *: *eLberetH*."
+MSGTYPE=show "You *: *eLbereth*."
+MSGTYPE=show "You *: *elBERETH*."
+MSGTYPE=show "You *: *elBERETh*."
+MSGTYPE=show "You *: *elBEREtH*."
+MSGTYPE=show "You *: *elBEREth*."
+MSGTYPE=show "You *: *elBEReTH*."
+MSGTYPE=show "You *: *elBEReTh*."
+MSGTYPE=show "You *: *elBERetH*."
+MSGTYPE=show "You *: *elBEReth*."
+MSGTYPE=show "You *: *elBErETH*."
+MSGTYPE=show "You *: *elBErETh*."
+MSGTYPE=show "You *: *elBErEtH*."
+MSGTYPE=show "You *: *elBErEth*."
+MSGTYPE=show "You *: *elBEreTH*."
+MSGTYPE=show "You *: *elBEreTh*."
+MSGTYPE=show "You *: *elBEretH*."
+MSGTYPE=show "You *: *elBEreth*."
+MSGTYPE=show "You *: *elBeRETH*."
+MSGTYPE=show "You *: *elBeRETh*."
+MSGTYPE=show "You *: *elBeREtH*."
+MSGTYPE=show "You *: *elBeREth*."
+MSGTYPE=show "You *: *elBeReTH*."
+MSGTYPE=show "You *: *elBeReTh*."
+MSGTYPE=show "You *: *elBeRetH*."
+MSGTYPE=show "You *: *elBeReth*."
+MSGTYPE=show "You *: *elBerETH*."
+MSGTYPE=show "You *: *elBerETh*."
+MSGTYPE=show "You *: *elBerEtH*."
+MSGTYPE=show "You *: *elBerEth*."
+MSGTYPE=show "You *: *elBereTH*."
+MSGTYPE=show "You *: *elBereTh*."
+MSGTYPE=show "You *: *elBeretH*."
+MSGTYPE=show "You *: *elBereth*."
+MSGTYPE=show "You *: *elbERETH*."
+MSGTYPE=show "You *: *elbERETh*."
+MSGTYPE=show "You *: *elbEREtH*."
+MSGTYPE=show "You *: *elbEREth*."
+MSGTYPE=show "You *: *elbEReTH*."
+MSGTYPE=show "You *: *elbEReTh*."
+MSGTYPE=show "You *: *elbERetH*."
+MSGTYPE=show "You *: *elbEReth*."
+MSGTYPE=show "You *: *elbErETH*."
+MSGTYPE=show "You *: *elbErETh*."
+MSGTYPE=show "You *: *elbErEtH*."
+MSGTYPE=show "You *: *elbErEth*."
+MSGTYPE=show "You *: *elbEreTH*."
+MSGTYPE=show "You *: *elbEreTh*."
+MSGTYPE=show "You *: *elbEretH*."
+MSGTYPE=show "You *: *elbEreth*."
+MSGTYPE=show "You *: *elbeRETH*."
+MSGTYPE=show "You *: *elbeRETh*."
+MSGTYPE=show "You *: *elbeREtH*."
+MSGTYPE=show "You *: *elbeREth*."
+MSGTYPE=show "You *: *elbeReTH*."
+MSGTYPE=show "You *: *elbeReTh*."
+MSGTYPE=show "You *: *elbeRetH*."
+MSGTYPE=show "You *: *elbeReth*."
+MSGTYPE=show "You *: *elberETH*."
+MSGTYPE=show "You *: *elberETh*."
+MSGTYPE=show "You *: *elberEtH*."
+MSGTYPE=show "You *: *elberEth*."
+MSGTYPE=show "You *: *elbereTH*."
+MSGTYPE=show "You *: *elbereTh*."
+MSGTYPE=show "You *: *elberetH*."
+MSGTYPE=show "You *: *elbereth*."
+#should be MSGTYPE=normal, but MSGTYPE=norep is closest.
+#These messages can be damaged, so don't rely on them appearing.
+MSGTYPE=norep "You *: ad aerarium"
+MSGTYPE=norep "You *: Closed for inventory"
+MSGTYPE=norep "You *: Vlad was here"
+
+#stash and containers
+# caution when typing fast -- the suppressed message may catch the keystroke intended for the actual loot menu
+MSGTYPE=hide "You put * into the * named *MI*."
+MSGTYPE=hide "You cannot stash something you are wearing.
+MSGTYPE=hide "You carefully open the * named *MI*."
+
+# pickup / drop /floor /shop items
+MSGTYPE=norep "You see here a *"
+MSGTYPE=norep "You see here an *"
+MSGTYPE=hide "You drop *."
+MSGTYPE=norep "You drop *<."
+MSGTYPE=norep "You drop *MI*."
+MSGTYPE=hide "?For you, good *; only * for this *.?"
+MSGTYPE=hide "Fine goods for sale:"
+MSGTYPE=hide "?Thank you for shopping in *!?"
+MSGTYPE=norep "You have a little trouble lifting *." 
+MSGTYPE=hide "Your credit is reduced by * zorkmid*."
+MSGTYPE=hide "The * will cost you * zorkmids."
+MSGTYPE=hide "?For you, *; only * for this *.?"
+MSGTYPE=hide "?For you, *; only * per *.?"
+MSGTYPE=norep "?For you, *; only * for this * named *MI*.?"
+MSGTYPE=norep "?For you, *; only * per * named *MI*.?"
+MSGTYPE=norep "The * named *MI* will cost you * zorkmids."
+MSGTYPE=hide "You put a +0 * into the bag * holding named */dev/null*."
+MSGTYPE=hide "You put an +0 * into the bag * holding named */dev/null*."
+
+#pets picking stuff up. By convention, tame monsters have a | in their name.
+MSGTYPE=hide "*|* picks up *."
+MSGTYPE=show "*|* picks up * gold piece*."
+MSGTYPE=hide "*|s* picks up * gold piece*."
+MSGTYPE=show "*|* picks up * named *<."
+MSGTYPE=show "*|* picks up * named *MI*."
+MSGTYPE=hide "*|* drops *."
+MSGTYPE=show "*|* drops * gold piece*."
+MSGTYPE=hide "*|s* drops * gold piece*."
+MSGTYPE=show "*|* drops * named *<."
+MSGTYPE=show "*|* drops * named *MI*."
+
+#human battle spam.
+#I know I'm magic resistant.
+MSGTYPE=hide "The magic missile bounces'"
+MSGTYPE=hide "The magic missile hits you*"
+#reflection. Don't hide from the start: use-testing
+# MSGTYPE=hide "But it reflects from your medallion!"
+# Rust monsters are a particular annoyance.
+MSGTYPE=hide "Your * is not affected."
+MSGTYPE=hide "The rust monster misses."
+MSGTYPE=hide "The rust monster touches you!"
+
+
+# pet care
+MSGTYPE=hide "*|ss* moves only reluctantly."
+MSGTYPE=hide "It moves only reluctantly."
+MSGTYPE=hide "*20|s* eats *." #maximally tame
+#unfortunately, this also kills the warning message for remote hostile mind flayers.
+MSGTYPE=norep "You sense a faint wave of psychic energy." #hostile
+#MSGTYPE=hide "You sense a faint wave of psychic energy." #pet
+MSGTYPE=hide "*|* concentrates."
+MSGTYPE=hide "A wave of psychic energy pours over you!"
+MSGTYPE=hide "It feels quite soothing."
+MSGTYPE=show "It locks on to your *telepathy!" # hostile
+MSGTYPE=hide "*|s* casts a spell!"
+MSGTYPE=norep "*|s* looks better." #spellcasting pet
+MSGTYPE=hide "*|s* turns to flee!" #tooled horn
+
+
+# pet battle spam.
+# convention: pets have | in their name. If it's even |s, lots of spam gets suppressed, |ss even more drastically.
+
+MSGTYPE=hide "*|ss* is caught in the * explosion!"
+MSGTYPE=hide "* misses *|s*."
+MSGTYPE=hide "*|s* misses *."
+MSGTYPE=hide "*|s* hits *."
+MSGTYPE=hide "*|s* bites*."
+MSGTYPE=hide "*|s* thrusts *."
+MSGTYPE=hide "*|s* swings *."
+MSGTYPE=hide "*|s* butts *."
+MSGTYPE=hide "*|s* touches *."
+MSGTYPE=hide "*|s* squeezes *."
+MSGTYPE=hide "*|s* kicks *."
+MSGTYPE=hide "*|s* tentacles suck *."
+MSGTYPE=hide "*|s* swallows *."
+MSGTYPE=hide "*'s brain is eaten!"
+MSGTYPE=hide "*s' brain is eaten!" #manes etc
+MSGTYPE=hide "The * is jolted with electricity!" #energy vortex. Versus cockatrices.
+MSGTYPE=hide "The * is regurgitated!"
+MSGTYPE=hide "The * gets zapped!"
+MSGTYPE=hide "*|* is mildly warmed?"
+
+
+# pet mind flayer is attacking
+MSGTYPE=hide "The *'s last thought fades away..."
+MSGTYPE=hide "The *s' last thought fades away..."
+MSGTYPE=hide "The * doesn't notice."
+MSGTYPE=hide "* doesn't seem harmed."
+MSGTYPE=hide "The *'s helmet blocks *|s*'s attack to his head."
+MSGTYPE=hide "The *'s helmet blocks *|s*'s attack to her head."
+#MSGTYPE=show "The *|* doesn't notice."
+#MSGTYPE=show "*|*'s brain is eaten!"
+#MSGTYPE=show "*|* doesn't seem harmed."
+
+# pets attacking pets, due to conflict, hunger, or confusion
+MSGTYPE=show "*|s* hits *|*."
+MSGTYPE=show "*|s* bites*|*."
+MSGTYPE=show "*|s* thrusts *|*."
+MSGTYPE=show "*|s* swings *|*."
+MSGTYPE=show "*|s* butts *|*."
+MSGTYPE=show "*|s* touches *|*."
+MSGTYPE=show "*|s* squeezes *|*."
+MSGTYPE=show "*|s* kicks *|*."
+MSGTYPE=show "*|s* tentacles suck *|*."
+MSGTYPE=show "*|s* swallows *|*."
+
+#Kill typeahead. The vibsquare is bad enough without missing it.
+MSGTYPE=stop "You feel a strange vibration under your *."
+MSGTYPE=stop "You feel a strange vibration beneath you."
