@@ -59,23 +59,34 @@ OPTIONS=disclose: +i +a #v +g +c +o
 OPTIONS=paranoid_confirmation:all
 
 #--------------------
-#|      Display     |
+#|      Curses      |
 #--------------------
+OPTIONS=windowtype:curses               # Use for v3.7.n
+OPTIONS=IBMgraphics                     # Use for v3.7.n
+# OPTIONS=symset:curses                 # Use for v3.6.n
+# OPTIONS=symset:IBMgraphics            # Use for v3.6.n
+OPTIONS=roguesymset:RogueIBM            # Test. Might be v3.6 option
+OPTIONS=guicolor	Adds color option to menu headers, window borders, message text, etc.
+#  OPTIONS=windowcolors:menu white/black message green/yellow status white/blue text #ffffff/#000000  # shows using hex
+OPTIONS=windowcolors:menu red/black message green/yellow status red/blue text white/black    # Maybe not implimented
+# OPTIONS=align_message:bottom          # Bottom is default
+# OPTIONS=align_status:right            # This is optional with perm_invent off
+OPTIONS=popup_dialog                    # If this is not set, the message window will be used.
+OPTIONS=windowborders:2                 # Use borders only if they will fit.
+# OPTIONS=term_cols:110                 # Can be used to force size.
+# OPTIONS=term_rows:32                  # Find size by sizing your term window and setting size in term options.
+OPTIONS=splash_screen                   # This should be default but needs testing
+OPTIONS=petattr:i                       # How to add color?
+OPTIONS=perm_invent                     # Inventory always on
+#OPTIONS=mouse_support                  # Allows dangerous mouse movement.  Maybe use shift tab to select active window.
+OPTIONS=classic_status                  # 2-line or 3-line status bar. On NetHack 3.x should default TRUE. Might be ignored in NetHack 3.6.x.
+
+
+#OPTIONS=DECgraphics     # Has trouble with walls looking like floors. Maybe able to fix later.
 #OPTIONS=ascii_map     # Maybe not ideal for testing as it forces some objects to appear ascii only
-OPTIONS=IBMgraphics
-#OPTIONS=DECgraphics
-OPTIONS=windowcolors:menu white/black message green/yellow status white/blue text #ffffff/#000000
-OPTIONS=windowborders:2
-OPTIONS=windowtype:curses
 OPTIONS=dark_room
 OPTIONS=menu_objsyms     # Uses obj symbols in menus
-OPTIONS=roguesymset:RogueIBM
-
-OPTIONS=perm_invent     # Inventory always on
-#OPTIONS=splash_screen     # Test this should be default: on
-OPTIONS=petattr:ui
-#OPTIONS=guicolor     # Testing for deletion. Cant find. TTY only.
-OPTIONS=msghistory:90     # Testing 60 max but who will count to check?
+OPTIONS=msghistory:90     # Testing 60 max
 
 #----------------
 #| Statuscolors |
