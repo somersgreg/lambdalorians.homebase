@@ -13,33 +13,38 @@ OPTIONS=bones
 #OPTIONS=catname: 
 #OPTIONS=dogname: 
 #OPTIONS=horsename: 
-OPTIONS=safe_pet     # In addition to 'paranoid_confimation: attack' which applies to peaceful. Test.
-OPTIONS=hilite_pet     # Used in non-curses display. Is set by pet_attr in addition to more options. Test.
-
-#OPTIONS=role:Valkyrie,race:Human,align:lawful     # For good chances.
-# Use Dwarf for mostly peaceful mines. Human for more XP and death drops in mines.
-# I suggest reaching XP Lv 5 before trying mines.  
-# Vals can #dip for Excaliber but risk nymphs and drowning pet so prepare.  Lock pet out!
-# Dipping also rusts weapon which decreases damage so have many fountain locations known and close before attempting.
-# Don't attempt to #dip in towns!
+OPTIONS=safe_pet
+                      # In addition to 'paranoid_confimation: attack' which applies to peaceful. Test.
+OPTIONS=hilite_pet
+                      # Used in non-curses display. Is set by pet_attr in addition to more options. Test.
+#OPTIONS=role:Valkyrie,race:Human,align:lawful     
+                      # For good chances.
+                      # Use Dwarf for mostly peaceful mines. Human for more XP and death drops in mines.
+                      # I suggest reaching XP Lv 5 before trying mines.  
+                      # Vals can #dip for Excaliber but risk nymphs and drowning pet so prepare.  Lock pet out!
+                      # Dipping also rusts weapon which decreases damage so have many fountain locations known and close before attempting.
+                      # Don't attempt to #dip in towns!
 
 #-----------------------
 #|      Controls       |
 #-----------------------
 
-OPTIONS=!number_pad      # Numpad off becuase I dont know how to fast move with it.
-OPTIONS=altmeta=true     # Adds some extended commands to alt+keys for speed.
-OPTIONS=pushweapon       # Readies item in one hand when Wielding a new thing.
-OPTIONS=autoopen         # Probably default.  Opens doors by walking into them. 
+OPTIONS=!number_pad
+                      # Numpad off becuase I dont know how to fast move with it.
+OPTIONS=altmeta=true     
+                      # Adds some extended commands to alt+keys for speed.
+OPTIONS=pushweapon
+                      # Readies item in one hand when Wielding a new thing.
+OPTIONS=autoopen
+                      # Probably default.  Opens doors by walking into them. 
 
-OPTIONS=hilite_pile      # Multi item piles get lit. Also works with stairs + one item?
-# Use #terrain command to see hidden stairs, altars, etc. under piles.
+OPTIONS=hilite_pile
+                      # Multi item piles get lit. Also works with stairs + one item?
+                      # Use #terrain command to see hidden stairs, altars, etc. under piles.
 OPTIONS=sortloot:none
 OPTIONS=packorder:$"[)(?/!=%+*`0_
-
 OPTIONS=sparkle           
 OPTIONS=dark_room
-
 SYMBOLS=S_ghost:X
 SYMBOLS=S_golem:7
 OPTIONS=boulder:0
@@ -55,32 +60,52 @@ OPTIONS=paranoid_confirmation:all
 #--------------------
 #|      Curses      |
 #--------------------
-OPTIONS=windowtype:curses               # Use for v3.7.n
-OPTIONS=IBMgraphics                     # Use for v3.7.n
-# OPTIONS=symset:curses                 # Use for v3.6.n
-# OPTIONS=symset:IBMgraphics            # Use for v3.6.n
-OPTIONS=roguesymset:RogueIBM            # Test. Might be v3.6 option
+OPTIONS=windowtype:curses
+                      # Use for v3.7.n
+OPTIONS=IBMgraphics
+                      # Use for v3.7.n
+# OPTIONS=symset:curses
+                      # Use for v3.6.n
+# OPTIONS=symset:IBMgraphics
+                      # Use for v3.6.n
+OPTIONS=roguesymset:RogueIBM
+                      # Test. Might be v3.6 option
 OPTIONS=guicolor	Adds color option to menu headers, window borders, message text, etc.
-#  OPTIONS=windowcolors:menu white/black message green/yellow status white/blue text #ffffff/#000000  # shows using hex
-OPTIONS=windowcolors:menu red/black message green/yellow status red/blue text white/black    # Maybe not implimented
-# OPTIONS=align_message:bottom          # Bottom is default
-# OPTIONS=align_status:right            # This is optional with perm_invent off
-OPTIONS=popup_dialog                    # If this is not set, the message window will be used.
-OPTIONS=windowborders:2                 # Use borders only if they will fit.
-# OPTIONS=term_cols:110                 # Can be used to force size.
-# OPTIONS=term_rows:32                  # Find size by sizing your term window and setting size in term options.
-OPTIONS=splash_screen                   # This should be default but needs testing
-OPTIONS=petattr:i                       # How to add color?  Used in curses instead of hilite_pet
-OPTIONS=perm_invent                     # Inventory always on
-#OPTIONS=mouse_support                  # Allows dangerous mouse movement.  Maybe use shift tab to select active window.
-OPTIONS=classic_status                  # 2-line or 3-line status bar. On NetHack 3.x should default TRUE. Might be ignored in NetHack 3.6.x.
+# OPTIONS=windowcolors:menu white/black message green/yellow status white/blue text #ffffff/#000000  # shows using hex
+OPTIONS=windowcolors:menu red/black message green/yellow status red/blue text white/black
+                      # Maybe not implimented
+# OPTIONS=align_message:bottom
+                      # Bottom is default
+# OPTIONS=align_status:right
+                      # This is optional with perm_invent off
+OPTIONS=popup_dialog
+                      # If this is not set, the message window will be used.
+OPTIONS=windowborders:2
+                      # Use borders only if they will fit.
+# OPTIONS=term_cols:110
+                      # Can be used to force size.
+# OPTIONS=term_rows:32
+                      # Find size by sizing your term window and setting size in term options.
+OPTIONS=splash_screen
+                      # This should be default but needs testing
+OPTIONS=petattr:i
+                      # How to add color?  Used in curses instead of hilite_pet
+OPTIONS=perm_invent
+                      # Inventory always on
+#OPTIONS=mouse_support
+                      # Allows dangerous mouse movement.  Maybe use shift tab to select active window.
+OPTIONS=classic_status
+                      # 2-line or 3-line status bar. On NetHack 3.x should default TRUE. Might be ignored in NetHack 3.6.x.
 
-
-#OPTIONS=DECgraphics     # Has trouble with walls looking like floors. Fix later.
-#OPTIONS=ascii_map     # Maybe not ideal for testing as it forces some objects to appear ascii only
+#OPTIONS=DECgraphics
+                      # Has trouble with walls looking like floors. Fix later.
+#OPTIONS=ascii_map
+                      # Maybe not ideal for testing as it forces some objects to appear ascii only
 OPTIONS=dark_room
-OPTIONS=menu_objsyms     # Uses obj symbols in menus
-OPTIONS=msghistory:90     # Testing 60 max
+OPTIONS=menu_objsyms
+                      # Uses obj symbols in menus
+OPTIONS=msghistory:90
+                      # Testing 60 max
 
 #----------------
 #| Statuscolors |
@@ -91,19 +116,26 @@ OPTIONS=msghistory:90     # Testing 60 max
 OPTIONS=hitpointbar
 OPTIONS=align_status:top
 OPTIONS=showexp,time
-OPTIONS=showscore     # This isnt appearing.  May not be in version?  Change in-game options.
-OPTIONS=statushilites:20     # Time change in stat colors persist.
-OPTION=hilite_status: hitpoints-max/lightmagenta     # Removed &normal from all
+OPTIONS=showscore
+                      # This isnt appearing.  May not be in version?  Change in-game options.
+OPTIONS=statushilites:20
+                      # Time change in stat colors persist.
+OPTION=hilite_status: hitpoints-max/lightmagenta
+                      # Removed &normal from all
 OPTION=hilite_status: hitpoints/100%/lightgreen
 OPTION=hilite_status: hitpoints/<100%/lightcyan
-OPTION=hilite_status: hitpoints/<76%/lightyellow     # I dont like 'yellow'
+OPTION=hilite_status: hitpoints/<76%/lightyellow
+                      # colors could be better for this?
 OPTION=hilite_status: hitpoints/<51%/orange
 OPTION=hilite_status: hitpoints/<26%/red
-OPTION=hilite_status: hitpoints/<11%/red&blink     # This is working in 3.7
-OPTION=hilite_status: power-max/lightmagenta&normal     # Testing to see when this appears
+OPTION=hilite_status: hitpoints/<11%/red&blink
+                      # This is working in 3.7
+OPTION=hilite_status: power-max/lightmagenta&normal 
+                      # Testing to see when this appears
 OPTION=hilite_status: power/100%/lightgreen&normal
 OPTION=hilite_status: power/<100%/lightgreen&normal
-OPTION=hilite_status: power/<76%/yellow&normal     # Leaving plain yellow to test difference
+OPTION=hilite_status: power/<76%/yellow&normal
+                      # Leaving plain yellow to test difference
 OPTION=hilite_status: power/<51%/orange&normal
 OPTION=hilite_status: power/<26%/red&normal
 OPTION=hilite_status: power/<11%/red&blink
@@ -168,7 +200,8 @@ MENUCOLOR=" punc "=white
 
 # water
 MENUCOLOR=" holy water"=cyan&bold
-MENUCOLOR=" blessed clear potion"=cyan&bold     # As these follow they will be darker blessed
+MENUCOLOR=" blessed clear potion"=cyan&bold
+                      # As these follow they will be darker blessed
 MENUCOLOR=" blessed potions? called water"=cyan&bold
 MENUCOLOR=" clear potions? named (holy|blessed|B)($| )"=cyan&bold
 MENUCOLOR=" potions? of water named (holy|blessed|B)($| )"=cyan&bold
@@ -369,8 +402,10 @@ OPTIONS=sortpack,travel,runmode:run,fixinv,disclose:+i+a+v+g+c
 OPTIONS=autopickup,pickup_types:$="/!?+
 OPTIONS=hilite_hidden_stairs
 OPTIONS=hilite_pet,safe_pet
-OPTIONS=msg_window:reversed       # Full screen, new first
-OPTIONS=menustyle:partial         # Immediately display a menu of all objects
+OPTIONS=msg_window:reversed
+                      # Full screen, new first
+OPTIONS=menustyle:partial
+                      # Immediately display a menu of all objects
 OPTIONS=hilite_obj_piles
 OPTIONS=pickup_burden:B
 OPTIONS=msghistory:60      
@@ -383,55 +418,64 @@ OPTIONS=lit_corridor
 OPTIONS=hitpointbar
 OPTIONS=!cmdassist
 OPTIONS=autoquiver
-OPTIONS=showscore               # Working?
-OPTIONS=!showrace               # PC represented by race letter not @
-OPTIONS=showbuc                 # Shows uncursed if known always
+OPTIONS=showscore
+                      # Working?
+OPTIONS=!showrace
+                      # PC represented by race letter not @
+OPTIONS=showbuc
+                      # Shows uncursed if known always
 OPTIONS=showexp
 OPTIONS=autodig
 OPTIONS=confirm
 OPTIONS=color
-OPTIONS=time                    # Not working?
-OPTIONS=mail                    # Allows recieving messages in game from viewers.
+OPTIONS=time
+                      # Not working?
+OPTIONS=mail
+                      # Allows recieving messages in game from viewers.
 
-OPTIONS=number_pad:0            # Have off because cant get numpad to run.
+OPTIONS=number_pad:0
+                      # Have off because cant get numpad to run.
 
-OPTIONS=perm_invent    	        # Needs curses. =->>TEST<<-=
+OPTIONS=perm_invent
+                      # Needs curses. =->>TEST<<-=
 OPTIONS=IBMgraphics
 #OPTIONS=UTF8graphics
 
 
 SYMBOL='opulent throne':0x265C
 SYMBOL='altar':0x2250
-OPTIONS=boulder:0                                 # Working
+OPTIONS=boulder:0
+                      # Working
 
-MONSTERCOLOR=floating eye:lightcyan&inverse        #  =->>TEST<<-=
+MONSTERCOLOR=floating eye:lightcyan&inverse
+                      #  =->>TEST<<-=
 MONSTERCOLOR=mind flayer:lightmagenta
 MONSTERCOLOR=master mind flayer:lightmagenta
 
 #  stth's @ with tweaks
-MONSTERCOLOR=human:white                           # - CLR_WHITE (HI_DOMESTIC)
-MONSTERCOLOR=wererat (human):black                 # ! CLR_BROWN
-MONSTERCOLOR=werejackal (human):black              # ! CLR_RED
-MONSTERCOLOR=werewolf (human):black                # ! CLR_ORANGE
-MONSTERCOLOR=elf:white                             # - CLR_WHITE (HI_DOMESTIC)
-MONSTERCOLOR=Woodland-elf:green                    # - CLR_GREEN
-MONSTERCOLOR=Green-elf:lightgreen                  # - CLR_BRIGHT_GREEN
-MONSTERCOLOR=Grey-elf:gray                         # - CLR_GRAY
-MONSTERCOLOR=elf-lord:lightblue                    # - CLR_BRIGHT_BLUE
-MONSTERCOLOR=Elvenking:magenta                     # - CLR_MAGENTA (HI_LORD)
-MONSTERCOLOR=doppelganger:lightcyan                # ! CLR_WHITE (HI_DOMESTIC)
-MONSTERCOLOR=nurse:white                           # - CLR_WHITE (HI_DOMESTIC)
-MONSTERCOLOR=shopkeeper:yellow                     # ! CLR_WHITE (HI_DOMESTIC)
-MONSTERCOLOR=guard:orange                          # ! CLR_BLUE
-MONSTERCOLOR=prisoner:orange                       # ! CLR_WHITE (HI_DOMESTIC)
-MONSTERCOLOR=aligned priest:white                  # ! CLR_WHITE
-MONSTERCOLOR=high priest:lightmagenta              # ! CLR_WHITE
-MONSTERCOLOR=soldier:gray                          # - CLR_GRAY
-MONSTERCOLOR=sergeant:red                          # - CLR_RED
-MONSTERCOLOR=lieutenant:green                      # - CLR_GREEN
-MONSTERCOLOR=captain:lightblue                     # ! CLR_BLUE
-MONSTERCOLOR=watchman:cyan                         # ! CLR_GRAY
-MONSTERCOLOR=watch captain:lightcyan               # ! CLR_GREEN
+MONSTERCOLOR=human:white
+MONSTERCOLOR=wererat (human):black
+MONSTERCOLOR=werejackal (human):black
+MONSTERCOLOR=werewolf (human):black
+MONSTERCOLOR=elf:white
+MONSTERCOLOR=Woodland-elf:green
+MONSTERCOLOR=Green-elf:lightgreen
+MONSTERCOLOR=Grey-elf:gray
+MONSTERCOLOR=elf-lord:lightblue
+MONSTERCOLOR=Elvenking:magenta
+MONSTERCOLOR=doppelganger:lightcyan
+MONSTERCOLOR=nurse:white
+MONSTERCOLOR=shopkeeper:yellow
+MONSTERCOLOR=guard:orange
+MONSTERCOLOR=prisoner:orange
+MONSTERCOLOR=aligned priest:white
+MONSTERCOLOR=high priest:lightmagenta
+MONSTERCOLOR=soldier:gray
+MONSTERCOLOR=sergeant:red
+MONSTERCOLOR=lieutenant:green
+MONSTERCOLOR=captain:lightblue
+MONSTERCOLOR=watchman:cyan
+MONSTERCOLOR=watch captain:lightcyan
 MONSTERCOLOR=minotaur:orange
 MONSTERCOLOR=wererat:black
 MONSTERCOLOR=werejackal:black
@@ -463,7 +507,8 @@ MENUCOLOR=" cursed .* worn"=red&inverse
 
 MENUCOLOR=" poisoned"=lightgreen
 
-MENUCOLOR=" hand"=lightmagenta&inverse    # This set to show weilding - Beware alt+x disarm cmd
+MENUCOLOR=" hand"=lightmagenta&inverse
+                      # This set to show weilding - Beware alt+x disarm cmd
 MENUCOLOR=" blessed .* hand"=cyan&inverse
 MENUCOLOR=" cursed .* hand"=red&inverse
 
