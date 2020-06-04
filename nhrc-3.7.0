@@ -9,37 +9,31 @@
 #|     Player     |
 #------------------
 OPTIONS=bones
-#OPTIONS=fruit:
-OPTIONS=safe_pet
-OPTIONS=hilite_pet
-#OPTIONS=catname:
-#OPTIONS=dogname:
-#OPTIONS=horsename:
+#OPTIONS=fruit: 
+#OPTIONS=catname: 
+#OPTIONS=dogname: 
+#OPTIONS=horsename: 
+OPTIONS=safe_pet     # In addition to 'paranoid_confimation: attack' which applies to peaceful. Test.
+OPTIONS=hilite_pet     # Used in non-curses display. Is set by pet_attr in addition to more options. Test.
 
-#OPTIONS=role:Healer,race:Human,gender:male
-#OPTIONS=role:Monk,gender:male,align:neutral
-#OPTIONS=role:Valkyrie,race:Human,align:lawful
-#OPTIONS=role:Rogue,race:Orc,gender:male,align:chaotic
-#OPTIONS=role:Knight,race:Human,gender:male,align:lawful
-#OPTIONS=role:Ranger,race:Elf,gender:female,align:chaotic
-#OPTIONS=role:Priest,race:Human,gender:male,align:neutral
-#OPTIONS=role:Wizard,race:Human,gender:male,align:neutral
-#OPTIONS=role:Samurai,race:Human,gender:male,align:lawful
-#OPTIONS=role:Caveman,race:Dwarf,gender:male,align:lawful
-#OPTIONS=role:Tourist,race:Human,gender:male,align:neutral
-#OPTIONS=role:Barbarian,race:Human,gender:male,align:chaotic
-#OPTIONS=role:Archeologist,race:Gnome,gender:male,align:neutral
+#OPTIONS=role:Valkyrie,race:Human,align:lawful     # For good chances.
+# Use Dwarf for mostly peaceful mines. Human for more XP and death drops in mines.
+# I suggest reaching XP Lv 5 before trying mines.  
+# Vals can #dip for Excaliber but risk nymphs and drowning pet so prepare.  Lock pet out!
+# Dipping also rusts weapon which decreases damage so have many fountain locations known and close before attempting.
+# Don't attempt to #dip in towns!
 
 #-----------------------
 #|      Controls       |
 #-----------------------
 
-OPTIONS=!number_pad
-OPTIONS=altmeta=true     #adds some extended commands to alt+keys
-OPTIONS=pushweapon
-OPTIONS=autoopen
+OPTIONS=!number_pad      # Numpad off becuase I dont know how to fast move with it.
+OPTIONS=altmeta=true     # Adds some extended commands to alt+keys for speed.
+OPTIONS=pushweapon       # Readies item in one hand when Wielding a new thing.
+OPTIONS=autoopen         # Probably default.  Opens doors by walking into them. 
 
-OPTIONS=hilite_pile 
+OPTIONS=hilite_pile      # Multi item piles get lit. Also works with stairs + one item?
+# Use #terrain command to see hidden stairs, altars, etc. under piles.
 OPTIONS=sortloot:none
 OPTIONS=packorder:$"[)(?/!=%+*`0_
 
@@ -76,13 +70,13 @@ OPTIONS=windowborders:2                 # Use borders only if they will fit.
 # OPTIONS=term_cols:110                 # Can be used to force size.
 # OPTIONS=term_rows:32                  # Find size by sizing your term window and setting size in term options.
 OPTIONS=splash_screen                   # This should be default but needs testing
-OPTIONS=petattr:i                       # How to add color?
+OPTIONS=petattr:i                       # How to add color?  Used in curses instead of hilite_pet
 OPTIONS=perm_invent                     # Inventory always on
 #OPTIONS=mouse_support                  # Allows dangerous mouse movement.  Maybe use shift tab to select active window.
 OPTIONS=classic_status                  # 2-line or 3-line status bar. On NetHack 3.x should default TRUE. Might be ignored in NetHack 3.6.x.
 
 
-#OPTIONS=DECgraphics     # Has trouble with walls looking like floors. Maybe able to fix later.
+#OPTIONS=DECgraphics     # Has trouble with walls looking like floors. Fix later.
 #OPTIONS=ascii_map     # Maybe not ideal for testing as it forces some objects to appear ascii only
 OPTIONS=dark_room
 OPTIONS=menu_objsyms     # Uses obj symbols in menus
