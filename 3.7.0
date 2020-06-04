@@ -1,5 +1,4 @@
-
-# junethack YOUR NAME HERE!
+# junethack Agrius
 #  _______               _____               
 #  ___    |______ __________(_)___  _________
 #  __  /| |_  __ `/_  ___/_  /_  / / /_  ___/
@@ -36,7 +35,7 @@ OPTIONS=hilite_pet
 #-----------------------
 
 OPTIONS=!number_pad
-OPTIONS=altmeta=true
+OPTIONS=altmeta=true     #adds some extended commands to alt+keys
 OPTIONS=pushweapon
 OPTIONS=autoopen
 
@@ -48,34 +47,35 @@ OPTIONS=sparkle
 OPTIONS=dark_room
 
 SYMBOLS=S_ghost:X
-SYMBOLS=golem:7
+SYMBOLS=S_golem:7
 OPTIONS=boulder:0
 
 #------------
 #| Messages |
 #------------
+OPTIONS=!cmdassist
 OPTIONS=msg_window:reversed
-OPTIONS=align_message:bottom
 OPTIONS=disclose: +i +a #v +g +c +o
-OPTIONS=paranoid_confirmation:quit attack pray wand
+OPTIONS=paranoid_confirmation:all
 
 #--------------------
 #|      Display     |
 #--------------------
-OPTIONS=ascii_map
-#OPTIONS=IBMgraphics
-OPTIONS=DECgraphics
+#OPTIONS=ascii_map     # Maybe not ideal for testing as it forces some objects to appear ascii only
+OPTIONS=IBMgraphics
+#OPTIONS=DECgraphics
+OPTIONS=windowcolors:menu white/black message green/yellow status white/blue text #ffffff/#000000
 OPTIONS=windowborders:2
 OPTIONS=windowtype:curses
 OPTIONS=dark_room
-OPTIONS=menu_objsyms
+OPTIONS=menu_objsyms     # Uses obj symbols in menus
 OPTIONS=roguesymset:RogueIBM
 
-OPTIONS=perm_invent
-OPTIONS=splash_screen
+OPTIONS=perm_invent     # Inventory always on
+#OPTIONS=splash_screen     # Test this should be default: on
 OPTIONS=petattr:ui
-OPTIONS=guicolor
-OPTIONS=msghistory:90
+#OPTIONS=guicolor     # Testing for deletion. Cant find. TTY only.
+OPTIONS=msghistory:90     # Testing 60 max but who will count to check?
 
 #----------------
 #| Statuscolors |
@@ -85,19 +85,20 @@ OPTIONS=msghistory:90
 #------------------------
 OPTIONS=hitpointbar
 OPTIONS=align_status:top
-OPTIONS=showexp,showscore,time
-OPTIONS=statushilites:20
-OPTION=hilite_status: hitpoints-max/cyan&normal
-OPTION=hilite_status: hitpoints/100%/cyan&normal
-OPTION=hilite_status: hitpoints/<100%/lightcyan&normal
-OPTION=hilite_status: hitpoints/<76%/yellow&normal
-OPTION=hilite_status: hitpoints/<51%/orange&normal
-OPTION=hilite_status: hitpoints/<26%/red&normal
-OPTION=hilite_status: hitpoints/<11%/red&blink
-OPTION=hilite_status: power-max/green&normal
-OPTION=hilite_status: power/100%/green&normal
+OPTIONS=showexp,time
+OPTIONS=showscore     # This isnt appearing.  May not be in version?  Change in-game options.
+OPTIONS=statushilites:20     # Time change in stat colors persist.
+OPTION=hilite_status: hitpoints-max/lightmagenta     # Removed &normal from all
+OPTION=hilite_status: hitpoints/100%/lightgreen
+OPTION=hilite_status: hitpoints/<100%/lightcyan
+OPTION=hilite_status: hitpoints/<76%/lightyellow     # I dont like 'yellow'
+OPTION=hilite_status: hitpoints/<51%/orange
+OPTION=hilite_status: hitpoints/<26%/red
+OPTION=hilite_status: hitpoints/<11%/red&blink     # This is working in 3.7
+OPTION=hilite_status: power-max/lightmagenta&normal     # Testing to see when this appears
+OPTION=hilite_status: power/100%/lightgreen&normal
 OPTION=hilite_status: power/<100%/lightgreen&normal
-OPTION=hilite_status: power/<76%/yellow&normal
+OPTION=hilite_status: power/<76%/yellow&normal     # Leaving plain yellow to test difference
 OPTION=hilite_status: power/<51%/orange&normal
 OPTION=hilite_status: power/<26%/red&normal
 OPTION=hilite_status: power/<11%/red&blink
@@ -129,9 +130,10 @@ OPTION=hilite_status: carrying-capacity/overloaded/red&blink
 ##########################
 OPTIONS=menucolors
 OPTIONS=color
+MENUCOLOR=" in hand "=lightmagenta&reversed
 #----------------
 #| Force Colors |
-#----------------
+#----------------         # I dont like this. maybe take colors from somewhere else.
 
 MENUCOLOR="\{R\}"=red
 MENUCOLOR="\{B\}"=blue
@@ -155,12 +157,13 @@ MENUCOLOR="\{c\}"=lightcyan
 MENUCOLOR=" !c"=white
 MENUCOLOR=" buc"=lightgreen
 MENUCOLOR=" cursed| C($| )"=red
-MENUCOLOR=" blessed| B($| )"=cyan
+MENUCOLOR=" blessed| B($| )"=lightcyan
 MENUCOLOR=" uncursed| UC?($| )"=white
+MENUCOLOR=" punc "=white
 
 # water
 MENUCOLOR=" holy water"=cyan&bold
-MENUCOLOR=" blessed clear potion"=cyan&bold
+MENUCOLOR=" blessed clear potion"=cyan&bold     # As these follow they will be darker blessed
 MENUCOLOR=" blessed potions? called water"=cyan&bold
 MENUCOLOR=" clear potions? named (holy|blessed|B)($| )"=cyan&bold
 MENUCOLOR=" potions? of water named (holy|blessed|B)($| )"=cyan&bold
