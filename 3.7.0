@@ -1,0 +1,345 @@
+
+# junethack YOUR NAME HERE!
+#  _______               _____               
+#  ___    |______ __________(_)___  _________
+#  __  /| |_  __ `/_  ___/_  /_  / / /_  ___/
+#  _  ___ |  /_/ /_  /   _  / / /_/ /_(__  ) 
+#  /_/  |_|\__, / /_/    /_/  \__,_/ /____/  
+#         /____/     v3.7                         
+#------------------
+#|     Player     |
+#------------------
+OPTIONS=bones
+#OPTIONS=fruit:
+OPTIONS=safe_pet
+OPTIONS=hilite_pet
+#OPTIONS=catname:
+#OPTIONS=dogname:
+#OPTIONS=horsename:
+
+#OPTIONS=role:Healer,race:Human,gender:male
+#OPTIONS=role:Monk,gender:male,align:neutral
+#OPTIONS=role:Valkyrie,race:Human,align:lawful
+#OPTIONS=role:Rogue,race:Orc,gender:male,align:chaotic
+#OPTIONS=role:Knight,race:Human,gender:male,align:lawful
+#OPTIONS=role:Ranger,race:Elf,gender:female,align:chaotic
+#OPTIONS=role:Priest,race:Human,gender:male,align:neutral
+#OPTIONS=role:Wizard,race:Human,gender:male,align:neutral
+#OPTIONS=role:Samurai,race:Human,gender:male,align:lawful
+#OPTIONS=role:Caveman,race:Dwarf,gender:male,align:lawful
+#OPTIONS=role:Tourist,race:Human,gender:male,align:neutral
+#OPTIONS=role:Barbarian,race:Human,gender:male,align:chaotic
+#OPTIONS=role:Archeologist,race:Gnome,gender:male,align:neutral
+
+#-----------------------
+#|      Controls       |
+#-----------------------
+
+OPTIONS=!number_pad
+OPTIONS=altmeta=true
+OPTIONS=pushweapon
+OPTIONS=autoopen
+
+OPTIONS=hilite_pile 
+OPTIONS=sortloot:none
+OPTIONS=packorder:$"[)(?/!=%+*`0_
+
+OPTIONS=sparkle           
+OPTIONS=dark_room
+
+SYMBOLS=S_ghost:X
+SYMBOLS=golem:7
+OPTIONS=boulder:0
+
+#------------
+#| Messages |
+#------------
+OPTIONS=msg_window:reversed
+OPTIONS=align_message:bottom
+OPTIONS=disclose: +i +a #v +g +c +o
+OPTIONS=paranoid_confirmation:quit attack pray wand
+
+#--------------------
+#|      Display     |
+#--------------------
+OPTIONS=ascii_map
+#OPTIONS=IBMgraphics
+OPTIONS=DECgraphics
+OPTIONS=windowborders:2
+OPTIONS=windowtype:curses
+OPTIONS=dark_room
+OPTIONS=menu_objsyms
+OPTIONS=roguesymset:RogueIBM
+
+OPTIONS=perm_invent
+OPTIONS=splash_screen
+OPTIONS=petattr:ui
+OPTIONS=guicolor
+OPTIONS=msghistory:90
+
+#----------------
+#| Statuscolors |
+#----------------
+#------------------------
+#|      Status Bar      |
+#------------------------
+OPTIONS=hitpointbar
+OPTIONS=align_status:top
+OPTIONS=showexp,showscore,time
+OPTIONS=statushilites:20
+OPTION=hilite_status: hitpoints-max/cyan&normal
+OPTION=hilite_status: hitpoints/100%/cyan&normal
+OPTION=hilite_status: hitpoints/<100%/lightcyan&normal
+OPTION=hilite_status: hitpoints/<76%/yellow&normal
+OPTION=hilite_status: hitpoints/<51%/orange&normal
+OPTION=hilite_status: hitpoints/<26%/red&normal
+OPTION=hilite_status: hitpoints/<11%/red&blink
+OPTION=hilite_status: power-max/green&normal
+OPTION=hilite_status: power/100%/green&normal
+OPTION=hilite_status: power/<100%/lightgreen&normal
+OPTION=hilite_status: power/<76%/yellow&normal
+OPTION=hilite_status: power/<51%/orange&normal
+OPTION=hilite_status: power/<26%/red&normal
+OPTION=hilite_status: power/<11%/red&blink
+OPTION=hilite_status: gold/always/yellow&normal
+OPTION=hilite_status: hunger/satiated/brown&normal
+OPTION=hilite_status: hunger/hungry/orange&normal
+OPTION=hilite_status: hunger/weak/red&normal
+OPTION=hilite_status: hunger/fainting/red&blink
+OPTION=hilite_status: hunger/fainted/red&blink
+OPTION=hilite_status: condition/conf/orange&normal
+OPTION=hilite_status: condition/stun/red&normal
+OPTION=hilite_status: condition/blind/black&normal
+OPTION=hilite_status: condition/deaf/cyan&normal
+OPTION=hilite_status: condition/foodpois/red&blink
+OPTION=hilite_status: condition/termill/red&blink
+OPTION=hilite_status: condition/slime/red&blink
+OPTION=hilite_status: condition/hallu/magenta&normal
+OPTION=hilite_status: condition/strngl/red&blink
+OPTION=hilite_status: condition/stone/red&blink
+OPTION=hilite_status: condition/movement/lightblue&normal
+OPTION=hilite_status: carrying-capacity/burdened/yellow&normal
+OPTION=hilite_status: carrying-capacity/stressed/orange&normal
+OPTION=hilite_status: carrying-capacity/strained/red&normal
+OPTION=hilite_status: carrying-capacity/overtaxed/red&normal
+OPTION=hilite_status: carrying-capacity/overloaded/red&blink
+
+##########################
+# Section 3: Menu Colors #
+##########################
+OPTIONS=menucolors
+OPTIONS=color
+#----------------
+#| Force Colors |
+#----------------
+
+MENUCOLOR="\{R\}"=red
+MENUCOLOR="\{B\}"=blue
+MENUCOLOR="\{C\}"=cyan
+MENUCOLOR="\{G\}"=green
+MENUCOLOR="\{Y\}"=yellow
+MENUCOLOR="\{[MP]\}"=magenta
+MENUCOLOR="\{O\}"=orange
+MENUCOLOR="\{W\}"=white
+MENUCOLOR="\{L\}"=black
+MENUCOLOR="\{y\}"=gray
+MENUCOLOR="\{g\}"=lightgreen
+MENUCOLOR="\{b\}"=lightblue
+MENUCOLOR="\{[mp]\}"=lightmagenta
+MENUCOLOR="\{c\}"=lightcyan
+
+#----------------
+#| B/U/C Status |
+#----------------
+
+MENUCOLOR=" !c"=white
+MENUCOLOR=" buc"=lightgreen
+MENUCOLOR=" cursed| C($| )"=red
+MENUCOLOR=" blessed| B($| )"=cyan
+MENUCOLOR=" uncursed| UC?($| )"=white
+
+# water
+MENUCOLOR=" holy water"=cyan&bold
+MENUCOLOR=" blessed clear potion"=cyan&bold
+MENUCOLOR=" blessed potions? called water"=cyan&bold
+MENUCOLOR=" clear potions? named (holy|blessed|B)($| )"=cyan&bold
+MENUCOLOR=" potions? of water named (holy|blessed|B)($| )"=cyan&bold
+MENUCOLOR=" potions? called water named (holy|blessed|B)($| )"=cyan&bold
+MENUCOLOR=" unholy water"=red&bold
+MENUCOLOR=" cursed clear potion"=red&bold
+MENUCOLOR=" cursed potions? called water"=red&bold
+MENUCOLOR=" potions? called water named (unholy|cursed|C)($| )"=red&bold
+
+#----------------------------------------------
+#| Fully enchanted items (or possibly at max) |
+#----------------------------------------------
+
+MENUCOLOR="\+4"=yellow
+MENUCOLOR="\+5"=yellow
+MENUCOLOR="\+6"=yellow
+MENUCOLOR="\+7"=yellow
+
+#-------------
+#| Artifacts |
+#-------------
+
+#lawful
+MENUCOLOR=" (Demonbane|Excalibur|Grayswandir|Snickersnee|Sunsword)"=green
+MENUCOLOR=" (Orb of Detection|Sceptre of Might|Magic Mirror of Merlin|Mitre of Holiness|Tsurugi of Muramasa)"=green
+
+#neutral
+MENUCOLOR=" (Cleaver|Giantslayer|Magicbane|Mjollnir|Vorpal Blade)"=green
+MENUCOLOR=" (Heart of Ahriman|Staff of Aesculapius|Eyes of the Overworld|Platinum Yendorian Express Card|Orb of Fate|Eye of the Aethiopica)"=green
+
+#chaotic
+MENUCOLOR=" (Grimtooth|Orcrist|Sting|Stormbringer)"=green
+MENUCOLOR=" (Longbow of Diana|Master Key of Thievery)"=green
+
+#unaligned
+MENUCOLOR=" (Dragonbane|Fire Brand|Frost Brand|Ogresmasher|Trollsbane|Werebane)"=green
+
+#invocation
+MENUCOLOR=" (Bell of Opening|silver bell|Candelabrum of Invocation|candelabrum|Book of the Dead|papyrus spellbook)"=orange
+
+#the whole reason you're playing this stupid game
+MENUCOLOR=" Amulet of Yendor named"=orange
+
+MENUCOLOR=" carrot"=orange
+
+#--------
+#| Gems |
+#--------
+#soft
+MENUCOLOR=" ([0-9]+|an?|gems? .*) (uncursed |cursed |blessed )?(dilithium|opal|garnet|jasper|agate|jet|obsidian|jade|citrine|chrysoberyl|amber|amethyst|fluorite|turquoise)(e?s)?( stones?| gems?| crystals?)?( named .*)?$"=brown
+# This is line 260
+#hard
+MENUCOLOR=" ([0-9]+|an?|gems?.*) (uncursed |cursed |blessed )?(diamond|rub(y|ies)|jacinth|sapphire|black opal|emerald|topaz|aquamarine)(e?s)?( stones?| gems?)?( named .*)?$"=brown&bold
+
+#unknown
+MENUCOLOR="gem called.*valuable"=brown
+#-------------------------
+#| Especially Good Stuff |
+#-------------------------
+MENUCOLOR="gold piece"=yellow
+MENUCOLOR=" bag .* holding"=magenta
+MENUCOLOR=" luck(stone)?($| )"=magenta
+MENUCOLOR=" wand .* tele(port(ation)?)?($| )"=magenta
+MENUCOLOR=" wand .* polymorph"=magenta
+MENUCOLOR=" wand .* death"=magenta
+MENUCOLOR=" gain level"=magenta
+#this doesn't color the #enhance unicorn horn
+MENUCOLOR=" unicorn horn[^[]*$"=magenta
+MENUCOLOR=" tinning kit"=magenta
+MENUCOLOR=" ring .* regen(eration)?($| )"=magenta
+MENUCOLOR=" ring .* conflict"=magenta
+MENUCOLOR=" ring .* (FA|free action)($| )"=magenta
+MENUCOLOR=" ring .* (TC|teleport control)($| )"=magenta
+MENUCOLOR=" ring .* lev(itation)?($| )"=magenta
+# Bugfix: 'scroll.*', not 'scroll .*': Otherwise the coloring disappears on stacks.
+MENUCOLOR=" scroll.* genocide($| )"=magenta
+MENUCOLOR=" scroll.* charging($| )"=magenta
+MENUCOLOR=" scroll.* identify($| )"=magenta
+MENUCOLOR=" c(o|hi)ckatrice (corpse|egg)"=magenta
+MENUCOLOR=" egg.* cockatrice"=magenta
+MENUCOLOR=" stethoscope"=magenta
+MENUCOLOR="tooled horn|fire horn|frost horn|horn .* (tooled|fire|frost)"=magenta
+MENUCOLOR=" harp"=magenta
+MENUCOLOR=" bugle"=magenta
+MENUCOLOR=" flute"=magenta
+MENUCOLOR=" potion.* healing"=magenta
+MENUCOLOR=" amulet .* ref(lection)?($| )"=magenta
+# UNIDENTIFIED MAGIC ARMOR
+MENUCOLOR="piece of cloth|opera cloak|ornamental cope|tattered cape"=magenta
+MENUCOLOR="plumed helmet|etched helmet|crested helmet|visored helmet"=magenta
+MENUCOLOR="(old|padded|riding|fencing) gloves"=magenta 
+MENUCOLOR="(mud|buckled|riding|snow|hiking|combat|jungle) boots"=magenta 
+# ASCENSION KIT ARMOR
+MENUCOLOR=" dragon scale mail "=yellow
+MENUCOLOR=" cloak of magic resistance "=yellow
+MENUCOLOR=" MR "=yellow
+MENUCOLOR=" reflection "=yellow
+MENUCOLOR=" #asc"=yellow
+# REALLY AWESOME STUFF
+MENUCOLOR=" wand .* wish(ing)?($| )"=lightblue   
+MENUCOLOR=" magic marker"=lightblue                                
+MENUCOLOR=" magic lamp|lamp .* magic"=lightblue 
+# LIFE-SAVING STUFF
+MENUCOLOR=" full healing"=lightblue&bold
+MENUCOLOR=" amulet .* (life ?saving|LS)($| )"=lightblue&bold
+
+#------------------
+#| Basic Settings |
+#------------------
+OPTIONS=autopickup
+OPTIONS=pickup_burden:Unencumbered
+OPTIONS=pickup_types:$?/+"=!%
+#OPTIONS=pickup_thrown
+#-------------------------
+#| Automatically Pick Up |
+#-------------------------
+autopickup_exception="<.*silver bell.*"
+autopickup_exception="<.*candelabrum.*"
+autopickup_exception="<.*Candelabrum.*"
+autopickup_exception="<.*Amulet.*Yendor.*"
+autopickup_exception="<.*Bell of Opening.*"
+autopickup_exception="<.*Book of the Dead.*"
+autopickup_exception="<.*papyrus spellbook.*"
+#-----------------------
+#| Leave on the Ground |
+#-----------------------
+autopickup_exception=">.* corpse.*"
+# < Lichen and Lizard follows...
+autopickup_exception="<.* li.*"
+autopickup_exception=">.*bag.*"
+autopickup_exception=">.*rock.*"
+autopickup_exception=">.*glass.*"
+autopickup_exception=">.*worthless.*"
+autopickup_exception=">.*loadstone.*"
+autopickup_exception=">.*gray stone.*"
+autopickup_exception=">.* named.* out.*"
+autopickup_exception=">.* named.* junk.*"
+autopickup_exception=">.* named.* empty.*"
+autopickup_exception=">.*heavy iron ball.*"
+autopickup_exception=">.*wand.*cancellation"
+autopickup_exception=">.* named.* worthless.*"
+# Avoid picking up known scrolls of scare monster.
+autopickup_exception=">.*scare monster.*"
+autopickup_exception=">.*called sm.*"
+#------------------
+#|    MESSAGES    |
+#------------------
+MSGTYPE=hide "You find a secret door"
+MSGTYPE=hide "You find a secret passage"
+# Delayed Instadeaths
+MSGTYPE=stop "The .* swings itself around you!"
+MSGTYPE=stop "The python grabs you!"
+MSGTYPE=stop "You don't feel very well."
+MSGTYPE=stop "You are turning a little green."
+MSGTYPE=stop "Your limbs are getting oozy."
+MSGTYPE=stop "Your skin begins to peel away."
+MSGTYPE=stop "You are turning into a green slime."
+MSGTYPE=stop "You are slowing down."
+MSGTYPE=stop "Your limbs are stiffening."
+MSGTYPE=stop "It constricts your throat!"
+MSGTYPE=stop "You find it hard to breathe."
+MSGTYPE=stop "You're gasping for air."
+MSGTYPE=stop "Your blood is having trouble reaching your brain."
+MSGTYPE=stop "You can no longer breathe."
+MSGTYPE=stop "You're turning blue."
+MSGTYPE=stop "Your consciousness is fading."
+MSGTYPE=stop "You feel deathly sick."
+MSGTYPE=stop "You feel much worse."
+MSGTYPE=stop "You feel even worse."
+MSGTYPE=stop "The .* throws a .*"  # Not sure this ones right
+# Things that aren't dangerous by themselves but could kill you if you don't notice.
+MSGTYPE=stop "You see here a.*cockatrice corpse."
+MSGTYPE=stop "You see here a.*chickatrice corpse."
+MSGTYPE=stop "You are beginning to feel weak."
+MSGTYPE=stop "You fail to cast the spell correctly."
+MSGTYPE=stop "Your wielded .* rots away."
+MSGTYPE=stop "You find a.*"
+MSGTYPE=stop "Closed for inventory"
+MSGTYPE=hide "Unknown command ' '."
+# Messages it's easy to miss.
+MSGTYPE=stop "You feel more confident in your.*skills."
+MSGTYPE=stop "You feel a strange vibration.*"
