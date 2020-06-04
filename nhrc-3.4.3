@@ -1,6 +1,6 @@
-# junethack YOUR NAME HERE
+# junethack YOUR NAME HERE!!
 #0   ________ 
-#0  /_  __/ /_  ___  v3.4.3
+#0  /_  __/ /_  ___    v3.4.3
 #0   / / / __ \/ _ \        
 #0  / / / / / /  __/          __        __      __           _   
 #0 /_/ / / /_/\___/____ ___  / /_  ____/ /___ _/ /___  _____(_)___ _____  _____
@@ -8,50 +8,47 @@
 #00  / /___/ /_/ / / / / / / /_/ / /_/ / /_/ / / /_/ / /  / / /_/ / / / (__  )
 #000/_____/\__,_/_/ /_/ /_/_.___/\__,_/\__,_/_/\____/_/  /_/\__,_/_/ /_/____/
 #000000000000000000000000000000000000000000000000000000000000000000000000000
-OPTIONS=symset:curses                 # Use for v3.6.n            TEST
-OPTIONS=symset:IBMgraphics            # Use for v3.6.n            TEST
-OPTIONS=cursesgraphics          #  =->>TEST<<-=
 
-OPTIONS=sortpack,travel,runmode:run,fixinv,disclose:+i+a+v+g+c
 OPTIONS=autopickup,pickup_types:$="/!?+
-OPTIONS=hilite_hidden_stairs
-OPTIONS=hilite_pet,safe_pet
-OPTIONS=msg_window:reversed       # Full screen, new first
-OPTIONS=menustyle:partial         # Immediately display a menu of all objects
-OPTIONS=hilite_obj_piles
-OPTIONS=pickup_burden:B
-OPTIONS=msghistory:60      
-OPTIONS=item_use_menu
-OPTIONS=sortloot:full
-OPTIONS=paranoid_quit
-OPTIONS=pickup_thrown
-OPTIONS=use_darkgray
-OPTIONS=lit_corridor
-OPTIONS=hitpointbar
-OPTIONS=!cmdassist
-OPTIONS=autoquiver
-OPTIONS=showscore               # Working?
-OPTIONS=!showrace               # PC represented by race letter not @
-OPTIONS=showbuc                 # Shows uncursed if known always
+OPTIONS=showrace
 OPTIONS=showexp
+OPTIONS=time
+OPTIONS=showscore
 OPTIONS=autodig
-OPTIONS=confirm
+OPTIONS=autoquiver
+OPTIONS=!sparkle
+OPTIONS=menustyle:partial
+OPTIONS=sortloot:full
+OPTIONS=hitpointbar
+OPTIONS=use_darkgray
+OPTIONS=item_use_menu
 OPTIONS=color
-OPTIONS=time                    # Not working?
-OPTIONS=mail                    # Allows recieving messages in game from viewers.
+OPTIONS=lit_corridor
+OPTIONS=hilite_obj_piles
+OPTIONS=hilite_hidden_stairs
+OPTIONS=rest_on_space
+OPTIONS=!cmdassist
+OPTIONS=confirm
+OPTIONS=msghistory:60
+OPTIONS=showbuc
+OPTIONS=msg_window:reversed
+OPTIONS=hilite_pet,safe_pet
+OPTIONS=pickup_thrown
+OPTIONS=mail
+OPTIONS=paranoid_quit
+OPTIONS=pickup_burden:B
+OPTIONS=sortpack,travel,runmode:run,fixinv,disclose:+i+a+v+g+c
+OPTIONS=number_pad:0
 
-OPTIONS=number_pad:0            # Have off because cant get numpad to run.
-
-OPTIONS=perm_invent    	        # Needs curses. =->>TEST<<-=
-OPTIONS=IBMgraphics
-#OPTIONS=UTF8graphics
-
+OPTIONS=windowtype:curses
+OPTIONS=perm_invent
+OPTIONS=DECgraphics
 
 SYMBOL='opulent throne':0x265C
 SYMBOL='altar':0x2250
-OPTIONS=boulder:0                                 # Working
+OPTIONS=boulder:0
 
-MONSTERCOLOR=floating eye:lightcyan&inverse        #  =->>TEST<<-=
+MONSTERCOLOR=floating eye:lightcyan
 MONSTERCOLOR=mind flayer:lightmagenta
 MONSTERCOLOR=master mind flayer:lightmagenta
 
@@ -110,7 +107,7 @@ MENUCOLOR=" cursed .* worn"=red&inverse
 
 MENUCOLOR=" poisoned"=lightgreen
 
-MENUCOLOR=" hand"=lightmagenta&inverse    # This set to show weilding - Beware alt+x disarm cmd
+MENUCOLOR=" hand"=magenta&inverse
 MENUCOLOR=" blessed .* hand"=cyan&inverse
 MENUCOLOR=" cursed .* hand"=red&inverse
 
@@ -134,6 +131,7 @@ MENUCOLOR="named op"=yellow
 
 MENUCOLOR="wishing"=lightcyan
 MENUCOLOR="unpaid"=white&underline
+
 
 
 # Spellcasting
@@ -176,7 +174,6 @@ STATUSCOLOR=blind:cyan
 
 # experiment (from Berry)
 DungeonColor= 0 7 7 7 7 7 7 7 7 7 7 7  3 3 3 3 3  6 2 7 7 7 13 13 3 3 7 6 11 6 6 4 14 1   5 5 5 5 6 7 4
-
 
 TRAPCOLORS= 6 6 7 3 6 1 7 14 4 9 0 0 2 2 5 13 13 7 15 12 11 10
 
@@ -225,3 +222,4 @@ autopickup_exception=">*spellbook of*"
 
 # arc and others with touchstones: pick up unknown gems only
 # autopickup_exception="<*gem*"
+
