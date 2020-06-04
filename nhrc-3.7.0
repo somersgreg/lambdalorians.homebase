@@ -62,7 +62,7 @@ OPTIONS=paranoid_confirmation:all
 #--------------------
 OPTIONS=windowtype:curses
                       # Use for v3.7.n
-OPTIONS=IBMgraphics
+# OPTIONS=IBMgraphics
                       # Use for v3.7.n
 # OPTIONS=symset:curses
                       # Use for v3.6.n
@@ -71,11 +71,11 @@ OPTIONS=IBMgraphics
 OPTIONS=roguesymset:RogueIBM
                       # Test. Might be v3.6 option
 OPTIONS=guicolor	Adds color option to menu headers, window borders, message text, etc.
-# OPTIONS=windowcolors:menu white/black message green/yellow status white/blue text #ffffff/#000000  # shows using hex
-OPTIONS=windowcolors:menu red/black message green/yellow status red/blue text white/black
+# OPTIONS=windowcolors:menu white/black message green/yellow status white/blue text #ffffff/#000000
+OPTIONS=windowcolors:menu red/blue message green/yellow status red/blue text white/black
                       # Maybe not implimented
-# OPTIONS=align_message:bottom
-                      # Bottom is default
+OPTIONS=align_message:bottom
+                      # Bottom is not default
 # OPTIONS=align_status:right
                       # This is optional with perm_invent off
 OPTIONS=popup_dialog
@@ -92,11 +92,11 @@ OPTIONS=petattr:i
                       # How to add color?  Used in curses instead of hilite_pet
 OPTIONS=perm_invent
                       # Inventory always on
-#OPTIONS=mouse_support
+# OPTIONS=mouse_support
                       # Allows dangerous mouse movement.  Maybe use shift tab to select active window.
-OPTIONS=classic_status
+# OPTIONS=classic_status
                       # 2-line or 3-line status bar. On NetHack 3.x should default TRUE. Might be ignored in NetHack 3.6.x.
-
+                      # Not working
 #OPTIONS=DECgraphics
                       # Has trouble with walls looking like floors. Fix later.
 #OPTIONS=ascii_map
@@ -167,36 +167,14 @@ OPTION=hilite_status: carrying-capacity/overloaded/red&blink
 ##########################
 OPTIONS=menucolors
 OPTIONS=color
-MENUCOLOR=" in hand "=lightmagenta&reversed
-#----------------
-#| Force Colors |
-#----------------         # I dont like this. maybe take colors from somewhere else.
-
-MENUCOLOR="\{R\}"=red
-MENUCOLOR="\{B\}"=blue
-MENUCOLOR="\{C\}"=cyan
-MENUCOLOR="\{G\}"=green
-MENUCOLOR="\{Y\}"=yellow
-MENUCOLOR="\{[MP]\}"=magenta
-MENUCOLOR="\{O\}"=orange
-MENUCOLOR="\{W\}"=white
-MENUCOLOR="\{L\}"=black
-MENUCOLOR="\{y\}"=gray
-MENUCOLOR="\{g\}"=lightgreen
-MENUCOLOR="\{b\}"=lightblue
-MENUCOLOR="\{[mp]\}"=lightmagenta
-MENUCOLOR="\{c\}"=lightcyan
-
+MENUCOLOR="*weapon*"=magenta
+                          # Not working at all
 #----------------
 #| B/U/C Status |
 #----------------
-
-MENUCOLOR=" !c"=white
-MENUCOLOR=" buc"=lightgreen
-MENUCOLOR=" cursed| C($| )"=red
-MENUCOLOR=" blessed| B($| )"=lightcyan
-MENUCOLOR=" uncursed| UC?($| )"=white
-MENUCOLOR=" punc "=white
+                                #TEST
+MENUCOLOR=" !c"=CLR_ORANGE
+MENUCOLOR=" p!c"=orange
 
 # water
 MENUCOLOR=" holy water"=cyan&bold
@@ -242,7 +220,6 @@ MENUCOLOR=" (Dragonbane|Fire Brand|Frost Brand|Ogresmasher|Trollsbane|Werebane)"
 #invocation
 MENUCOLOR=" (Bell of Opening|silver bell|Candelabrum of Invocation|candelabrum|Book of the Dead|papyrus spellbook)"=orange
 
-#the whole reason you're playing this stupid game
 MENUCOLOR=" Amulet of Yendor named"=orange
 
 MENUCOLOR=" carrot"=orange
@@ -379,8 +356,8 @@ MSGTYPE=stop "You are beginning to feel weak."
 MSGTYPE=stop "You fail to cast the spell correctly."
 MSGTYPE=stop "Your wielded .* rots away."
 MSGTYPE=stop "You find a.*"
-MSGTYPE=stop "Closed for inventory"
 MSGTYPE=hide "Unknown command ' '."
+MSGTYPE=stop "Closed for inventory"
 # Messages it's easy to miss.
 MSGTYPE=stop "You feel more confident in your.*skills."
 MSGTYPE=stop "You feel a strange vibration.*"
@@ -394,9 +371,12 @@ MSGTYPE=stop "You feel a strange vibration.*"
 #00  / /___/ /_/ / / / / / / /_/ / /_/ / /_/ / / /_/ / /  / / /_/ / / / (__  )
 #000/_____/\__,_/_/ /_/ /_/_.___/\__,_/\__,_/_/\____/_/  /_/\__,_/_/ /_/____/
 #000000000000000000000000000000000000000000000000000000000000000000000000000
-OPTIONS=symset:curses                 # Use for v3.6.n            TEST
-OPTIONS=symset:IBMgraphics            # Use for v3.6.n            TEST
-OPTIONS=cursesgraphics          #  =->>TEST<<-=
+OPTIONS=symset:curses                 
+             # Use for v3.6.n            TEST
+OPTIONS=symset:IBMgraphics
+             # Use for v3.6.n            TEST
+#OPTIONS=cursesgraphics
+             #  =->>TEST<<-=
 
 OPTIONS=sortpack,travel,runmode:run,fixinv,disclose:+i+a+v+g+c
 OPTIONS=autopickup,pickup_types:$="/!?+
@@ -578,7 +558,7 @@ DungeonColor= 0 7 7 7 7 7 7 7 7 7 7 7  3 3 3 3 3  6 2 7 7 7 13 13 3 3 7 6 11 6 6
 
 TRAPCOLORS= 6 6 7 3 6 1 7 14 4 9 0 0 2 2 5 13 13 7 15 12 11 10
 
-OPTIONS=effects:|-\\/*!)(0#@*/-\\||\\-/\\|/-X-/|\\
+#OPTIONS=effects:|-\\/*!)(0#@*/-\\||\\-/\\|/-X-/|\\
 
 # turns ghosts/shades to X for easier detection, strange objects \(mimics\) to m
 OPTIONS=monsters:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@X'&;:~m
@@ -623,4 +603,3 @@ autopickup_exception=">*spellbook of*"
 
 # arc and others with touchstones: pick up unknown gems only
 # autopickup_exception="<*gem*"
-
