@@ -8,6 +8,10 @@
 #00  / /___/ /_/ / / / / / / /_/ / /_/ / /_/ / / /_/ / /  / / /_/ / / / (__  )
 #000/_____/\__,_/_/ /_/ /_/_.___/\__,_/\__,_/_/\____/_/  /_/\__,_/_/ /_/____/
 #000000000000000000000000000000000000000000000000000000000000000000000000000
+OPTIONS=symset:curses                 # Use for v3.6.n            TEST
+OPTIONS=symset:IBMgraphics            # Use for v3.6.n            TEST
+OPTIONS=cursesgraphics          #  =->>TEST<<-=
+
 OPTIONS=sortpack,travel,runmode:run,fixinv,disclose:+i+a+v+g+c
 OPTIONS=autopickup,pickup_types:$="/!?+
 OPTIONS=hilite_hidden_stairs
@@ -38,9 +42,8 @@ OPTIONS=mail                    # Allows recieving messages in game from viewers
 
 OPTIONS=number_pad:0            # Have off because cant get numpad to run.
 
-OPTIONS=perm_invent    	        # Not working?
+OPTIONS=perm_invent    	        # Needs curses. =->>TEST<<-=
 OPTIONS=IBMgraphics
-OPTIONS=cursesgraphics
 #OPTIONS=UTF8graphics
 
 
@@ -48,7 +51,7 @@ SYMBOL='opulent throne':0x265C
 SYMBOL='altar':0x2250
 OPTIONS=boulder:0                                 # Working
 
-MONSTERCOLOR=floating eye:lightcyan
+MONSTERCOLOR=floating eye:lightcyan&inverse        #  =->>TEST<<-=
 MONSTERCOLOR=mind flayer:lightmagenta
 MONSTERCOLOR=master mind flayer:lightmagenta
 
@@ -131,7 +134,6 @@ MENUCOLOR="named op"=yellow
 
 MENUCOLOR="wishing"=lightcyan
 MENUCOLOR="unpaid"=white&underline
-
 
 
 # Spellcasting
