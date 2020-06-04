@@ -1,43 +1,44 @@
-# junethack Agrius
-# 3.4
-OPTIONS=autopickup,pickup_types:$="/!?+
-OPTIONS=showrace
-OPTIONS=showexp
-OPTIONS=time
-OPTIONS=autodig
-OPTIONS=autoquiver
-OPTIONS=!sparkle
-OPTIONS=menustyle:combination
-OPTIONS=sortloot:loot
-
-#options unlikely ever to change
-
-OPTIONS=use_darkgray
-OPTIONS=!item_use_menu
-OPTIONS=color
-OPTIONS=lit_corridor
-OPTIONS=hilite_obj_piles
-OPTIONS=hilite_hidden_stairs
-OPTIONS=rest_on_space
-OPTIONS=!cmdassist
-OPTIONS=confirm
-OPTIONS=msghistory:60
-OPTIONS=showbuc
-OPTIONS=msg_window:reversed
-OPTIONS=hilite_pet,safe_pet
-OPTIONS=pickup_thrown
-OPTIONS=mail
+# junethack YOUR NAME HERE
 
 OPTIONS=sortpack,travel,runmode:run,fixinv,disclose:+i+a+v+g+c
-OPTIONS=number_pad:0
-OPTIONS=suppress_alert:3.4.3
-OPTIONS=!cursesgraphics
-OPTIONS=UTF8graphics
-OPTIONS=showborn
+OPTIONS=autopickup,pickup_types:$="/!?+
+OPTIONS=hilite_hidden_stairs
+OPTIONS=hilite_pet,safe_pet
+OPTIONS=msg_window:reversed       # Full screen, new first
+OPTIONS=menustyle:partial         # Immediately display a menu of all objects
+OPTIONS=hilite_obj_piles
+OPTIONS=pickup_burden:B
+OPTIONS=msghistory:60      
+OPTIONS=item_use_menu
+OPTIONS=sortloot:full
 OPTIONS=paranoid_quit
+OPTIONS=pickup_thrown
+OPTIONS=use_darkgray
+OPTIONS=lit_corridor
+OPTIONS=hitpointbar
+OPTIONS=!cmdassist
+OPTIONS=autoquiver
+OPTIONS=showscore               # Working?
+OPTIONS=!showrace               # PC represented by race letter not @
+OPTIONS=showbuc                 # Shows uncursed if known always
+OPTIONS=showexp
+OPTIONS=autodig
+OPTIONS=confirm
+OPTIONS=color
+OPTIONS=time                    # Not working?
+OPTIONS=mail                    # Allows recieving messages in game from viewers.
+
+OPTIONS=number_pad:0            # Have off because cant get numpad to run.
+
+OPTIONS=perm_invent    	        # Not working?
+OPTIONS=IBMgraphics
+OPTIONS=cursesgraphics
+#OPTIONS=UTF8graphics
+
 
 SYMBOL='opulent throne':0x265C
 SYMBOL='altar':0x2250
+OPTIONS=boulder:0                                 # Working
 
 MONSTERCOLOR=floating eye:lightcyan
 MONSTERCOLOR=mind flayer:lightmagenta
@@ -76,8 +77,8 @@ MONSTERCOLOR=werewolf:black
 OPTIONS=menucolors
 
 MENUCOLOR=" blessed"=green
-MENUCOLOR=" uncursed"=cyan
-MENUCOLOR=" named nc"=cyan
+MENUCOLOR=" uncursed"=white
+MENUCOLOR=" named uc"=white
 MENUCOLOR=" cursed"=red
 MENUCOLOR=" named pc"=red
 
@@ -98,8 +99,8 @@ MENUCOLOR=" cursed .* worn"=red&inverse
 
 MENUCOLOR=" poisoned"=lightgreen
 
-MENUCOLOR=" hand"=cyan&inverse
-MENUCOLOR=" blessed .* hand"=green&inverse
+MENUCOLOR=" hand"=lightmagenta&inverse    # This set to show weilding - Beware alt+x disarm cmd
+MENUCOLOR=" blessed .* hand"=cyan&inverse
 MENUCOLOR=" cursed .* hand"=red&inverse
 
 MENUCOLOR=" blessed .* bag of holding"=green&underline
@@ -174,21 +175,21 @@ OPTIONS=effects:|-\\/*!)(0#@*/-\\||\\-/\\|/-X-/|\\
 # turns ghosts/shades to X for easier detection, strange objects \(mimics\) to m
 OPTIONS=monsters:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@X'&;:~m
 
-MSGTYPE=hide "You start digging*"
-MSGTYPE=hide "You continue digging*"
-MSGTYPE=hide "You make an opening in the*"
-MSGTYPE=hide "You hit the rock*"
-MSGTYPE=hide "*tastes terrible!"
+#MSGTYPE=hide "You start digging*"
+#MSGTYPE=hide "You continue digging*"
+#MSGTYPE=hide "You make an opening in the*"
+#MSGTYPE=hide "You hit the rock*"
+#MSGTYPE=hide "*tastes terrible!"
 
-MSGTYPE=hide "You add to the writing in the dust with your fingers*"
-MSGTYPE=hide "You write in the dust with your fingers*"
-MSGTYPE=hide "Something is engraved*"
+#MSGTYPE=hide "You add to the writing in the dust with your fingers*"
+#MSGTYPE=hide "You write in the dust with your fingers*"
+#MSGTYPE=hide "Something is engraved*"
 
-MSGTYPE=hide "With great effort*"
+#MSGTYPE=hide "With great effort*"
 
-MSGTYPE=hide "*draws the life from*"
-MSGTYPE=hide "*Lightning strikes*"
-MSGTYPE=hide "*with your gloved hands*"
+#MSGTYPE=hide "*draws the life from*"
+#MSGTYPE=hide "*Lightning strikes*"
+#MSGTYPE=hide "*with your gloved hands*"
 
 MSGTYPE=stop "You are slowing down*"
 MSGTYPE=stop "*feel weak*"
@@ -196,7 +197,7 @@ MSGTYPE=stop "*needs food*"
 MSGTYPE=stop "*interfering with*"
 MSGTYPE=stop "*faint from*"
 MSGTYPE=stop "*strange vibration under*"
-
+MSGTYPE=stop "*sign*"
 #autopickup exceptions
 
 autopickup_exception=">* poisoned*"
@@ -205,8 +206,8 @@ autopickup_exception="<*athame"
 #autopickup_exception="<*flint*"
 #autopickup_exception="<*dagger"
 #autopickup_exception="<*dart"
-autopickup_exception=">*named op"
-autopickup_exception="<*lichen corpse"
+autopickup_exception=">*corpse"
+autopickup_exception="< li*"
 autopickup_exception=">*scare"
 
 # don't pick up known spellbooks
