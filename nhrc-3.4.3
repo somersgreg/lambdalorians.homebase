@@ -134,7 +134,6 @@ MENUCOLOR="wishing"=lightcyan
 MENUCOLOR="unpaid"=white&underline
 
 
-
 # Spellcasting
 MENUCOLOR=" 0%"=white
 MENUCOLOR=" [1-9]%"=cyan
@@ -206,17 +205,52 @@ MSGTYPE=stop "*interfering with*"
 MSGTYPE=stop "*faint from*"
 MSGTYPE=stop "*strange vibration under*"
 MSGTYPE=stop "*sign*"
-#autopickup exceptions
 
-autopickup_exception=">* poisoned*"
+# Autopickup exceptions
+# Weapons
+autopickup_exception="<.*athame"
+autopickup_exception="<.*flint*"
+autopickup_exception="<.*dagger"
+AUTOPICKUP_EXCEPTION="<.*dart*"
+AUTOPICKUP_EXCEPTION="<.*arrow*"
+AUTOPICKUP_EXCEPTION="<.*bolt*"
+# Foods
+AUTOPICKUP_EXCEPTION=">.* corpse*"
+autopickup_exception="<.*lichen*"
+autopickup_exception="<.*lizard*"
+# Artifacts
+AUTOPICKUP_EXCEPTION="<.*Amulet of Yendor*"
+#AUTOPICKUP_EXCEPTION="<.*Candelabrum of Invocation*"
+#AUTOPICKUP_EXCEPTION="<.*candelabrum*"
+#AUTOPICKUP_EXCEPTION="<.*Bell of Opening*"
+#AUTOPICKUP_EXCEPTION="<.*silver bell*"
+AUTOPICKUP_EXCEPTION="<.*Book of the Dead*"
+AUTOPICKUP_EXCEPTION="<.*papyrus spellbook*"
+AUTOPICKUP_EXCEPTION="<.*magic*"
+AUTOPICKUP_EXCEPTION="<.*wishing*"
+AUTOPICKUP_EXCEPTION="<.*death*"
+AUTOPICKUP_EXCEPTION="<.*polymorph*"
+AUTOPICKUP_EXCEPTION="<.*dilithium crystal*"
+AUTOPICKUP_EXCEPTION="<.*diamond*"
+AUTOPICKUP_EXCEPTION="<.*ruby*"
+AUTOPICKUP_EXCEPTION="<.*jacinth*"
+AUTOPICKUP_EXCEPTION="<.*sapphire*"
+AUTOPICKUP_EXCEPTION="<.*black opal*"
+AUTOPICKUP_EXCEPTION="<.*emerald*"
+AUTOPICKUP_EXCEPTION="<.*detonation*"
+AUTOPICKUP_EXCEPTION="<.*thirsty*"
+AUTOPICKUP_EXCEPTION="<.*vorpal*"
+AUTOPICKUP_EXCEPTION="<.*worthless piece of*"
 
-autopickup_exception="<*athame"
-#autopickup_exception="<*flint*"
-#autopickup_exception="<*dagger"
-#autopickup_exception="<*dart"
-autopickup_exception=">*corpse"
-autopickup_exception="< li*"
-autopickup_exception=">*scare"
+## Don't pick these:
+AUTOPICKUP_EXCEPTION=">.*cheap plastic imitation*"
+#AUTOPICKUP_EXCEPTION=">.*worthless piece of*"
+AUTOPICKUP_EXCEPTION=">.* stone*"
+AUTOPICKUP_EXCEPTION=">.*loadstone*"
+AUTOPICKUP_EXCEPTION=">.*rock*"
+AUTOPICKUP_EXCEPTION=">.*chunk*"
+AUTOPICKUP_EXCEPTION=">.*meatball*"
+AUTOPICKUP_EXCEPTION=">.*scare*"
 
 # don't pick up known spellbooks
 autopickup_exception=">*spellbook of*"
