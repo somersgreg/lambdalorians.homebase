@@ -9,15 +9,25 @@
 #000/_____/\__,_/_/ /_/ /_/_.___/\__,_/\__,_/_/\____/_/  /_/\__,_/_/ /_/____/
 #000000000000000000000000000000000000000000000000000000000000000000000000000
 OPTIONS=autopickup,pickup_types:$="/!?+%
-#OPTIONS=align_message:bottom
-#OPTIONS=align_status:top
-OPTIONS=showrace
-OPTIONS=showexp
+OPTIONS=number_pad:0
+
+OPTIONS=align_message:bottom
+OPTIONS=align_status:top
+OPTIONS=windowtype:curses
+OPTIONS=symset:DECgraphics
+
+OPTIONS=popup_dialog
+# OPTIONS=perm_invent
+OPTIONS=clicklook
+OPTIONS=disclose: +i +a +v +g +c
+# OPTIONS=showrace
+#-<@   NOT WORKING   @>-#
+OPTIONS=menu_objsyms, showexp, showscore
+                          #None of these appear to work
 OPTIONS=time
-OPTIONS=showscore
+
 OPTIONS=autodig
 OPTIONS=autoquiver
-OPTIONS=!sparkle
 OPTIONS=menustyle:partial
 OPTIONS=sortloot:full
 OPTIONS=hitpointbar
@@ -32,18 +42,12 @@ OPTIONS=!cmdassist
 OPTIONS=confirm
 OPTIONS=msghistory:60
 OPTIONS=showbuc
-OPTIONS=msg_window:reversed
 OPTIONS=hilite_pet,safe_pet
 OPTIONS=pickup_thrown
 OPTIONS=mail
 OPTIONS=paranoid_quit
 OPTIONS=pickup_burden:B
-OPTIONS=sortpack,travel,runmode:run,fixinv,disclose:+i+a+v+g+c
-OPTIONS=number_pad:0
 
-OPTIONS=windowtype:curses
-OPTIONS=perm_invent
-OPTIONS=DECgraphics
 
 SYMBOL='opulent throne':0x265C
 SYMBOL='altar':0x2250
@@ -53,43 +57,13 @@ MONSTERCOLOR=floating eye:lightcyan
 MONSTERCOLOR=mind flayer:lightmagenta
 MONSTERCOLOR=master mind flayer:lightmagenta
 
-#  stth's @ with tweaks
-MONSTERCOLOR=human:white                           # - CLR_WHITE (HI_DOMESTIC)
-MONSTERCOLOR=wererat (human):black                 # ! CLR_BROWN
-MONSTERCOLOR=werejackal (human):black              # ! CLR_RED
-MONSTERCOLOR=werewolf (human):black                # ! CLR_ORANGE
-MONSTERCOLOR=elf:white                             # - CLR_WHITE (HI_DOMESTIC)
-MONSTERCOLOR=Woodland-elf:green                    # - CLR_GREEN
-MONSTERCOLOR=Green-elf:lightgreen                  # - CLR_BRIGHT_GREEN
-MONSTERCOLOR=Grey-elf:gray                         # - CLR_GRAY
-MONSTERCOLOR=elf-lord:lightblue                    # - CLR_BRIGHT_BLUE
-MONSTERCOLOR=Elvenking:magenta                     # - CLR_MAGENTA (HI_LORD)
-MONSTERCOLOR=doppelganger:lightcyan                # ! CLR_WHITE (HI_DOMESTIC)
-MONSTERCOLOR=nurse:white                           # - CLR_WHITE (HI_DOMESTIC)
-MONSTERCOLOR=shopkeeper:yellow                     # ! CLR_WHITE (HI_DOMESTIC)
-MONSTERCOLOR=guard:orange                          # ! CLR_BLUE
-MONSTERCOLOR=prisoner:orange                       # ! CLR_WHITE (HI_DOMESTIC)
-MONSTERCOLOR=aligned priest:white                  # ! CLR_WHITE
-MONSTERCOLOR=high priest:lightmagenta              # ! CLR_WHITE
-MONSTERCOLOR=soldier:gray                          # - CLR_GRAY
-MONSTERCOLOR=sergeant:red                          # - CLR_RED
-MONSTERCOLOR=lieutenant:green                      # - CLR_GREEN
-MONSTERCOLOR=captain:lightblue                     # ! CLR_BLUE
-MONSTERCOLOR=watchman:cyan                         # ! CLR_GRAY
-MONSTERCOLOR=watch captain:lightcyan               # ! CLR_GREEN
-MONSTERCOLOR=minotaur:orange
-MONSTERCOLOR=wererat:black
-MONSTERCOLOR=werejackal:black
-MONSTERCOLOR=werewolf:black
-
-
 OPTIONS=menucolors
 
 MENUCOLOR=" blessed"=green
 MENUCOLOR=" uncursed"=white
 MENUCOLOR=" named uc"=white
 MENUCOLOR=" cursed"=red
-MENUCOLOR=" named pc"=red
+MENUCOLOR=" named pc"=orange
 
 MENUCOLOR=" water"=lightblue
 MENUCOLOR=" called plain"=lightblue
@@ -182,22 +156,6 @@ OPTIONS=effects:|-\\/*!)(0#@*/-\\||\\-/\\|/-X-/|\\
 # turns ghosts/shades to X for easier detection, strange objects \(mimics\) to m
 OPTIONS=monsters:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@X'&;:~m
 
-#MSGTYPE=hide "You start digging*"
-#MSGTYPE=hide "You continue digging*"
-#MSGTYPE=hide "You make an opening in the*"
-#MSGTYPE=hide "You hit the rock*"
-#MSGTYPE=hide "*tastes terrible!"
-
-#MSGTYPE=hide "You add to the writing in the dust with your fingers*"
-#MSGTYPE=hide "You write in the dust with your fingers*"
-#MSGTYPE=hide "Something is engraved*"
-
-#MSGTYPE=hide "With great effort*"
-
-#MSGTYPE=hide "*draws the life from*"
-#MSGTYPE=hide "*Lightning strikes*"
-#MSGTYPE=hide "*with your gloved hands*"
-
 MSGTYPE=stop "You are slowing down*"
 MSGTYPE=stop "*feel weak*"
 MSGTYPE=stop "*needs food*"
@@ -215,28 +173,6 @@ AUTOPICKUP_EXCEPTION="<*arrow*"
 AUTOPICKUP_EXCEPTION="<*dart*"
 AUTOPICKUP_EXCEPTION="<*lichen*"
 AUTOPICKUP_EXCEPTION="<*lizard*"
-## Always pick these:
-AUTOPICKUP_EXCEPTION="<*Amulet of Yendor*"
-AUTOPICKUP_EXCEPTION="<*Candelabrum of Invocation*"
-AUTOPICKUP_EXCEPTION="<*candelabrum*"
-AUTOPICKUP_EXCEPTION="<*Bell of Opening*"
-AUTOPICKUP_EXCEPTION="<*silver bell*"
-AUTOPICKUP_EXCEPTION="<*Book of the Dead*"
-AUTOPICKUP_EXCEPTION="<*papyrus spellbook*"
-AUTOPICKUP_EXCEPTION="<*magic lamp*"
-AUTOPICKUP_EXCEPTION="<*wand of wishing*"
-AUTOPICKUP_EXCEPTION="<*wand of death*"
-AUTOPICKUP_EXCEPTION="<*wand of polymorph*"
-AUTOPICKUP_EXCEPTION="<*dilithium crystal*"
-AUTOPICKUP_EXCEPTION="<*diamond*"
-AUTOPICKUP_EXCEPTION="<*ruby*"
-AUTOPICKUP_EXCEPTION="<*jacinth*"
-AUTOPICKUP_EXCEPTION="<*sapphire*"
-AUTOPICKUP_EXCEPTION="<*black opal*"
-AUTOPICKUP_EXCEPTION="<*emerald*"
-AUTOPICKUP_EXCEPTION="<*detonation*"
-AUTOPICKUP_EXCEPTION="<*thirsty*"
-AUTOPICKUP_EXCEPTION="<*vorpal*"
 
 ## Don't pick these:
 AUTOPICKUP_EXCEPTION=">*cheap plastic imitation of the Amulet of Yendor*"
