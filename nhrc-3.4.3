@@ -8,17 +8,21 @@
 #00  / /___/ /_/ / / / / / / /_/ / /_/ / /_/ / / /_/ / /  / / /_/ / / / (__  )
 #000/_____/\__,_/_/ /_/ /_/_.___/\__,_/\__,_/_/\____/_/  /_/\__,_/_/ /_/____/
 #000000000000000000000000000000000000000000000000000000000000000000000000000
-OPTIONS=autopickup,pickup_types:$="/!?+%
+#-<@   CONTROLS   @>-#
 OPTIONS=number_pad:0
 
+#-<@   SCREEN   @>-#
 OPTIONS=term_cols:80
 OPTIONS=term_rows:24
-
 OPTIONS=align_message:top
 OPTIONS=align_status:bottom
 OPTIONS=windowtype:curses
 OPTIONS=symset:DECgraphics
 
+#-<@   INVENTORY   @>-#
+OPTIONS=autopickup
+OPTIONS=pickup_types:$"=/!?+*%(
+OPTIONS=pickup_burden:U
 # Autopickup exceptions
 AUTOPICKUP_EXCEPTION=">*corpse*"
 AUTOPICKUP_EXCEPTION="<lichen corpse" 
@@ -29,6 +33,15 @@ AUTOPICKUP_EXCEPTION="<wraith corpse"
 AUTOPICKUP_EXCEPTION="<*dagger*"
 AUTOPICKUP_EXCEPTION="<*arrow*"
 AUTOPICKUP_EXCEPTION="<*dart*"
+AUTOPICKUP_EXCEPTION=">.*rock.*"
+AUTOPICKUP_EXCEPTION=">.*chest.*"
+AUTOPICKUP_EXCEPTION=">.*box.*"
+AUTOPICKUP_EXCEPTION=">.*loadstone.*"
+AUTOPICKUP_EXCEPTION=">.*gray stone.*"
+AUTOPICKUP_EXCEPTION=">.*heavy iron ball.*"
+AUTOPICKUP_EXCEPTION=">.*scare.*"
+AUTOPICKUP_EXCEPTION="<.*gem*"
+AUTOPICKUP_EXCEPTION=">.*spellbook of*"
 
 OPTIONS=popup_dialog
 # OPTIONS=perm_invent
