@@ -19,6 +19,17 @@ OPTIONS=align_status:bottom
 OPTIONS=windowtype:curses
 OPTIONS=symset:DECgraphics
 
+# Autopickup exceptions
+AUTOPICKUP_EXCEPTION=">*corpse*"
+AUTOPICKUP_EXCEPTION="<lichen corpse" 
+AUTOPICKUP_EXCEPTION="<lizard corpse" 
+AUTOPICKUP_EXCEPTION="<newt corpse"
+AUTOPICKUP_EXCEPTION="<floating eye corpse"
+AUTOPICKUP_EXCEPTION="<wraith corpse"
+AUTOPICKUP_EXCEPTION="<*dagger*"
+AUTOPICKUP_EXCEPTION="<*arrow*"
+AUTOPICKUP_EXCEPTION="<*dart*"
+
 OPTIONS=popup_dialog
 # OPTIONS=perm_invent
 OPTIONS=clicklook
@@ -171,15 +182,7 @@ MSGTYPE=stop "*faint from*"
 MSGTYPE=stop "*strange vibration under*"
 MSGTYPE=stop "*sign*"
 
-# Autopickup exceptions
-AUTOPICKUP_EXCEPTION="<*lichen*"
-AUTOPICKUP_EXCEPTION="<*lizard*"
-AUTOPICKUP_EXCEPTION=">*corpse*"
-AUTOPICKUP_EXCEPTION="<*dagger*"
-AUTOPICKUP_EXCEPTION="<*arrow*"
-AUTOPICKUP_EXCEPTION="<*dart*"
-AUTOPICKUP_EXCEPTION="<*lichen*"
-AUTOPICKUP_EXCEPTION="<*lizard*"
+
 
 ## Don't pick these:
 AUTOPICKUP_EXCEPTION=">*cheap plastic imitation of the Amulet of Yendor*"
