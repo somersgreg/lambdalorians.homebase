@@ -18,17 +18,38 @@ OPTIONS=perm_invent
 OPTIONS=clicklook
 OPTIONS=disclose: +i +a #v +g +c +o
 
+#-<@   INVENTORY   @>-#
+OPTIONS=autopickup
+OPTIONS=pickup_types:$"=/!?+*
+OPTIONS=pickup_burden:U
+# Autopickup exceptions
+AUTOPICKUP_EXCEPTION=">*corpse*"
+AUTOPICKUP_EXCEPTION="<lichen corpse" 
+AUTOPICKUP_EXCEPTION="<lizard corpse" 
+AUTOPICKUP_EXCEPTION="<newt corpse"
+AUTOPICKUP_EXCEPTION="<floating eye corpse"
+AUTOPICKUP_EXCEPTION="<wraith corpse"
+AUTOPICKUP_EXCEPTION="<*dagger*"
+AUTOPICKUP_EXCEPTION="<*arrow*"
+AUTOPICKUP_EXCEPTION="<*dart*"
+AUTOPICKUP_EXCEPTION=">.*rock.*"
+AUTOPICKUP_EXCEPTION=">.*chest.*"
+AUTOPICKUP_EXCEPTION=">.*box.*"
+AUTOPICKUP_EXCEPTION=">.*loadstone.*"
+AUTOPICKUP_EXCEPTION=">.*gray stone.*"
+AUTOPICKUP_EXCEPTION=">.*heavy iron ball.*"
+AUTOPICKUP_EXCEPTION=">.*scare.*"
+AUTOPICKUP_EXCEPTION="<.*gem*"
+AUTOPICKUP_EXCEPTION=">.*spellbook of*"
+
 #-<@   NOT WORKING   @>-#
 
 OPTIONS=menu_objsyms, showexp, showscore
                           #None of these appear to work
 OPTIONS=symset:DECgraphics      
                           #Not for all terminals. Delete or #out line to revert to curses default IBMgraphics.
-#-<@   INVENTORY   @>-#
-OPTIONS=autopickup
-OPTIONS=pickup_burden:Unencumbered
-MONSTERCOLOR=floating eye:lightcyan&inverse
 
+MONSTERCOLOR=floating eye:lightcyan&inverse
 
 OPTIONS=color,menucolors
 
@@ -70,25 +91,6 @@ MSGTYPE=stop "*sign*"
 MSGTYPE=stop "Closed for inventory"
 # Messages easy to miss.
 MSGTYPE=stop "You feel more confident in your.*skills."
-
-#-----------------------
-#| Leave on the Ground |
-#-----------------------
-autopickup_exception="> corpse"
-autopickup_exception=">.*rock.*"
-autopickup_exception=">.*chest.*"
-autopickup_exception=">.*box.*"
-autopickup_exception=">.*loadstone.*"
-autopickup_exception=">.*gray stone.*"
-autopickup_exception=">.*heavy iron ball.*"
-AUTOPICKUP_EXCEPTION="<lichen corpse" 
-AUTOPICKUP_EXCEPTION="<lizard corpse" 
-AUTOPICKUP_EXCEPTION="<newt corpse"
-AUTOPICKUP_EXCEPTION="<floating eye corpse"
-AUTOPICKUP_EXCEPTION="<wraith corpse"
-autopickup_exception=">.*scare.*"
-autopickup_exception="<.*gem*"
-autopickup_exception=">.*spellbook of*"
 
 #------------------------
 #|      Status Bar      |
