@@ -9,8 +9,8 @@
 #000/_____/\__,_/_/ /_/ /_/_.___/\__,_/\__,_/_/\____/_/  /_/\__,_/_/ /_/____/
 #000000000000000000000000000000000000000000000000000000000000000000000000000
 OPTIONS=autopickup,pickup_types:$="/!?+%
-OPTIONS=align_message:bottom
-OPTIONS=align_status:top
+OPTIONS=align_message:top
+OPTIONS=align_status:bottom
 OPTIONS=showrace
 OPTIONS=showexp
 OPTIONS=time
@@ -207,54 +207,42 @@ MSGTYPE=stop "*strange vibration under*"
 MSGTYPE=stop "*sign*"
 
 # Autopickup exceptions
-# Weapons
-autopickup_exception="<.*athame"
-autopickup_exception="<.*flint*"
-autopickup_exception="<.*dagger"
-AUTOPICKUP_EXCEPTION="<.*dart*"
-AUTOPICKUP_EXCEPTION="<.*arrow*"
-AUTOPICKUP_EXCEPTION="<.*bolt*"
-# Foods
-AUTOPICKUP_EXCEPTION=">.* corpse*"
-autopickup_exception="<.*lichen*"
-autopickup_exception="<.*lizard*"
-# Artifacts
-AUTOPICKUP_EXCEPTION="<.*Amulet of Yendor*"
-#AUTOPICKUP_EXCEPTION="<.*Candelabrum of Invocation*"
-#AUTOPICKUP_EXCEPTION="<.*candelabrum*"
-#AUTOPICKUP_EXCEPTION="<.*Bell of Opening*"
-#AUTOPICKUP_EXCEPTION="<.*silver bell*"
-AUTOPICKUP_EXCEPTION="<.*Book of the Dead*"
-AUTOPICKUP_EXCEPTION="<.*papyrus spellbook*"
-AUTOPICKUP_EXCEPTION="<.*magic*"
-AUTOPICKUP_EXCEPTION="<.*wishing*"
-AUTOPICKUP_EXCEPTION="<.*death*"
-AUTOPICKUP_EXCEPTION="<.*polymorph*"
-AUTOPICKUP_EXCEPTION="<.*dilithium crystal*"
-AUTOPICKUP_EXCEPTION="<.*diamond*"
-AUTOPICKUP_EXCEPTION="<.*ruby*"
-AUTOPICKUP_EXCEPTION="<.*jacinth*"
-AUTOPICKUP_EXCEPTION="<.*sapphire*"
-AUTOPICKUP_EXCEPTION="<.*black opal*"
-AUTOPICKUP_EXCEPTION="<.*emerald*"
-AUTOPICKUP_EXCEPTION="<.*detonation*"
-AUTOPICKUP_EXCEPTION="<.*thirsty*"
-AUTOPICKUP_EXCEPTION="<.*vorpal*"
-AUTOPICKUP_EXCEPTION="<.*worthless piece of*"
+AUTOPICKUP_EXCEPTION="<*lichen*"
+AUTOPICKUP_EXCEPTION="<*lizard*"
+AUTOPICKUP_EXCEPTION=">*corpse*"
+AUTOPICKUP_EXCEPTION="<*dart*"
+AUTOPICKUP_EXCEPTION="<*lichen*"
+AUTOPICKUP_EXCEPTION="<*lizard*"
+## Always pick these:
+AUTOPICKUP_EXCEPTION="<*Amulet of Yendor*"
+AUTOPICKUP_EXCEPTION="<*Candelabrum of Invocation*"
+AUTOPICKUP_EXCEPTION="<*candelabrum*"
+AUTOPICKUP_EXCEPTION="<*Bell of Opening*"
+AUTOPICKUP_EXCEPTION="<*silver bell*"
+AUTOPICKUP_EXCEPTION="<*Book of the Dead*"
+AUTOPICKUP_EXCEPTION="<*papyrus spellbook*"
+AUTOPICKUP_EXCEPTION="<*magic lamp*"
+AUTOPICKUP_EXCEPTION="<*wand of wishing*"
+AUTOPICKUP_EXCEPTION="<*wand of death*"
+AUTOPICKUP_EXCEPTION="<*wand of polymorph*"
+AUTOPICKUP_EXCEPTION="<*dilithium crystal*"
+AUTOPICKUP_EXCEPTION="<*diamond*"
+AUTOPICKUP_EXCEPTION="<*ruby*"
+AUTOPICKUP_EXCEPTION="<*jacinth*"
+AUTOPICKUP_EXCEPTION="<*sapphire*"
+AUTOPICKUP_EXCEPTION="<*black opal*"
+AUTOPICKUP_EXCEPTION="<*emerald*"
+AUTOPICKUP_EXCEPTION="<*detonation*"
+AUTOPICKUP_EXCEPTION="<*thirsty*"
+AUTOPICKUP_EXCEPTION="<*vorpal*"
 
 ## Don't pick these:
-AUTOPICKUP_EXCEPTION=">.*cheap plastic imitation*"
-#AUTOPICKUP_EXCEPTION=">.*worthless piece of*"
-AUTOPICKUP_EXCEPTION=">.* stone*"
-AUTOPICKUP_EXCEPTION=">.*loadstone*"
-AUTOPICKUP_EXCEPTION=">.*rock*"
-AUTOPICKUP_EXCEPTION=">.*chunk*"
-AUTOPICKUP_EXCEPTION=">.*meatball*"
-AUTOPICKUP_EXCEPTION=">.*scare*"
-
-# don't pick up known spellbooks
-autopickup_exception=">*spellbook of*"
-
-# arc and others with touchstones: pick up unknown gems only
-# autopickup_exception="<*gem*"
-
+AUTOPICKUP_EXCEPTION=">*cheap plastic imitation of the Amulet of Yendor*"
+AUTOPICKUP_EXCEPTION=">*worthless piece of*"
+AUTOPICKUP_EXCEPTION=">* stone*"
+AUTOPICKUP_EXCEPTION=">*loadstone*"
+AUTOPICKUP_EXCEPTION=">*rock*"
+AUTOPICKUP_EXCEPTION=">*chunk*"
+AUTOPICKUP_EXCEPTION=">*meatball*"
+AUTOPICKUP_EXCEPTION=">*scare monster*"
+AUTOPICKUP_EXCEPTION=">*spellbook of*"
