@@ -15,12 +15,22 @@ OPTIONS=align_message:bottom
 OPTIONS=align_status:top
 OPTIONS=popup_dialog
 OPTIONS=!suppress_alert:3.4.3
-OPTIONS=!cmdassist
+OPTIONS=legacy
+OPTIONS=cmdassist
 OPTIONS=perm_invent
+OPTIONS=lit_corridor
 OPTIONS=clicklook
+OPTIONS=force_invmenu
+OPTIONS=fixinv
+OPTIONS=confirm
+OPTIONS=autodescribe
 OPTIONS=disclose: +i +a #v +g +c +o
+OPTIONS=dark_room
 
 #-<@   Personal Stuff   @>-#
+# For showrace-how to add blink and colored inverse?
+
+OPTIONS=showrace
 #OPTIONS=fruit:
 #OPTIONS=catname:
 #OPTIONS=dogname:
@@ -28,8 +38,10 @@ OPTIONS=disclose: +i +a #v +g +c +o
 OPTIONS=safe_pet
 OPTIONS=!autodig
 OPTIONS=autoopen
-OPTIONS=dark_room
 OPTIONS=bones
+OPTIONS=sortloot:full
+OPTIONS=menustyle:partial
+
 
 #-<@   INVENTORY   @>-#
 OPTIONS=autopickup
